@@ -1,4 +1,4 @@
-package com.zzy.service.gate;
+package com.zzy.gate.server;
 /**
 * @author Zeus
 * @version 1.1

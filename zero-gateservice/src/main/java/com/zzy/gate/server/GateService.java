@@ -4,7 +4,7 @@
 * @version 1.0
 * @describe:第一网关服务类
 */
-package com.zzy.service.gate;
+package com.zzy.gate.server;
 
 import java.io.IOException;
 
@@ -16,10 +16,9 @@ public class GateService {
 		new GateService().init();
 	}
 	public void init() throws IOException{
-	
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"applicationContext.xml"});
+		context.start(); 
         System.out.println("zero_zook服务启动~O(∩_∩)O哈哈~.");
-        context.start();
         System.in.read(); // 按任意键退出
 	}
 }
