@@ -1,0 +1,80 @@
+package com.zzy.controller;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.alibaba.fastjson.JSONObject;
+import com.zzy.base.ResultValue;
+import com.zzy.domain.base.GRole;
+import com.zzy.domain.base.ZUser;
+import com.zzy.service.common.BaseService;
+import com.zzy.service.common.RedisService;
+
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+
+/**
+ * @author Zeus
+ * @version 1.1
+ * @createTime：2016年6月30日 @decript:模板Controller
+ */
+// 切记一定要标注method=xxxx 否则swagger将会为每个方法包括头部信息创建多个api
+@RestController
+public class tempController extends BaseController {
+
+	@ApiOperation(value = "获取", notes = "获取user列表")
+	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
+	public JSONObject listUser() {
+		return ResultValue.success();
+	}
+ 
+	@ApiOperation(value = "创建", notes = "根据User对象创建用户")
+	@RequestMapping(value = "/", method = RequestMethod.POST)
+	public JSONObject postUser(@RequestBody ZUser user) {
+		if(Objects.isNull(user)){
+			return ResultValue.requireNonNull();
+		}
+		return ResultValue.success();
+	}
+
+	@ApiOperation(value = "获取详细信息", notes = "根据url的id来获取详细信息")
+	@RequestMapping(value = "//{id}", method = RequestMethod.GET)
+	public JSONObject getUser(@PathVariable String id) {
+		if(Objects.isNull(id)){
+			return ResultValue.requireNonNull();
+		}
+		return ResultValue.success();
+	}
+
+	@ApiOperation(value = "更新详细信息", notes = "根据url的id来指定更新对象，并根据传过来的user信息来更新用户详细信息")
+	@RequestMapping(value = "/", method = RequestMethod.PUT)
+	public JSONObject putUser(@RequestBody ZUser user) {
+		if(Objects.isNull(user)){
+			return ResultValue.requireNonNull();
+		}
+		return ResultValue.success();
+	}
+
+	@ApiOperation(value = "删除用户", notes = "根据url的id来指定删除对象")
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	public JSONObject deleteUser(@PathVariable String id) {
+		if(Objects.isNull(id)){
+			return ResultValue.requireNonNull();
+		}
+		GRole role = roleService.get(id);
+		role.setStatus(10);
+		roleService.update(role);
+		return ResultValue.success();
+	}
+
+}

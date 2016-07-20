@@ -1,0 +1,4 @@
+2016年7月11日  role表新增head_image_id字段(头像) 对象关联完毕 准备检查json转换死循环问题（单向关联似乎没有此问题了） 映射完成
+2016年7月12日  改为单表查询 定义所有基本service repository
+2016年7月13日  修改查询 roleBuff新增三个字段 开始时间 结束时间 持续时间 还有问题待解决 改为单表查询 关联对象 给所有对象重写上id（为了repository方法映射需要）
+2016年7月16日  修改rolefriend时间字段为bigint 新增区表 area 映射role关系到area

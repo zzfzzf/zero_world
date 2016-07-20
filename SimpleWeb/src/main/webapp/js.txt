@@ -1,0 +1,9 @@
+    <script src="resource/js/jquery-1.8.3.min.js"></script>
+   <script src="resource/js/jquery.nicescroll.js" type="text/javascript"></script>
+   <script src="resource/js/bootstrap.min.js"></script>
+   <script src="resource/js/jquery.scrollto.min.js"></script>
+   <!--[if lt IE 9]>
+   <script src="resource/js/http://www.js-css.cn/js/excanvas.js"></script>
+   <script src="resource/js/http://www.js-css.cn/js/respond.js"></script>
+   <![endif]-->
+   <script src="resource/js/common-scripts.js"></script>
