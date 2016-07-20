@@ -1,6 +1,6 @@
 package com.zzy.service.gate;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.alibaba.fastjson.JSONObject;
 
 /**
 * @author Zeus
@@ -10,7 +10,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 */
 public class Test {
    public static void main(String[] args) {
-	   ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"applicationContext.xml"});
-	   System.out.println("d");
+	   JSONObject json=new JSONObject();
+	   json.put("xx", " this com");
+	   String message=null;
+	  JSONObject k= JSONObject.parseObject(message);
+	  System.out.println(k);
 }
 }
