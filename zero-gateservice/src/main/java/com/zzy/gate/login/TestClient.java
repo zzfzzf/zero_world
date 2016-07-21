@@ -25,7 +25,6 @@ public class TestClient {
 	      PrintWriter  writer =new PrintWriter(client.getOutputStream());
 	      JSONObject json=new JSONObject();
 	      json.put("呵呵", "和开决定了看见路口附近路口积分可垃圾路口附近的拉开纠纷拉数据量中华人民共和开决定了看见路口附近路口积分可垃圾路口附近的拉开纠纷拉数据量中华人民共和开决定了看见路口附近路口积分可垃圾路口附近的拉开纠纷拉数据量中华人民共和开决定了看见路口附近路中华人民共和开决定了看见路口附近路口积分可垃圾路口附近的拉开纠纷拉数据量中华人民共和开决定了看见路口附近路口积分可垃圾路口附近的拉开纠纷拉数据量中华人民共和开决定了看见路口附近路口积分可垃圾路口附近的拉开纠纷拉数据量中华人民共和开口附近的拉开纠纷拉数据量中华人民共看见路口附近路口积分可垃圾路口附近的拉开纠纷拉数据量口积分可垃圾路口附近的拉开纠纷拉数据量中华人民共和开决定了看见路口附近路口积分可垃圾路口附近的拉开纠纷拉数据量");
-	      System.out.println(json);
 	      writer.println(json.toString());
 	      writer.flush();//写完后要记得flush  
 	      writer.close();  

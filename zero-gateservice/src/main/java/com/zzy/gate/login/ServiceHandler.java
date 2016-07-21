@@ -20,8 +20,7 @@ public class ServiceHandler extends IoHandlerAdapter {
 	// 当一个客户端连接进入时
 	@Override
 	public void sessionOpened(IoSession session) throws Exception {
-		log.info("有用户连接");
-
+	
 	}
 
 	/**
