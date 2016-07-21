@@ -1,3 +1,0 @@
- 2016-07-21 11:30:40  [ main:2 ] - [ DEBUG ]  [DEBUG] 2016-07-21 11:32:47,512(0) --> [main] com.zzy.gate.login.LoginService.init(LoginService.java:32): message  
- 2016-07-21 11:35:53,799 [com.zzy.gate.login.ServiceHandler]-[DEBUG] message
-2016-07-21 11:37:05,642 com.zzy.gate.login.LoginService.init(LoginService.java:32) DEBUG - message: message

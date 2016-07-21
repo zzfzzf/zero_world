@@ -1,8 +1,0 @@
-2016-07-21 11:28:26,515 DEBUG [com.zzy.gate.login.ServiceHandler] - message
-2016-07-21 11:30:14,654 DEBUG [com.zzy.gate.login.ServiceHandler] - message
-2016-07-21 11:30:40,870 DEBUG [com.zzy.gate.login.ServiceHandler] - message
-2016-07-21 11:32:47,512 DEBUG [com.zzy.gate.login.ServiceHandler] - message
-2016-07-21 11:35:53,799 DEBUG [com.zzy.gate.login.ServiceHandler] - message
-2016-07-21 11:37:05,642 com.zzy.gate.login.LoginService.init(LoginService.java:32) DEBUG - message: message
-2016-07-21 11:39:32,884 com.zzy.gate.login.LoginService.init(LoginService.java:46) DEBUG - message: ---------------------服务器已启动--------------------
-2016-07-21 11:40:47,535 com.zzy.gate.login.LoginService.init(LoginService.java:46) DEBUG - message: ---------------------服务器已启动--------------------
