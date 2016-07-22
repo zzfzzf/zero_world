@@ -3,14 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>zero-service-login</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<parent>
 		<groupId>com.zzy</groupId>
-		<artifactId>zero-service-common</artifactId>
-		<version>1.1.1</version>
-		<relativePath>../zero-service-common/pom.xml</relativePath>
+		<artifactId>zero-service-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../zero-service-parent/pom.xml</relativePath>
 	</parent>
 
 	<name>zero-service-login</name>
@@ -21,10 +20,10 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>com.zzy</groupId>
-			<artifactId>zero-service-common</artifactId>
-		</dependency>
+		<!-- <dependency>
+		<groupId>com.zzy</groupId>
+		<artifactId>zero-service-common</artifactId>
+		</dependency> -->
 		<!-- json -->
 		<dependency>
 			<groupId>com.alibaba</groupId>

@@ -1,4 +1,4 @@
-package com.zzy.common;
+package com.zzy.zero_service_parent;
 
 /**
  * Hello world!
