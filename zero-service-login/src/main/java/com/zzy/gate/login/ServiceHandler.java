@@ -7,6 +7,8 @@ import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
 
 import com.alibaba.fastjson.JSONObject;
+import com.zzy.common.base.Command;
+import com.zzy.gate.logic.LoginController;
 
 /**
 * @author Zeus
@@ -15,7 +17,7 @@ import com.alibaba.fastjson.JSONObject;
  */
 public class ServiceHandler extends IoHandlerAdapter {
 	private static Logger log = Logger.getLogger(ServiceHandler.class);
-
+	private LoginController loginController = new LoginController();
 	// 当一个客户端连接进入时
 	@Override
 	public void sessionOpened(IoSession session) throws Exception {
@@ -27,7 +29,6 @@ public class ServiceHandler extends IoHandlerAdapter {
 	 */
 	@Override
 	public void exceptionCaught(IoSession session, Throwable cause) throws Exception {
-		System.out.println("异常"+cause.getMessage());
 		log.error("错误session:"+session.getId()+"---->"+cause.getMessage());
 	}
 
@@ -41,6 +42,14 @@ public class ServiceHandler extends IoHandlerAdapter {
 			throw new NullPointerException("message不能为null");
 		}
 		JSONObject json = JSONObject.parseObject((String) message);
+		String command = (String)json.get("command");
+		switch (command) {
+		case "login":
+			loginController.loginLogic(json,session);
+			break;
+		default:
+			break;
+		}
 		
 	}
 

@@ -1,0 +1,5 @@
+2016-07-21 20:34:54,411 com.zzy.gate.login.ServiceHandler.exceptionCaught(ServiceHandler.java:34) ERROR - message: 错误session:1---->message不能为null
+2016-07-21 20:45:36,345 com.zzy.gate.login.ServiceHandler.exceptionCaught(ServiceHandler.java:34) ERROR - message: 错误session:1---->message不能为null
+2016-07-22 15:00:17,888 com.zzy.gate.login.ServiceHandler.exceptionCaught(ServiceHandler.java:31) ERROR - message: 错误session:1---->message不能为null
+2016-07-22 15:06:54,749 com.zzy.gate.login.ServiceHandler.exceptionCaught(ServiceHandler.java:31) ERROR - message: 错误session:1---->message不能为null
+2016-07-22 16:02:51,305 com.zzy.gate.login.LoginService.init(LoginService.java:43) ERROR - message: Address already in use: bind
