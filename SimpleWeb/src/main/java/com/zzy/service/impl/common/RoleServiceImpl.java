@@ -29,4 +29,8 @@ public class RoleServiceImpl extends BaseServiceImp<GRole> implements RoleServic
 	public List<GRole> findByStatusNot(int status) {
 		return roleRepository.findByStatusNot(status); 
 	}
+	@Override
+	public GRole findByName(String name) {
+		return roleRepository.findByName(name);
+	}
 }

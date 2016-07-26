@@ -26,7 +26,7 @@ import com.zzy.domain.cross.ZUserPosition;
 public class ZUser implements java.io.Serializable {
 
 	private String id;
-	private String user;
+	private String username;
 	private String password;
 	private String nickName;
 	private String specialSign;
@@ -35,8 +35,8 @@ public class ZUser implements java.io.Serializable {
 	private Integer money;
 	private String qq;
 	private String phone;
-	private Set<ZUserGRole> user_role;
 	private GImage headImageId;
+	private Set<GRole> role;
 	private Set<ZUserPosition> user_pisition;
 	@OneToMany(fetch = FetchType.LAZY)  
     @JoinColumn(name="user_id") 
@@ -61,21 +61,23 @@ public class ZUser implements java.io.Serializable {
 		this.headImageId = headImageId;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY)  
+	@OneToMany
     @JoinColumn(name="user_id")     
 	@NotFound(action=NotFoundAction.IGNORE)
-	public Set<ZUserGRole> getUser_role() {
-		return user_role;
+	public Set<GRole> getRole() {
+		return role;
 	}
-	
-	public void setUser_role(Set<ZUserGRole> user_role) {
-		this.user_role = user_role;
+
+	public void setRole(Set<GRole> role) {
+		this.role = role;
 	}
 	
 
 	public ZUser() {
 	}
 
+
+	
 
 	public ZUser(String id) {
 		this.id = id;
@@ -93,13 +95,13 @@ public class ZUser implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "user", length = 50)
-	public String getUser() {
-		return this.user;
+	@Column(name = "username", length = 50)
+	public String getUsername() {
+		return this.username;
 	}
 
-	public void setUser(String user) {
-		this.user = user;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	@Column(name = "password", length = 16)

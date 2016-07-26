@@ -29,4 +29,19 @@ public class UserServiceImpl extends BaseServiceImp<ZUser> implements UserServic
 	public List<ZUser> findByStatusNot(int status) {
 		return userRepository.findByStatusNot(status);
 	}
+
+	@Override
+	public ZUser findByUsername(String username) {
+		return userRepository.findByUsername(username);
+	}
+
+	@Override
+	public boolean login(ZUser user) {
+		ZUser tuser= userRepository.findByUsername(user.getUsername());
+		boolean result = false;
+		if(tuser != null){
+			result = user.getPassword().equals(tuser.getPassword());
+		}
+		return result;
+	}
 }

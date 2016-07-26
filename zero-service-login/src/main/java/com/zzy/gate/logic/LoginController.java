@@ -9,11 +9,13 @@ package com.zzy.gate.logic;
 import org.apache.mina.core.session.IoSession;
 
 import com.alibaba.fastjson.JSONObject;
-import com.zzy.common.base.ResultValue;
+import com.zzy.common.base.HttpUtil;
 
 public class LoginController {
 	public void loginLogic(JSONObject json,IoSession session){
-		session.write(json);
+		String url = "http://localhost:8080/zeus/user/login";
+		JSONObject result = HttpUtil.postJson(url,json);
+		session.write(result);
 	}
 }
 

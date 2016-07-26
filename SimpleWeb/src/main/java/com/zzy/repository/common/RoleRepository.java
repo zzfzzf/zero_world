@@ -14,4 +14,5 @@ import com.zzy.domain.base.GRole;
 */
 public interface RoleRepository extends CrudRepository<GRole, String>{
 	List<GRole> findByStatusNot(int status);
+	GRole findByName (String user);
 }

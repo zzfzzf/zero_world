@@ -7,8 +7,6 @@ import java.util.Objects;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
-import org.hibernate.Query;
-import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,7 +32,17 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 public class RoleController extends BaseController {
 	private static Logger log = Logger.getLogger(RoleController.class);
-
+	
+	@ApiOperation(value = "根据user获取role", notes = "")
+	@RequestMapping(value = { "/role/user/{user}" }, method = RequestMethod.GET)
+	public JSONObject getRoleByUser(@PathVariable String user) throws SQLException {
+		if (Objects.isNull(user)) {
+			return ResultValue.requireNonNull();
+		}
+		GRole role=roleService.findByName(user);
+		return ResultValue.success(role);
+	}
+	
 	@ApiOperation(value = "获取role", notes = "")
 	@RequestMapping(value = { "/role/{id}" }, method = RequestMethod.GET)
 	public JSONObject getRole(@PathVariable String id) throws SQLException {

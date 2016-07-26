@@ -1,3 +1,0 @@
-2016-07-24 14:03:03,044 com.zzy.gate.login.ServiceHandler.exceptionCaught(ServiceHandler.java:31) ERROR - message: 错误session:1---->message不能为null
-2016-07-24 14:04:23,733 com.zzy.gate.login.ServiceHandler.exceptionCaught(ServiceHandler.java:31) ERROR - message: 错误session:1---->java.lang.String cannot be cast to com.zzy.common.base.Command
-2016-07-24 14:16:52,476 com.zzy.gate.login.ServiceHandler.exceptionCaught(ServiceHandler.java:31) ERROR - message: 错误session:1---->java.lang.String cannot be cast to com.zzy.common.base.Command

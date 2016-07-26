@@ -9,7 +9,7 @@ import com.alibaba.fastjson.JSONObject;
 * @decript:
 */
 public class ResultValue {
-
+	public static final int LOGIN_FAIL=99;
     public static final int SUCCESS=200;
     public static final int ADD_FAIL=301;
     public static final int UPDATE_FAIL=302;

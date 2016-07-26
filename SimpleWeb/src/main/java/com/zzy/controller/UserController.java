@@ -33,6 +33,23 @@ public class UserController extends BaseController {
 		return ResultValue.success(userList);
 	}
 
+	@ApiOperation(value = "根据username获取user", notes = "根据username获取user")
+	@RequestMapping(value = { "/user/username/{username}" }, method = RequestMethod.GET)
+	public JSONObject getUserByUsername(@PathVariable String username) {
+		userService.findByUsername(username);
+		return ResultValue.success();
+	}
+	
+	@ApiOperation(value = "登录验证", notes = "用户登录验证")
+	@RequestMapping(value = { "/user/login" }, method = RequestMethod.POST)
+	public JSONObject login(@RequestBody ZUser user) {
+		JSONObject result = ResultValue.success();
+		if(userService.login(user)){
+			result = ResultValue.fail(ResultValue.LOGIN_FAIL, "登录失败");
+		}
+		return result;
+	}
+	
 	@ApiOperation(value = "创建user", notes = "根据User对象创建用户")
 	@RequestMapping(value = "/user", method = RequestMethod.POST)
 	public JSONObject postUser(@RequestBody ZUser user) {

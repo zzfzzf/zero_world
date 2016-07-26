@@ -1,14 +1,10 @@
 package com.zzy.gate.login;
 
-import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.io.Writer;
-import java.net.Socket;
 
-import com.alibaba.fastjson.JSONObject;
-import com.zzy.common.base.Command;
+import org.apache.log4j.Logger;
+
+import com.zzy.common.base.HttpUtil;
 
 
 /**
@@ -17,7 +13,11 @@ import com.zzy.common.base.Command;
  * @createTime：2016年7月20日 @decript:
  */
 public class TestClient {
+	private static Logger log = Logger.getLogger(ServiceHandler.class);
 	public static void main(String[] args) throws IOException {
+		 String s=HttpUtil.getJson("http://localhost:8080/zeus/role/user/1");
+		 System.out.println(s);
+		/*
 		  String host = "127.0.0.1";  //要连接的服务端IP地址  
 	      int port = 8080;   //要连接的服务端对应的监听端口  
 	      //与服务端建立连接  
@@ -29,6 +29,6 @@ public class TestClient {
 	      writer.println(json); 
 	      writer.flush();//写完后要记得flush  
 	      writer.close();  
-	      client.close();
+	      client.close();*/
 	}
 }

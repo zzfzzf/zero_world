@@ -12,5 +12,6 @@ import com.zzy.domain.base.ZUser;
 * @description:
 */
 public interface UserRepository extends CrudRepository<ZUser, String>{
-     List<ZUser> findByStatusNot(int status);    
+     List<ZUser> findByStatusNot(int status); 
+     ZUser findByUsername(String username);
 }

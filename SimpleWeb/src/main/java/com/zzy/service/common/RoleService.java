@@ -13,4 +13,6 @@ import com.zzy.domain.base.GRole;
 public interface RoleService extends BaseService<GRole>{
 	// 查找status不为10的 (有效的)
 	List<GRole> findByStatusNot(int status);
+	
+	GRole findByName(String name);
 }

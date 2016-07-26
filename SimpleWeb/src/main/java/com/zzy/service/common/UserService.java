@@ -12,4 +12,6 @@ import com.zzy.domain.base.ZUser;
 */
 public interface UserService extends BaseService<ZUser>{
 	List<ZUser> findByStatusNot(int status);
+	ZUser findByUsername(String username);
+	boolean login(ZUser user);
 }

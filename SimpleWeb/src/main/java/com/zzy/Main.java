@@ -21,7 +21,6 @@ import org.springframework.cache.annotation.EnableCaching;
 @EnableCaching
 @SpringBootApplication 
 public class Main {
-	Logger log = Logger.getLogger(this.getClass());
 	public static void main(String[] args) throws Exception {
 		// Close the context so it doesn't stay awake listening for redis
 		SpringApplication.run(Main.class, args); 

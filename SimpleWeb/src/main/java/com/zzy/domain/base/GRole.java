@@ -56,7 +56,17 @@ public class GRole implements java.io.Serializable {
     private Set<GLand> land;
     private GImage headImageId;
     private GArea area;
-    @ManyToOne
+    private String userId;
+    
+    @Column(name = "user_id", length = 50)
+    public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	@ManyToOne
     @JoinColumn(name = "area_id")  
 	@NotFound(action=NotFoundAction.IGNORE)
     public GArea getArea() {
