@@ -13,6 +13,8 @@ import java.net.URL;
 */
 public class Test extends A {
    public static void main(String[] args) {
+	   int i= -1;
+	   System.out.println(2+i);
 	   try {
 		new A().getMessage("http://localhost:8080/zeus/user/1");
 	} catch (Exception e) {

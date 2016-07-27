@@ -12,7 +12,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.zzy.common.base.Command;
 import com.zzy.common.base.HttpUtil;
 import com.zzy.common.base.UrlCommon;
-import com.zzy.gate.logic.LoginController;
+import com.zzy.gate.logic.Impl.LoginController;
 
 /**
  * @author Zeus

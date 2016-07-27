@@ -15,5 +15,17 @@ public interface Command {
 	 * 在线数量
 	 */
 	public static String ONLINE_NUM="onlineNum";
+	/**
+	 * 角色移动
+	 */
+	public static String MOVE="move";
+	/**
+	 * 玩家贸易 
+	 */
+	public static String TRADE="trade";
+	/**
+	 * 拾取物品
+	 */
+	public static String PICKUP="pickUp";
+	
 }
- 

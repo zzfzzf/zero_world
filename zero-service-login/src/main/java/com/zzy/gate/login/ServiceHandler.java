@@ -9,8 +9,8 @@ import org.apache.mina.core.session.IoSession;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zzy.common.base.Command;
-import com.zzy.gate.logic.LoginController;
-import com.zzy.gate.logic.OtherController;
+import com.zzy.gate.logic.Impl.LoginController;
+import com.zzy.gate.logic.Impl.OtherController;
 
 /**
 * @author Zeus
@@ -54,9 +54,23 @@ public class ServiceHandler extends IoHandlerAdapter implements Command{
 		String command = (String)json.get("command");  
 		switch (command) {
 		case LOGIN:
-			loginController.loginLogic(json,session);
+			// 登录逻辑
+			loginController.login(json,session);
 			break;
 		case ONLINE_NUM:
+			// 获取在线用户
+			otherController.getOnlineNum(acceptor, session);
+			break;
+		case MOVE:
+			// 移动广播
+			otherController.getOnlineNum(acceptor, session);
+			break;
+		case TRADE:
+			// 交易广播
+			otherController.getOnlineNum(acceptor, session);
+			break;
+		case PICKUP:
+			// 拾取物品
 			otherController.getOnlineNum(acceptor, session);
 			break;
 		}
