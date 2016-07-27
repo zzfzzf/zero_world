@@ -1,0 +1,16 @@
+2016-07-27 10:36:17,877 org.hibernate.validator.internal.util.Version.<clinit>(Version.java:30) INFO - message: HV000001: Hibernate Validator 5.2.4.Final
+2016-07-27 10:36:22,085 com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:721) INFO - message: {dataSource-1} inited
+2016-07-27 10:36:22,296 org.hibernate.Version.logVersion(Version.java:54) INFO - message: HHH000412: Hibernate Core {4.3.11.Final}
+2016-07-27 10:36:22,298 org.hibernate.cfg.Environment.<clinit>(Environment.java:239) INFO - message: HHH000206: hibernate.properties not found
+2016-07-27 10:36:22,299 org.hibernate.cfg.Environment.buildBytecodeProvider(Environment.java:346) INFO - message: HHH000021: Bytecode provider name : javassist
+2016-07-27 10:36:22,514 org.hibernate.annotations.common.reflection.java.JavaReflectionManager.<clinit>(JavaReflectionManager.java:66) INFO - message: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-07-27 10:36:22,581 org.hibernate.dialect.Dialect.<init>(Dialect.java:145) INFO - message: HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-07-27 10:36:22,804 org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(ASTQueryTranslatorFactory.java:47) INFO - message: HHH000397: Using ASTQueryTranslatorFactory
+2016-07-27 10:37:08,631 org.hibernate.validator.internal.util.Version.<clinit>(Version.java:30) INFO - message: HV000001: Hibernate Validator 5.2.4.Final
+2016-07-27 10:37:11,742 com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:721) INFO - message: {dataSource-1} inited
+2016-07-27 10:37:11,958 org.hibernate.Version.logVersion(Version.java:54) INFO - message: HHH000412: Hibernate Core {4.3.11.Final}
+2016-07-27 10:37:11,959 org.hibernate.cfg.Environment.<clinit>(Environment.java:239) INFO - message: HHH000206: hibernate.properties not found
+2016-07-27 10:37:11,960 org.hibernate.cfg.Environment.buildBytecodeProvider(Environment.java:346) INFO - message: HHH000021: Bytecode provider name : javassist
+2016-07-27 10:37:12,155 org.hibernate.annotations.common.reflection.java.JavaReflectionManager.<clinit>(JavaReflectionManager.java:66) INFO - message: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-07-27 10:37:12,214 org.hibernate.dialect.Dialect.<init>(Dialect.java:145) INFO - message: HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-07-27 10:37:12,382 org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory.<init>(ASTQueryTranslatorFactory.java:47) INFO - message: HHH000397: Using ASTQueryTranslatorFactory

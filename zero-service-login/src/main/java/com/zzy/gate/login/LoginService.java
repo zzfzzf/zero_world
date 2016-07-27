@@ -11,17 +11,20 @@ import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.textline.TextLineCodecFactory;
 import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 
+import com.zzy.common.base.UrlCommon;
+
 /**
  * @author Zeus
  * @version 1.1
- * @createTime：2016年7月20日 @decript:
+ * @createTime：2016年7月20日
+ *  @decript:
  */
 //传递对象拦截器
 // chain.addLast("objectFilter", new ProtocolCodecFilter(new ObjectSerializationCodecFactory()));
 public class LoginService {
 	private static Logger log = Logger.getLogger(ServiceHandler.class);
 
-	private static int PORT = 8080;
+	private static int PORT = UrlCommon.PORT;
 
 	public static void main(String[] args) {
 		new LoginService().init();
@@ -36,13 +39,12 @@ public class LoginService {
 			// 设定这个过滤器将一行一行的读取数据 并且转码
 			chain.addLast("codec", new ProtocolCodecFilter(new TextLineCodecFactory(Charset.forName("UTF-8"))));// 指定编码过滤器
 			// 指定业务逻辑处理器
-			acceptor.setHandler(new ServiceHandler());
+			acceptor.setHandler(new ServiceHandler(acceptor));
 			// 设置端口号并绑定
 			acceptor.bind(new InetSocketAddress(PORT));
 		} catch (IOException e) {
 			log.error(e.getMessage());
 		} 
-		// 启动监听
 		log.debug("---------------------服务器已启动--------------------");
 	}
 }

@@ -10,12 +10,12 @@ import org.apache.mina.core.session.IoSession;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zzy.common.base.HttpUtil;
+import com.zzy.common.base.UrlCommon;
 
 public class LoginController {
 	public void loginLogic(JSONObject json,IoSession session){
-		String url = "http://localhost:8080/zeus/user/login";
-		JSONObject result = HttpUtil.postJson(url,json);
-		session.write(result);
-	}
+		JSONObject result = HttpUtil.postJson(UrlCommon.LOGIN,json);
+		session.write(result); 
+   }
 }
 

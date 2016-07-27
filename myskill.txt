@@ -1,0 +1,30 @@
+ZooKeeper
+RMI
+EJB
+RPC
+JMS
+SOA
+MAVEN
+GIT
+SVN
+Socket
+Mina
+Object
+Mysql
+Hibernate
+Spring boot 
+Spring data jpa
+Spring mvc
+Lucene
+MongoDb
+Redis
+Swagger UI
+JQuery
+Struts
+Mybatis
+Ocr
+JRMP(没看）
+Nginx
+Linux
+reactor模式
+AtomicInteger 线程安全integer

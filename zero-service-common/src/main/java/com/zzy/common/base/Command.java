@@ -6,10 +6,14 @@
 */
 package com.zzy.common.base;
 
-public class Command {
+public interface Command {
 	/**
 	 * 登录
 	 */
 	public static String LOGIN="login";
+	/**
+	 * 在线数量
+	 */
+	public static String ONLINE_NUM="onlineNum";
 }
  
