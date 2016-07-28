@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2016/7/26 星期二 15:59:25                       */
+/* Created on:     2016/7/28 星期四 16:18:28                       */
 /*==============================================================*/
 
 
@@ -274,8 +274,8 @@ create table g_role
 (
    id                   char(32) not null,
    name                 varchar(50),
-   blood                varchar(50) comment '生命',
-   energy               varchar(50) comment '能量',
+   blood                int comment '生命',
+   energy               int comment '能量',
    level                int,
    experience           int,
    gender               int comment '0女 1男',
@@ -294,6 +294,9 @@ create table g_role
    head_image_id        char(32),
    user_id              char(32),
    area                 char(32),
+   max_blood            int,
+   max_energy           int,
+   speed                int,
    primary key (id)
 );
 
@@ -320,7 +323,7 @@ create table g_role_friend
    friend_id            char(32),
    role_id              char(32),
    detail               varchar(50),
-   "bigint"             timestamp,
+   create_time          bigint,
    favor                int,
    primary key (id)
 );

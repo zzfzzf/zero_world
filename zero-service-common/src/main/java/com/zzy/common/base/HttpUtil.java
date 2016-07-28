@@ -110,7 +110,7 @@ public class HttpUtil {
 		while ((lines = reader.readLine()) != null) {
 			lines = new String(lines.getBytes(), "utf-8");
 			sb.append(lines);
-		}
+		} 
 		reader.close();
 		return sb == null ? "" : sb.toString();
 	}

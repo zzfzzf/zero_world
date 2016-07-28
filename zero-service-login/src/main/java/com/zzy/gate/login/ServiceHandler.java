@@ -9,8 +9,12 @@ import org.apache.mina.core.session.IoSession;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zzy.common.base.Command;
+import com.zzy.gate.logic.Impl.ItemController;
 import com.zzy.gate.logic.Impl.LoginController;
+import com.zzy.gate.logic.Impl.MoneyController;
 import com.zzy.gate.logic.Impl.OtherController;
+import com.zzy.gate.logic.Impl.RoleController;
+import com.zzy.gate.logic.Impl.TradeController;
 
 /**
 * @author Zeus
@@ -22,6 +26,12 @@ public class ServiceHandler extends IoHandlerAdapter implements Command{
 	private static Logger log = Logger.getLogger(ServiceHandler.class);
 	private LoginController loginController = new LoginController();
 	private OtherController otherController = new OtherController();
+	private MoneyController moneyController = new MoneyController();
+	private ItemController itemController = new ItemController();
+	private RoleController roleController = new RoleController();
+	private TradeController tradeController = new TradeController();
+	
+	
 	private IoAcceptor acceptor;
 	public ServiceHandler(IoAcceptor acceptor) {
 		this.acceptor=acceptor;
@@ -30,7 +40,8 @@ public class ServiceHandler extends IoHandlerAdapter implements Command{
 	// 当一个客户端连接进入时
 	@Override
 	public void sessionOpened(IoSession session) throws Exception {
-		
+		long token = session.getId();
+		session.write(token);
 	}
 
 	/**
@@ -62,15 +73,75 @@ public class ServiceHandler extends IoHandlerAdapter implements Command{
 			otherController.getOnlineNum(acceptor, session);
 			break;
 		case MOVE:
-			// 移动广播
+			// 移动
 			otherController.getOnlineNum(acceptor, session);
 			break;
-		case TRADE:
-			// 交易广播
+		case ATTACK:
+			// 攻击	
 			otherController.getOnlineNum(acceptor, session);
 			break;
-		case PICKUP:
+		case ADD_ITEM:
+			// 添加物品
+			otherController.getOnlineNum(acceptor, session);
+			break;
+		case ADD_MONEY:
+			// 添加金钱
+			otherController.getOnlineNum(acceptor, session);
+			break;
+		case CHAT:
+			// 聊天
+			otherController.getOnlineNum(acceptor, session);
+			break;
+		case CONFIRM_TRADE:
+			// 确认交易
+			otherController.getOnlineNum(acceptor, session);
+			break;
+		case DESTROY_ITEM:
+			// 销毁物品
+			otherController.getOnlineNum(acceptor, session);
+			break;
+		case GIVE_UP_ITEM:
+			// 丢弃物品
+			otherController.getOnlineNum(acceptor, session);
+			break;
+		case GIVE_UP_MONEY:
+			// 丢弃金币
+			otherController.getOnlineNum(acceptor, session);
+			break;
+		case PICK_UP_ITEM:
 			// 拾取物品
+			otherController.getOnlineNum(acceptor, session);
+			break;
+		case PICK_UP_MONEY:
+			// 拾取金币
+			otherController.getOnlineNum(acceptor, session);
+			break;
+		case PUT_ON:
+			// 装备物品
+			otherController.getOnlineNum(acceptor, session);
+			break;
+		case RIDE:
+			// 骑乘
+			otherController.getOnlineNum(acceptor, session);
+			break;
+		case SPLIT_ITEM:
+			// 拆分物品
+			otherController.getOnlineNum(acceptor, session);
+			break;
+		case SKILL:
+			// 使用技能
+			otherController.getOnlineNum(acceptor, session);
+			break;
+		case STALL:
+			// 摆摊
+			otherController.getOnlineNum(acceptor, session);
+			break;
+		case TAKE_DOWN:
+			// 卸下物品
+			otherController.getOnlineNum(acceptor, session);
+			break;
+		case USE_ITEM:
+			// 使用物品
 			otherController.getOnlineNum(acceptor, session);
 			break;
 		}

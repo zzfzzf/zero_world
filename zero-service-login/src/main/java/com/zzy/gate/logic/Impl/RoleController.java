@@ -1,58 +1,51 @@
 
 package com.zzy.gate.logic.Impl;
 
-import com.zzy.gate.logic.IItem;
+import com.zzy.gate.logic.IRole;
 
 /**
 * @author zeus
 * @date 2016年7月27日
 * @version 1.0
-* @describe:物品控制器
+* @describe:角色控制器
 */
-public class ItemController implements IItem{
+public class RoleController implements IRole {
 
 	@Override
-	public void pickUpItem() {
+	public void move() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void giveUpItem() {
+	public void attack() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void destroy() {
+	public void skill() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void putOn() {
+	public void ride() {
+		// TODO Auto-generated method stub
+		 
+	}
+
+	@Override
+	public void stall() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void takeDown() {
+	public void chat() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
-	public void useItem() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void splitItem() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
 }
 

@@ -33,8 +33,11 @@ import com.zzy.domain.cross.GRoleSkill;
 public class GRole implements java.io.Serializable {
 	private String id;
 	private String name;
-	private String blood; 
-	private String energy;
+	private Integer maxBlood;
+	private Integer maxEnergy;
+	private Integer speed;
+	private Integer blood; 
+	private Integer energy;
 	private Integer level;
 	private Integer experience;
 	private Integer gender;
@@ -187,21 +190,48 @@ public class GRole implements java.io.Serializable {
 		this.name = name;
 	}
 
-	@Column(name = "blood", length = 50)
-	public String getBlood() {
+	
+	@Column(name = "speed")
+	public Integer getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(Integer speed) {
+		this.speed = speed;
+	}
+
+	@Column(name = "max_blood")
+	public Integer getMaxBlood() {
+		return maxBlood;
+	}
+
+	public void setMaxBlood(Integer maxBlood) {
+		this.maxBlood = maxBlood;
+	}
+	@Column(name = "max_energy")
+	public Integer getMaxEnergy() {
+		return maxEnergy;
+	}
+
+	public void setMaxEnergy(Integer maxEnergy) {
+		this.maxEnergy = maxEnergy;
+	}
+
+	@Column(name = "blood")
+	public Integer getBlood() {
 		return this.blood;
 	}
 
-	public void setBlood(String blood) {
+	public void setBlood(Integer blood) {
 		this.blood = blood;
 	}
 
-	@Column(name = "energy", length = 50)
-	public String getEnergy() {
+	@Column(name = "energy")
+	public Integer getEnergy() {
 		return this.energy;
 	}
 
-	public void setEnergy(String energy) {
+	public void setEnergy(Integer energy) {
 		this.energy = energy;
 	}
 

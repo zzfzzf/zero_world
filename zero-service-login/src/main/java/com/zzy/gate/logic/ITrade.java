@@ -8,13 +8,13 @@ package com.zzy.gate.logic;
 */
 public interface ITrade {
 	/**
-	 * 卖出
+	 * 添加交易商品
 	 */
-	public void sale();
+	public void addItem();
 	/**
-	 * 买入
+	 * 添加交易金钱
 	 */
-	public void buy();
+	public void addMoney();
 	/**
 	 * 交易确认
 	 */

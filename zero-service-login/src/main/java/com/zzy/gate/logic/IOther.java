@@ -11,6 +11,11 @@ import org.apache.mina.core.session.IoSession;
 * @describe:用一句话描述该类是干嘛的
 */
 public interface IOther {
+	/**
+	 * 查询在线人数
+	 * @param acceptor session管理工具,从其中可获取当前管理session总数
+	 * @param session  当前查询人的session
+	 */
 	public void getOnlineNum(IoAcceptor acceptor,IoSession session);
 }
 

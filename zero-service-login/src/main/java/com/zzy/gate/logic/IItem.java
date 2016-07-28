@@ -8,13 +8,13 @@ package com.zzy.gate.logic;
 */
 public interface IItem {
 	/**
-	 * 拾取物品
+	 *  拾取物品
 	 */
-	 public void pickUp();
+	 public void pickUpItem();
 	 /**
 	  * 丢弃物品
 	  */
-	 public void giveUp();
+	 public void giveUpItem();
 	 /**
 	  * 销毁物品
 	  */
@@ -27,6 +27,13 @@ public interface IItem {
 	  * 卸下物品
 	  */
 	 public void takeDown();
-	 
+	 /**
+	  * 使用商品
+	  */
+	 public void useItem();
+	 /**
+	  * 拆分商品
+	  */
+	 public void splitItem();
 }
 

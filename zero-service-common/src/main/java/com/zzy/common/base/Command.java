@@ -15,17 +15,80 @@ public interface Command {
 	 * 在线数量
 	 */
 	public static String ONLINE_NUM="onlineNum";
+//	----------------------------角色指令------------------------
 	/**
 	 * 角色移动
 	 */
 	public static String MOVE="move";
 	/**
-	 * 玩家贸易 
+	 * 攻击
 	 */
-	public static String TRADE="trade";
+	public static String ATTACK="attack";
+	/**
+	 * 技能
+	 */
+	public static String SKILL="skill";
+	/**
+	 * 骑乘
+	 */
+	public static String RIDE="ride";
+	/**
+	 * 摆摊
+	 */
+	public static String STALL="stall";
+	/**
+	 * 聊天
+	 */
+	public static String CHAT="chat";
+//	----------------------------交易指令------------------------
+	/**
+	 * 确认交易
+	 */
+	public static String CONFIRM_TRADE="comfirmTrade";
+	/**
+	 * 添加金钱
+	 */
+	public static String ADD_MONEY="addMoney";
+	/**
+	 * 添加物品
+	 */
+	public static String ADD_ITEM="addItem";
+//	----------------------------物品指令------------------------
+	/**
+	 * 装备物品
+	 */
+	public static String PUT_ON="putOn";
+	/**
+	 * 使用物品
+	 */
+	public static String USE_ITEM="useItem";
+	/**
+	 * 放弃物品
+	 */
+	public static String GIVE_UP_ITEM="giveUpItem";
+	/**
+	 * 销毁物品
+	 */
+	public static String DESTROY_ITEM="destroyItem";
+	/**
+	 * 卸下物品
+	 */
+	public static String TAKE_DOWN="takeDown";
 	/**
 	 * 拾取物品
 	 */
-	public static String PICKUP="pickUp";
-	
+	public static String PICK_UP_ITEM="pickUpItem";
+	/**
+	 * 拆分物品
+	 */
+	public static String SPLIT_ITEM="splitItem";
+//	----------------------------物品指令------------------------
+	/**
+	 * 拾取金币
+	 */
+	public static String PICK_UP_MONEY="pickUpMoney";
+	/**
+	 * 丢弃金币
+	 */
+	public static String GIVE_UP_MONEY="giveUpMoney";
 }

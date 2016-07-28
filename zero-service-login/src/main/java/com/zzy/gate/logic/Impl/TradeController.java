@@ -12,13 +12,13 @@ import com.zzy.gate.logic.ITrade;
 public class TradeController implements ITrade{
 
 	@Override
-	public void sale() {
+	public void addItem() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void buy() {
+	public void addMoney() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -28,6 +28,7 @@ public class TradeController implements ITrade{
 		// TODO Auto-generated method stub
 		
 	}
+	
 
 }
 
