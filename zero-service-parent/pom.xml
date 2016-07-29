@@ -9,6 +9,7 @@
 	<modules>
 		<module>../zero-service-login</module>
 		<module>../zero-service-common</module>
+		<module>../zero-service-logic</module>
 		<module>../SimpleWeb</module>
 	</modules>
 	<name>zero-service-parent</name>
@@ -39,6 +40,11 @@
 			<dependency>
 				<groupId>com.zzy</groupId>
 				<artifactId>zero-service-common</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.zzy</groupId>
+				<artifactId>zero-service-logic</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 			<dependency>

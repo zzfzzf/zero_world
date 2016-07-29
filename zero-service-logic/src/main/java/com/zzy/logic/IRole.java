@@ -1,5 +1,5 @@
 
-package com.zzy.gate.logic;
+package com.zzy.logic;
 /**
 * @author zeus
 * @date 2016年7月27日

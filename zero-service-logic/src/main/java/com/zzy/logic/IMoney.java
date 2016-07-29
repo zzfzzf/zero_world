@@ -1,4 +1,4 @@
-package com.zzy.gate.logic;
+package com.zzy.logic;
 
 /**
  * @author Zeus

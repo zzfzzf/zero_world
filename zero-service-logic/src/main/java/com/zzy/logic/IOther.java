@@ -1,5 +1,5 @@
 
-package com.zzy.gate.logic;
+package com.zzy.logic;
 
 import org.apache.mina.core.service.IoAcceptor;
 import org.apache.mina.core.session.IoSession;

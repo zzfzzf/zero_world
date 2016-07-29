@@ -1,9 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-	<artifactId>zero-service-login</artifactId>
-	<packaging>jar</packaging>
+  <artifactId>zero-service-logic</artifactId>
+  <packaging>jar</packaging>
+
 
 	<parent>
 		<groupId>com.zzy</groupId>
@@ -12,19 +13,19 @@
 		<relativePath>../zero-service-parent/pom.xml</relativePath>
 	</parent>
 
-	<name>zero-service-login</name>
-	<url>http://maven.apache.org</url>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+  <name>zero-service-logic</name>
+  <url>http://maven.apache.org</url>
 
-	<dependencies>
-		<dependency>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
 		<groupId>com.zzy</groupId>
 		<artifactId>zero-service-common</artifactId>
 		</dependency>
-	
 		<!-- json -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -55,5 +56,5 @@
 			<artifactId>mina-core</artifactId>
 		</dependency>
 
-	</dependencies>
+  </dependencies>
 </project>

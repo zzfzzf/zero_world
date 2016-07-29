@@ -1,7 +1,7 @@
 
-package com.zzy.gate.logic.Impl;
+package com.zzy.logic.Impl;
 
-import com.zzy.gate.logic.ITrade;
+import com.zzy.logic.ITrade;
 
 /**
 * @author zeus

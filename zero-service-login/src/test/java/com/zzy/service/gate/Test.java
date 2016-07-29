@@ -5,6 +5,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import org.apache.mina.core.session.AbstractIoSession;
+import org.apache.mina.core.session.IoSession;
+import org.apache.mina.transport.socket.nio.NioSession;
 /**
 * @author Zeus
 * @version 1.1
@@ -13,8 +16,6 @@ import java.net.URL;
 */
 public class Test extends A {
    public static void main(String[] args) {
-	 System.out.println(1366/3);
-	 System.out.println(768/3);
 }
 
 }

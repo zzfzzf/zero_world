@@ -1,0 +1,116 @@
+2016-07-29 10:36:53,864 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162) WARN - message: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-07-29 10:36:55,975 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162) WARN - message: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-07-29 10:38:26,756 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162) WARN - message: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-07-29 10:46:04,588 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162) WARN - message: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-07-29 11:16:58,991 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162) WARN - message: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-07-29 11:17:01,123 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162) WARN - message: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-07-29 13:26:33,322 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108) WARN - message: Client session timed out, have not heard from server in 30000ms for sessionid 0x0
+2016-07-29 13:26:33,326 com.alibaba.dubbo.remoting.transport.AbstractServer.disconnected(AbstractServer.java:197) WARN - message:  [DUBBO] All clients has discontected from /127.0.0.1:2181. You can graceful shutdown now., dubbo version: 2.5.3, current host: 127.0.0.1
+2016-07-29 13:27:04,480 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108) WARN - message: Client session timed out, have not heard from server in 30001ms for sessionid 0x0
+2016-07-29 13:27:04,481 com.alibaba.dubbo.remoting.transport.AbstractServer.disconnected(AbstractServer.java:197) WARN - message:  [DUBBO] All clients has discontected from /127.0.0.1:2181. You can graceful shutdown now., dubbo version: 2.5.3, current host: 127.0.0.1
+2016-07-29 13:27:35,698 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108) WARN - message: Client session timed out, have not heard from server in 30006ms for sessionid 0x0
+2016-07-29 13:27:35,699 com.alibaba.dubbo.remoting.transport.AbstractServer.disconnected(AbstractServer.java:197) WARN - message:  [DUBBO] All clients has discontected from /127.0.0.1:2181. You can graceful shutdown now., dubbo version: 2.5.3, current host: 127.0.0.1
+2016-07-29 13:28:07,458 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108) WARN - message: Client session timed out, have not heard from server in 30012ms for sessionid 0x0
+2016-07-29 13:28:07,460 com.alibaba.dubbo.remoting.transport.AbstractServer.disconnected(AbstractServer.java:197) WARN - message:  [DUBBO] All clients has discontected from /127.0.0.1:2181. You can graceful shutdown now., dubbo version: 2.5.3, current host: 127.0.0.1
+2016-07-29 13:28:38,649 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108) WARN - message: Client session timed out, have not heard from server in 30008ms for sessionid 0x0
+2016-07-29 13:28:38,650 com.alibaba.dubbo.remoting.transport.AbstractServer.disconnected(AbstractServer.java:197) WARN - message:  [DUBBO] All clients has discontected from /127.0.0.1:2181. You can graceful shutdown now., dubbo version: 2.5.3, current host: 127.0.0.1
+2016-07-29 13:29:19,339 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162) WARN - message: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-07-29 13:29:21,486 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162) WARN - message: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-07-29 13:59:38,827 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162) WARN - message: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-07-29 13:59:40,967 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162) WARN - message: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-07-29 13:59:43,092 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162) WARN - message: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-07-29 13:59:45,225 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162) WARN - message: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-07-29 13:59:47,345 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162) WARN - message: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-07-29 14:01:05,165 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108) WARN - message: Client session timed out, have not heard from server in 30001ms for sessionid 0x0
+2016-07-29 14:01:15,665 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162) WARN - message: Session 0x0 for server 127.0.0.1/127.0.0.1:2181, unexpected error, closing socket connection and attempting reconnect
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:68)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:366)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-07-29 14:01:18,234 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162) WARN - message: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-07-29 14:01:20,625 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162) WARN - message: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-07-29 14:03:53,667 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108) WARN - message: Client session timed out, have not heard from server in 30013ms for sessionid 0x0
+2016-07-29 14:05:26,154 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108) WARN - message: Client session timed out, have not heard from server in 30005ms for sessionid 0x0
+2016-07-29 14:07:54,212 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108) WARN - message: Client session timed out, have not heard from server in 30001ms for sessionid 0x0
+2016-07-29 14:08:25,697 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108) WARN - message: Client session timed out, have not heard from server in 30011ms for sessionid 0x0
+2016-07-29 14:08:57,410 org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108) WARN - message: Client session timed out, have not heard from server in 30001ms for sessionid 0x0

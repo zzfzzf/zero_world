@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        ">
+
+ <!-- 提供方应用信息，用于计算依赖关系 -->
+ <dubbo:application name="zk_logic_service" />
+ <!-- 使用multicast广播注册中心暴露服务地址 -->
+<!--   <dubbo:registry address="multicast://224.5.6.7:1234" /> -->
+ <!-- 使用zookeeper注册中心暴露服务地址 -->
+ <dubbo:registry address="zookeeper://127.0.0.1:2181" />
+ <!-- 用dubbo协议在 端口暴露服务 -->
+ <dubbo:protocol name="dubbo" port="20880" />
+ <!-- 声明需要暴露的服务接口 -->
+ <dubbo:service interface="com.zzy.logic.ILogin" ref="loginLogic" /> 
+ <dubbo:service interface="com.zzy.logic.IItem" ref="itemLogic" /> 
+ <dubbo:service interface="com.zzy.logic.IMoney" ref="moneyLogic" /> 
+ <dubbo:service interface="com.zzy.logic.IOther" ref="otherLogic" /> 
+ <dubbo:service interface="com.zzy.logic.IRole" ref="roleLogic" /> 
+ <dubbo:service interface="com.zzy.logic.ITrade" ref="tradeLogic" />         
+  <!-- 具体的实现bean --> 
+ <bean id="loginLogic" class="com.zzy.logic.Impl.LoginController" />
+ <bean id="itemLogic" class="com.zzy.logic.Impl.ItemController" />
+ <bean id="moneyLogic" class="com.zzy.logic.Impl.MoneyController" />
+ <bean id="otherLogic" class="com.zzy.logic.Impl.OtherController" />
+ <bean id="roleLogic" class="com.zzy.logic.Impl.RoleController" />
+ <bean id="tradeLogic" class="com.zzy.logic.Impl.TradeController" />   
+</beans>
