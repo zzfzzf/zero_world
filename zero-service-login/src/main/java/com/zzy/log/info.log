@@ -1,0 +1,14 @@
+2016-08-01 17:35:47,282 com.zzy.login.LoginServer.<init>(LoginServer.java:45) INFO - message: 服务启动
+2016-08-01 17:37:18,684 com.zzy.login.LoginServer.<init>(LoginServer.java:45) INFO - message: Login服务已启动-----监听端口为：9999
+2016-08-01 17:37:26,226 com.zzy.login.LoginServer.<init>(LoginServer.java:45) INFO - message: Login服务已启动-----监听端口为：9999
+2016-08-01 17:47:32,661 com.zzy.login.LoginServer.<init>(LoginServer.java:45) INFO - message: Login服务已启动-----监听端口为：9999
+2016-08-01 17:48:13,267 com.zzy.login.LoginServer.<init>(LoginServer.java:45) INFO - message: Login服务已启动-----监听端口为：9999
+2016-08-01 17:49:46,148 com.zzy.login.LoginServer.<init>(LoginServer.java:45) INFO - message: Login服务已启动-----监听端口为：9999
+2016-08-01 17:50:30,890 com.zzy.login.LoginServer.<init>(LoginServer.java:45) INFO - message: Login服务已启动-----监听端口为：9999
+2016-08-01 17:54:21,556 com.zzy.login.LoginServer.<init>(LoginServer.java:45) INFO - message: Login服务已启动-----监听端口为：9999
+2016-08-01 17:57:08,281 com.zzy.login.LoginServer.<init>(LoginServer.java:45) INFO - message: Login服务已启动-----监听端口为：9999
+2016-08-01 17:57:45,465 com.zzy.login.LoginServer.<init>(LoginServer.java:45) INFO - message: Login服务已启动-----监听端口为：9999
+2016-08-01 17:59:22,318 com.zzy.login.LoginServer.<init>(LoginServer.java:45) INFO - message: Login服务已启动-----监听端口为：9999
+2016-08-01 17:59:55,390 com.zzy.login.LoginServer.<init>(LoginServer.java:45) INFO - message: Login服务已启动-----监听端口为：9999
+2016-08-01 18:00:54,920 com.zzy.login.LoginServer.<init>(LoginServer.java:45) INFO - message: Login服务已启动-----监听端口为：9999
+2016-08-01 18:01:19,980 com.zzy.login.LoginServer.<init>(LoginServer.java:45) INFO - message: Login服务已启动-----监听端口为：9999

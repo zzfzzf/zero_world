@@ -7,7 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
-		<module>../zero-service-login</module>
+		<module>../zero-service-gate</module>
 		<module>../zero-service-common</module>
 		<module>../zero-service-logic</module>
 		<module>../SimpleWeb</module>

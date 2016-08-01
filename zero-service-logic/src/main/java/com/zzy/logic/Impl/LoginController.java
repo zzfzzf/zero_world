@@ -16,10 +16,8 @@ import com.zzy.logic.ILogin;
 public class LoginController implements ILogin { 
 	@Override
 	public void login(JSONObject json,IoSession session) throws Exception{
-		System.out.println("session："+session.getId());
 		JSONObject result = HttpUtil.postJson(UrlCommon.LOGIN,json);
 		session.write(result); 
-		System.out.println("写入完成");
    } 
 }
 
