@@ -1,13 +1,17 @@
 package com.zzy.login;
 
+import java.nio.IntBuffer;
 import java.util.Objects;
 
 import org.apache.log4j.Logger;
+import org.apache.mina.core.buffer.IoBuffer;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zzy.common.base.Command;
+import com.zzy.common.base.HttpUtil;
+import com.zzy.common.base.UrlCommon;
 
 /**
 * @author Zeus
@@ -17,13 +21,14 @@ import com.zzy.common.base.Command;
 */
 public class LoginHandler extends IoHandlerAdapter implements Command{
 	private static Logger log = Logger.getLogger(LoginHandler.class);
-
 	// 当一个客户端连接进入时
 		@Override
 		public void sessionOpened(IoSession session) throws Exception {
 			long token = session.getId();
-			System.out.println("有客戶端進入"+session.getId());
-			session.write(token+"\n");
+			JSONObject json=new JSONObject();
+			json.put("command", Command.TOKEN);
+			json.put("token", token);
+			session.write(json);
 		}
 
 		/**
@@ -44,14 +49,12 @@ public class LoginHandler extends IoHandlerAdapter implements Command{
 				throw new NullPointerException("message不能为null");
 			}
 			JSONObject json = JSONObject.parseObject((String) message);
-			String command = (String)json.get("command");  
-			switch (command) {
-			case LOGIN:
-				System.out.println("当前session"+session.getId());
-				session.write("this my test");
-				break;
+			String command = (String)json.get("command");
+			System.out.println("解析命令--"+command.equals(Command.LOGIN));
+			if(Command.LOGIN.equals(command)){
+				JSONObject result = HttpUtil.postJson(UrlCommon.LOGIN,json);
+				session.write(result); 
 			}
-			
 		}
 
 

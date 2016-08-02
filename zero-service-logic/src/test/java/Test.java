@@ -12,20 +12,12 @@ import com.zzy.logic.ILogin;
  */
 public class Test {
 	public static void main(String[] args) throws Exception {
-		try {
-			ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-					new String[] { "applicationClient.xml" });
-			context.start();
-			ILogin login = (ILogin) context.getBean("loginLogic");
-			System.out.println("拿到了");
-			JSONObject json = new JSONObject();
-			json.put("command", Command.LOGIN);
-			json.put("username", 1); 
-			json.put("password", 1);
-			login.login(json, null);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
+		int x=1,y=3; // 1  11
+		x=x^y;
+		System.out.println("x="+x);
+		y=y^x;
+		System.out.println("y="+y);
+		x=x^y;
+		System.out.println("x(终)="+x);
 	}
 }

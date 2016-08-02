@@ -40,9 +40,9 @@ public class TestClient {
         client.send(packet);
         
         byte[] buffer = new byte[65508];  
-        DatagramPacket packetr = new DatagramPacket(buffer, 0, buffer.length);  
+        DatagramPacket packetr = new DatagramPacket(buffer, 0, buffer.length); 
         while(true){  
-        	client.receive(packet);  
+        	client.receive(packetr);  
             String s = new String(packetr.getData(),0,packetr.getLength());  
             System.out.println(s);  
         }  

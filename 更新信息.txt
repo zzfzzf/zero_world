@@ -3,3 +3,4 @@
 2016年7月13日  修改查询 roleBuff新增三个字段 开始时间 结束时间 持续时间 还有问题待解决 改为单表查询 关联对象 给所有对象重写上id（为了repository方法映射需要）
 2016年7月16日  修改rolefriend时间字段为bigint 新增区表 area 映射role关系到area
 2016年7月20日  数据打乱 重新调整logingate
+2016年8月2日   分离 login gate服务器 实现login服务器交互

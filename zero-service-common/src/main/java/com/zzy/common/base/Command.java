@@ -8,6 +8,10 @@ package com.zzy.common.base;
 
 public interface Command {
 	/**
+	 * token 令牌
+	 */
+	public static String TOKEN = "token";
+	/**
 	 * 登录
 	 */
 	public static String LOGIN="login";
