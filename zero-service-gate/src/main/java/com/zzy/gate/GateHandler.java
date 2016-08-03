@@ -1,5 +1,7 @@
-package com.zzy.gate.login;
+package com.zzy.gate;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import org.apache.log4j.Logger;
@@ -18,14 +20,13 @@ import com.zzy.logic.IRole;
 import com.zzy.logic.ITrade;
 
 /**
-* @author Zeus
+ * @author Zeus
  * @version 1.1
  * @createTime：2016年7月20日
  * @decript: 逻辑处理类,客户端请求进入里面
  */
-public class ServiceHandler extends IoHandlerAdapter implements Command{
-	private static Logger log = Logger.getLogger(ServiceHandler.class);
-	
+public class GateHandler extends IoHandlerAdapter implements Command{
+	private static Logger log = Logger.getLogger(GateHandler.class);
 	ILogin loginLogic;
 	IItem itemLogic;
 	IMoney moneyLogic;
@@ -34,25 +35,32 @@ public class ServiceHandler extends IoHandlerAdapter implements Command{
 	ITrade tradeLogic;
 	 
 	private IoAcceptor acceptor;
-	public ServiceHandler(IoAcceptor acceptor) {
+	public GateHandler(IoAcceptor acceptor) {
 		this.acceptor=acceptor;
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] { "applicationClient.xml" });
+		/*ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] { "applicationClient.xml" });
 		context.start();
 		loginLogic = (ILogin) context.getBean("loginLogic");
 		itemLogic = (IItem) context.getBean("itemLogic");
 		moneyLogic = (IMoney) context.getBean("moneyLogic");
 		otherLogic = (IOther) context.getBean("otherLogic");
 		roleLogic = (IRole) context.getBean("roleLogic");
-		tradeLogic = (ITrade) context.getBean("tradeLogic");
+		tradeLogic = (ITrade) context.getBean("tradeLogic");*/
 	} 
 
 	// 当一个客户端连接进入时
 	@Override
 	public void sessionOpened(IoSession session) throws Exception {
-		long token = session.getId();
-		session.write(token);
 	}
-
+    @Override 
+	public void sessionCreated(IoSession session) throws Exception {
+    	// 连接时返回token并存入session,只初始化一次 
+		JSONObject jsonToken = new JSONObject();
+		jsonToken.put("command", Command.TOKEN);
+		jsonToken.put("token", session.getId());
+		session.write(jsonToken);
+		// 存入id
+	};
+	
 	/**
 	 * 捕捉异常
 	 */
@@ -72,13 +80,11 @@ public class ServiceHandler extends IoHandlerAdapter implements Command{
 			throw new NullPointerException("message不能为null");
 		}
 		JSONObject json = JSONObject.parseObject((String) message);
+		Long token = json.getLong("token");
+		
+
 		String command = (String)json.get("command");  
 		switch (command) {
-		case LOGIN:
-			
-			loginLogic.login(json, session);// 问题
-			System.out.println("当前session"+session.getId());
-			break;
 		case ONLINE_NUM:
 			// 获取在线用户
 			break;
@@ -160,6 +166,6 @@ public class ServiceHandler extends IoHandlerAdapter implements Command{
 	// 当一个客户端连接关闭时
 	@Override
 	public void sessionClosed(IoSession session) throws Exception {
-		
+		System.out.println("有客户端关闭"+session.getId());
 	}
 }

@@ -3,6 +3,7 @@ package test;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.alibaba.fastjson.JSONObject;
 import com.zzy.domain.base.GRole;
 
 /**
@@ -17,9 +18,12 @@ public class Test {
 	}
 
 	public void test() throws InstantiationException, IllegalAccessException {
-		int n=350; 
-		js(350,0);
-		System.out.println(count+1);
+		User user = new User();
+		user.setName("name");
+		JSONObject json=new JSONObject();
+		json.put("xx", user);
+		user.setPassword("password");
+		System.out.println(json);
 	}
 	public int js(int i,int j){
 		count+=1;

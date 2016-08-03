@@ -10,6 +10,7 @@
 		<module>../zero-service-gate</module>
 		<module>../zero-service-common</module>
 		<module>../zero-service-logic</module>
+		<module>../zero-service-db</module>
 		<module>../SimpleWeb</module>
 	</modules>
 	<name>zero-service-parent</name>
@@ -46,6 +47,11 @@
 				<groupId>com.zzy</groupId>
 				<artifactId>zero-service-logic</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.zzy</groupId>
+				<artifactId>zero-service-db</artifactId>
+				<version>0.0.1-SNAPSHOT</version> 
 			</dependency>
 			<dependency>
 				<groupId>com.101tec</groupId>

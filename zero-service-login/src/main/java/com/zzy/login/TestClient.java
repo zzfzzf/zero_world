@@ -30,21 +30,19 @@ public class TestClient {
 		
 		DatagramSocket client = new DatagramSocket();
 		JSONObject json = new JSONObject();
-		json.put("command", Command.LOGIN);
-		json.put("username", 1);
-		json.put("password", 1);
 		String jsonData=json.toString()+"\n";
 		byte[] buf = jsonData.getBytes(); //创建发送数据缓冲区  
         // 数据包包括所有的信息，ip地址，端口号及要发送的数据   
         DatagramPacket packet = new DatagramPacket(buf, buf.length, InetAddress.getByName("localhost"), 9999);  
         client.send(packet);
-        
+        client.close();
+      /*  
         byte[] buffer = new byte[65508];  
         DatagramPacket packetr = new DatagramPacket(buffer, 0, buffer.length); 
         while(true){  
         	client.receive(packetr);  
             String s = new String(packetr.getData(),0,packetr.getLength());  
             System.out.println(s);  
-        }  
+        }*/
 	}
 }

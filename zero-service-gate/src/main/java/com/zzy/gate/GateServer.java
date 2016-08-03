@@ -1,4 +1,4 @@
-package com.zzy.gate.login;
+package com.zzy.gate;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -23,11 +23,11 @@ import com.zzy.logic.ILogin;
 // 传递对象拦截器
 // chain.addLast("objectFilter", new ProtocolCodecFilter(new
 // ObjectSerializationCodecFactory()));
-public class LoginService {
-	private static Logger log = Logger.getLogger(ServiceHandler.class);
-	private static int PORT = UrlCommon.PORT;
+public class GateServer {
+	private static Logger log = Logger.getLogger(GateHandler.class);
+	
 	public static void main(String[] args) {
-		new LoginService().init();
+		new GateServer().init();
 	}
 
 
@@ -40,12 +40,13 @@ public class LoginService {
 			// 设定这个过滤器将一行一行的读取数据 并且转码
 			chain.addLast("codec", new ProtocolCodecFilter(new TextLineCodecFactory(Charset.forName("UTF-8"))));// 指定编码过滤器
 			// 指定业务逻辑处理器
-			acceptor.setHandler(new ServiceHandler(acceptor));
+			acceptor.setHandler(new GateHandler(acceptor));
 			// 设置端口号并绑定
-			acceptor.bind(new InetSocketAddress(PORT));
+		
+			acceptor.bind(new InetSocketAddress(UrlCommon.PORT));
 		} catch (IOException e) {
 			log.error(e.getMessage());
 		}
-		log.debug("---------------------服务器已启动--------------------");
+		System.out.println("---------------------------服务器已启动---------------------------");
 	}
 }

@@ -24,11 +24,7 @@ public class LoginHandler extends IoHandlerAdapter implements Command{
 	// 当一个客户端连接进入时
 		@Override
 		public void sessionOpened(IoSession session) throws Exception {
-			long token = session.getId();
-			JSONObject json=new JSONObject();
-			json.put("command", Command.TOKEN);
-			json.put("token", token);
-			session.write(json);
+			
 		}
 
 		/**
@@ -36,6 +32,7 @@ public class LoginHandler extends IoHandlerAdapter implements Command{
 		 */
 		@Override
 		public void exceptionCaught(IoSession session, Throwable cause) throws Exception {
+			System.out.println("有用户异常关闭");
 			log.error("错误session:"+session.getId()+"---->"+cause.getMessage());
 		}
 
@@ -50,7 +47,6 @@ public class LoginHandler extends IoHandlerAdapter implements Command{
 			}
 			JSONObject json = JSONObject.parseObject((String) message);
 			String command = (String)json.get("command");
-			System.out.println("解析命令--"+command.equals(Command.LOGIN));
 			if(Command.LOGIN.equals(command)){
 				JSONObject result = HttpUtil.postJson(UrlCommon.LOGIN,json);
 				session.write(result); 
@@ -61,6 +57,6 @@ public class LoginHandler extends IoHandlerAdapter implements Command{
 		// 当一个客户端连接关闭时
 		@Override
 		public void sessionClosed(IoSession session) throws Exception {
-			
+			System.out.println("客户端"+session.getId()+"关闭");
 		}
 }

@@ -1,4 +1,4 @@
-package com.zzy.gate.login;
+package com.zzy.gate;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,7 +20,7 @@ import com.zzy.logic.ILogin;
  * @createTime：2016年7月20日 @decript:
  */
 public class TestClient {
-	private static Logger log = Logger.getLogger(ServiceHandler.class);
+	private static Logger log = Logger.getLogger(GateHandler.class);
 
 	public static void main(String[] args) throws IOException {
 	
