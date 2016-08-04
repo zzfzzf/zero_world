@@ -1,4 +1,4 @@
-package com.zzy.db;
+package com.zzy.dubbo;
 
 import java.util.Set;
 

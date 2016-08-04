@@ -1,8 +1,8 @@
-package com.zzy.db.impl;
+package com.zzy.dubbo.impl;
 
 import java.util.Set;
 
-import com.zzy.db.DBService;
+import com.zzy.dubbo.DBService;
 
 import redis.clients.jedis.Jedis;
 

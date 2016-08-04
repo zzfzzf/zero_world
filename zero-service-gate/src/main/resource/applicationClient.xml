@@ -13,10 +13,11 @@
  <dubbo:registry address="zookeeper://127.0.0.1:2181" />
  <dubbo:consumer timeout="5000" />
  <!-- which service to consume? -->
- <dubbo:reference interface="com.zzy.logic.ILogin" id="loginLogic" /> 
+<!--  <dubbo:reference interface="com.zzy.logic.ILogin" id="loginLogic" /> 
  <dubbo:reference interface="com.zzy.logic.IItem"  id="itemLogic" /> 
  <dubbo:reference interface="com.zzy.logic.IMoney" id="moneyLogic" /> 
  <dubbo:reference interface="com.zzy.logic.IOther" id="otherLogic" /> 
  <dubbo:reference interface="com.zzy.logic.IRole"  id="roleLogic" />  
- <dubbo:reference interface="com.zzy.logic.ITrade" id="tradeLogic" />  
+ <dubbo:reference interface="com.zzy.logic.ITrade" id="tradeLogic" />   -->
+ <dubbo:reference interface="com.zzy.db.DBService" id="dbService" />  
  </beans>

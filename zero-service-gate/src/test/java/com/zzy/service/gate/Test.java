@@ -1,11 +1,15 @@
 package com.zzy.service.gate;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Calendar;
-import java.util.Date;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.zzy.dubbo.DBService;
+
 /**
 * @author Zeus
 * @version 1.1
@@ -13,9 +17,16 @@ import java.util.Date;
 * @decript:
 */
 public class Test extends A {
-   public static void main(String[] args) {
-	   Date d=new Date();
-}
+	public static void main(String[] args) throws IOException {
+		new Test().init();
+	}
+	public void init() throws IOException{
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"applicationClient.xml"});
+		context.start(); 
+		DBService db=(DBService) context.getBean("dbService");
+		db.set("x", "xx");
+        System.in.read(); // 按任意键退出
+	}
 
 }
 class A{
