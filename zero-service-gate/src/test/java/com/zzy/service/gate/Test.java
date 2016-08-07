@@ -21,10 +21,10 @@ public class Test extends A {
 		new Test().init();
 	}
 	public void init() throws IOException{
-		while(true){
-			int a=1;
-			System.out.println(a);
-		}
+		int a=1;
+		byte b=(byte) a;
+		byte[] bs = "3".getBytes();
+		System.out.println(b);
 	}
 
 }

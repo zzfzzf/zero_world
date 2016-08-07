@@ -1,7 +1,9 @@
 package com.zzy.dubbo.impl;
 
+import java.io.IOException;
 import java.util.Set;
 
+import com.zzy.common.base.SerializeUtil;
 import com.zzy.dubbo.DBService;
 
 import redis.clients.jedis.Jedis;
@@ -84,5 +86,11 @@ public class DBServiceImpl implements DBService{
 	@Override
 	public String ping() {
 		return jedis.ping();
+	}
+
+	@Override 
+	public void set(String key, Object object) throws IOException {
+		byte[] bytes = SerializeUtil.serialize(object);
+		jedis.set(key.getBytes(), bytes);
 	}
 }

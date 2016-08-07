@@ -22,7 +22,7 @@ import com.zzy.common.base.UrlCommon;
 // chain.addLast("objectFilter", new ProtocolCodecFilter(new
 // ObjectSerializationCodecFactory()));
 public class GateServer {
-	private static Logger log = Logger.getLogger(GateHandler.class);
+	private static Logger log = Logger.getLogger(GateServer.class);
 	
 	public static void main(String[] args) {
 		new GateServer().init();

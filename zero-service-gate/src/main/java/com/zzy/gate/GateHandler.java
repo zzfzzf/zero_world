@@ -1,14 +1,17 @@
 package com.zzy.gate;
 
+import java.util.Map;
 import java.util.Objects;
 
 import org.apache.log4j.Logger;
 import org.apache.mina.core.service.IoAcceptor;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zzy.common.base.Command;
+import com.zzy.dubbo.DBService;
 
 /**
  * @author Zeus
@@ -18,18 +21,13 @@ import com.zzy.common.base.Command;
  */
 public class GateHandler extends IoHandlerAdapter implements Command{
 	private static Logger log = Logger.getLogger(GateHandler.class);
-	 
+	private DBService dbService;
 	private IoAcceptor acceptor;
 	public GateHandler(IoAcceptor acceptor) {
 		this.acceptor=acceptor;
-		/*ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] { "applicationClient.xml" });
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] { "applicationClient.xml" });
 		context.start();
-		loginLogic = (ILogin) context.getBean("loginLogic");
-		itemLogic = (IItem) context.getBean("itemLogic");
-		moneyLogic = (IMoney) context.getBean("moneyLogic");
-		otherLogic = (IOther) context.getBean("otherLogic");
-		roleLogic = (IRole) context.getBean("roleLogic");
-		tradeLogic = (ITrade) context.getBean("tradeLogic");*/
+		dbService=(DBService) context.getBean("dbService");
 	} 
 
 	// 当一个客户端连接进入时
@@ -44,6 +42,8 @@ public class GateHandler extends IoHandlerAdapter implements Command{
 		jsonToken.put("token", session.getId());
 		session.write(jsonToken);
 		// 存入id
+		Map<String,Object> tokens=dbService.get("tokens");
+		
 	};
 	
 	/**
@@ -66,7 +66,6 @@ public class GateHandler extends IoHandlerAdapter implements Command{
 		}
 		JSONObject json = JSONObject.parseObject((String) message);
 		Long token = json.getLong("token");
-		
 
 		String command = (String)json.get("command");  
 		switch (command) {

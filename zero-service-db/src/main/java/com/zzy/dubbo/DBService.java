@@ -1,5 +1,6 @@
 package com.zzy.dubbo;
 
+import java.io.IOException;
 import java.util.Set;
 
 /**
@@ -40,55 +41,44 @@ public interface DBService {
     
     /**
      * 添加key value 并且设置存活时间
-     * @param key
-     * @param value
      * @param seconds 单位秒
      */
     public abstract void set(String key, String value, int seconds);
 
     /**
      * 添加key value
-     * @param key
-     * @param value
      */
     public abstract void set(String key, String value);
 
     /**
+     * 添加对象
+     */
+    
+    public abstract void set(String key, Object object) throws IOException;
+
     /**
      * 获取redis value (String)
-     * @param key
-     * @return
      */
+    
     public abstract String get(String key);
 
     /**
      * 通过正则匹配keys
-     * @param <T>
-     * 
-     * @param pattern
-     * @return 
      */
     public abstract Set<?> Setkeys(String pattern); 
 
     /**
      * 检查key是否已经存在
-     * 
-     * @param key
-     * @return
      */
     public abstract boolean exists(String key);
 
     /**
      * 清空redis(某个db库) 所有数据
-     * 
-     * @return
      */
     public abstract String flushDB();
     
     /**
      * 清空redis 所有数据
-     * 
-     * @return
      */
     public abstract String flushAll();
 
@@ -99,8 +89,6 @@ public interface DBService {
 
     /**
      * 检查是否连接成功
-     * 
-     * @return
      */
     public abstract String ping();
 }
