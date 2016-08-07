@@ -7,12 +7,10 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 import org.apache.log4j.Logger;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zzy.common.base.Command;
 import com.zzy.common.base.UrlCommon;
-import com.zzy.logic.ILogin;
 
 /**
  * @author Zeus
@@ -23,7 +21,7 @@ public class TestClient {
 	private static Logger log = Logger.getLogger(GateHandler.class);
 
 	public static void main(String[] args) throws IOException {
-	
+		log.info("测试");
 		String host = "127.0.0.1"; // 要连接的服务端IP地址
 		int port = UrlCommon.PORT; // 要连接的服务端对应的监听端口
 		// 与服务端建立连接

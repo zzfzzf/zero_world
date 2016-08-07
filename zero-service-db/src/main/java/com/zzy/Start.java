@@ -3,7 +3,6 @@ package com.zzy;
 import org.apache.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.zzy.gate.GateHandler;
 
 /**
 * @author Zeus
@@ -13,11 +12,15 @@ import com.zzy.gate.GateHandler;
 */
 public class Start {
 	private static Logger log = Logger.getLogger(Start.class);
-	public Start() {
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"dubboService.xml"});
-		context.start(); 
-		log.info("--------------------db服务器已启动---------------------");
-        System.in.read(); // 按任意键退出
+	public Start()  {
+		try {
+			ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"dubboService.xml"});
+			context.start(); 
+			log.info("--------------------db服务器已启动---------------------");
+			System.in.read();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static void main(String[] args) {

@@ -1,23 +1,14 @@
 package com.zzy.gate;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 import org.apache.log4j.Logger;
 import org.apache.mina.core.service.IoAcceptor;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zzy.common.base.Command;
-import com.zzy.logic.IItem;
-import com.zzy.logic.ILogin;
-import com.zzy.logic.IMoney;
-import com.zzy.logic.IOther;
-import com.zzy.logic.IRole;
-import com.zzy.logic.ITrade;
 
 /**
  * @author Zeus
@@ -27,12 +18,6 @@ import com.zzy.logic.ITrade;
  */
 public class GateHandler extends IoHandlerAdapter implements Command{
 	private static Logger log = Logger.getLogger(GateHandler.class);
-	ILogin loginLogic;
-	IItem itemLogic;
-	IMoney moneyLogic;
-	IOther otherLogic;
-	IRole roleLogic;
-	ITrade tradeLogic;
 	 
 	private IoAcceptor acceptor;
 	public GateHandler(IoAcceptor acceptor) {
@@ -95,7 +80,7 @@ public class GateHandler extends IoHandlerAdapter implements Command{
 			// 攻击	
 			break;
 		case ADD_ITEM:
-			// 添加物品
+			// 添加物品 
 
 			break;
 		case ADD_MONEY:

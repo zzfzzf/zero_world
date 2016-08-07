@@ -21,11 +21,10 @@ public class Test extends A {
 		new Test().init();
 	}
 	public void init() throws IOException{
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"applicationClient.xml"});
-		context.start(); 
-		DBService db=(DBService) context.getBean("dbService");
-		db.set("x", "xx");
-        System.in.read(); // 按任意键退出
+		while(true){
+			int a=1;
+			System.out.println(a);
+		}
 	}
 
 }
