@@ -4,7 +4,7 @@
 * @version 1.0
 * @describe:用一句话描述该类是干嘛的
 */
-package com.zzy.common.base;
+package com.zzy.common.util;
 
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;

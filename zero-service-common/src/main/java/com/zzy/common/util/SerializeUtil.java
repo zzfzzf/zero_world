@@ -1,5 +1,5 @@
 
-package com.zzy.common.base;
+package com.zzy.common.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

@@ -10,8 +10,8 @@ import org.apache.mina.core.session.IoSession;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zzy.common.base.Command;
-import com.zzy.common.base.HttpUtil;
 import com.zzy.common.base.UrlCommon;
+import com.zzy.common.util.HttpUtil;
 
 /**
 * @author Zeus

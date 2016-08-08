@@ -1,5 +1,6 @@
 package com.zzy.gate;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -35,15 +36,16 @@ public class GateHandler extends IoHandlerAdapter implements Command{
 	public void sessionOpened(IoSession session) throws Exception {
 	}
     @Override 
+    @SuppressWarnings("unchecked")
 	public void sessionCreated(IoSession session) throws Exception {
     	// 连接时返回token并存入session,只初始化一次 
 		JSONObject jsonToken = new JSONObject();
 		jsonToken.put("command", Command.TOKEN);
 		jsonToken.put("token", session.getId());
 		session.write(jsonToken);
-		// 存入id
-		Map<String,Object> tokens=dbService.get("tokens");
-		
+		// 当前用户存入token
+		List<Long> tokens = (List<Long>) dbService.getObj("tokens", List.class);
+		tokens.add(session.getId());
 	};
 	
 	/**

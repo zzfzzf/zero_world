@@ -53,8 +53,15 @@ public interface DBService {
     /**
      * 添加对象
      */
+    public abstract void setObj(String key, Object object)throws IOException;
     
-    public abstract void set(String key, Object object) throws IOException;
+    /**
+     * 获取对象
+     * @param <T>
+     */
+    public abstract Object getObj(String key,Class<? extends Object> c)throws Exception;
+    
+    
 
     /**
      * 获取redis value (String)
@@ -71,6 +78,7 @@ public interface DBService {
      * 检查key是否已经存在
      */
     public abstract boolean exists(String key);
+    
 
     /**
      * 清空redis(某个db库) 所有数据

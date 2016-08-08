@@ -4,8 +4,8 @@ package com.zzy.logic.Impl;
 import org.apache.mina.core.session.IoSession;
 
 import com.alibaba.fastjson.JSONObject;
-import com.zzy.common.base.HttpUtil;
 import com.zzy.common.base.UrlCommon;
+import com.zzy.common.util.HttpUtil;
 import com.zzy.logic.ILogin;
 /**
 * @author zeus

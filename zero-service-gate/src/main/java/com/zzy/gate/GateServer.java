@@ -17,7 +17,7 @@ import com.zzy.common.base.UrlCommon;
  * @author Zeus
  * @version 1.1
  * @createTime：2016年7月20日 @decript:
- */
+ */ 
 // 传递对象拦截器
 // chain.addLast("objectFilter", new ProtocolCodecFilter(new
 // ObjectSerializationCodecFactory()));
@@ -27,7 +27,6 @@ public class GateServer {
 	public static void main(String[] args) {
 		new GateServer().init();
 	}
-
 
 	private void init() {
 		try {
@@ -40,11 +39,10 @@ public class GateServer {
 			// 指定业务逻辑处理器
 			acceptor.setHandler(new GateHandler(acceptor));
 			// 设置端口号并绑定
-		
 			acceptor.bind(new InetSocketAddress(UrlCommon.PORT));
 		} catch (IOException e) {
 			log.error(e.getMessage());
-		}
+		} 
 		System.out.println("---------------------------服务器已启动---------------------------");
 	}
 }
