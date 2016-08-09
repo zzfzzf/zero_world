@@ -17,6 +17,7 @@ public class ResultValue {
     public static final int GET_FAIL=304;
     public static final int PARAM_FAIL=305;
     public static final int PARAM_NON_NULL=500;
+    public static final int TOKEN_ERROR=306;
     /**
      * 操作成功
      * @param 返回参数
@@ -25,6 +26,14 @@ public class ResultValue {
      	JSONObject json=new JSONObject();
     	json.put("status", SUCCESS);
     	json.put("data", object);
+    	return json;
+    }
+    
+    /**
+     * 操作成功 返回传入json
+     */
+    public static JSONObject success(JSONObject json){
+    	json.put("status", SUCCESS);
     	return json;
     }
     

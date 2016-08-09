@@ -12,6 +12,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zzy.common.base.Command;
+import com.zzy.common.base.ResultValue;
 import com.zzy.dubbo.DBService;
 
 /**
@@ -38,14 +39,15 @@ public class GateHandler extends IoHandlerAdapter implements Command{
     @Override 
     @SuppressWarnings("unchecked")
 	public void sessionCreated(IoSession session) throws Exception {
+    	long token = session.getId();
     	// 连接时返回token并存入session,只初始化一次 
 		JSONObject jsonToken = new JSONObject();
 		jsonToken.put("command", Command.TOKEN);
-		jsonToken.put("token", session.getId());
+		jsonToken.put("token", token);
 		session.write(jsonToken);
 		// 当前用户存入token
-		List<Long> tokens = (List<Long>) dbService.getObj("tokens", List.class);
-		tokens.add(session.getId());
+		Map<Long,Long> tokens = (Map<Long,Long>) dbService.getObj("tokens", Map.class);
+		tokens.put(token, token);
 	};
 	
 	/**
@@ -68,11 +70,18 @@ public class GateHandler extends IoHandlerAdapter implements Command{
 		}
 		JSONObject json = JSONObject.parseObject((String) message);
 		Long token = json.getLong("token");
-
+        @SuppressWarnings("unchecked")
+		Map<Long,Long> tokens = (Map<Long,Long>) dbService.getObj("tokens", Map.class);
+		if(!tokens.containsKey(token)){
+			session.write(ResultValue.fail(ResultValue.TOKEN_ERROR, "token错误"));
+			return;
+		}
+		
 		String command = (String)json.get("command");  
 		switch (command) {
 		case ONLINE_NUM:
-			// 获取在线用户
+			ResultValue.success(json).put("onlineNum",acceptor.getManagedSessionCount());
+			session.write(json);
 			break;
 		case MOVE:
 			// 移动
@@ -82,7 +91,6 @@ public class GateHandler extends IoHandlerAdapter implements Command{
 			break;
 		case ADD_ITEM:
 			// 添加物品 
-
 			break;
 		case ADD_MONEY:
 			// 添加金钱

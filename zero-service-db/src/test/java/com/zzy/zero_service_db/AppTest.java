@@ -1,15 +1,11 @@
 package com.zzy.zero_service_db;
 
-import java.awt.Component;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import com.zzy.dubbo.DBService;
-import com.zzy.dubbo.impl.DBServiceImpl;
 
 
 
@@ -20,23 +16,32 @@ import com.zzy.dubbo.impl.DBServiceImpl;
 public class AppTest{
 
 	public static void main(String[] args) throws Exception {
-			new AppTest().init(12);
+			new AppTest().test();
 		}
-		public void init(Integer it) throws Exception{
+		public AppTest init(Integer it) throws Exception{
 			Map map = new HashMap();
 			for(int i=0;i<1000000;i++){
 				map.put(i, i);
+				
 			}
 			long ct=System.currentTimeMillis();
-			Iterator itr = map.keySet().iterator();
-			while(itr.hasNext()){
-				long tl = (long) itr.next();
-				if( tl == 999999L){       
+				if( map.containsKey(999999)){       
 					System.out.println("所花时间:"+(System.currentTimeMillis()-ct));
 				}
-			}
+			return this;
 		}
-		public  Object getObj(String key,Class<? extends Object> class1){
-			return null;
+
+		public void test(){
+			List list = new ArrayList();
+			for(int i=0;i<1000000;i++){
+				list.add(i);
+			}
+			Iterator it = list.iterator();
+			long ctime = System.currentTimeMillis();
+			while(it.hasNext()){
+				if((int)it.next()==999999){
+					System.out.println("用时:"+(System.currentTimeMillis()-ctime));
+				}
+			}
 		}
 }

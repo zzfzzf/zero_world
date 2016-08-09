@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSONObject;
-import com.google.common.util.concurrent.Service;
-import com.zzy.base.ResultValue;
 import com.zzy.base.UUIDUtils;
+import com.zzy.common.base.ResultValue;
 import com.zzy.domain.base.ZUser;
 
 import io.swagger.annotations.ApiOperation;

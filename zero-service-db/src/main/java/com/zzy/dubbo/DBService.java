@@ -57,7 +57,6 @@ public interface DBService {
     
     /**
      * 获取对象
-     * @param <T>
      */
     public abstract Object getObj(String key,Class<? extends Object> c)throws Exception;
     

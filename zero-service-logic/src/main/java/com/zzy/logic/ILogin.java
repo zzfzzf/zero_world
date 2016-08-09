@@ -1,8 +1,6 @@
 
 package com.zzy.logic;
 
-import org.apache.mina.core.session.IoSession;
-
 import com.alibaba.fastjson.JSONObject;
 
 /**
@@ -12,6 +10,7 @@ import com.alibaba.fastjson.JSONObject;
 * @describe:用一句话描述该类是干嘛的
 */
 public interface ILogin {
-	public void login(JSONObject json,IoSession session) throws Exception;
+	public void online(JSONObject json) throws Exception;
+	public void offline(JSONObject json) throws Exception;
 }
 

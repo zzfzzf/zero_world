@@ -13,11 +13,17 @@ import com.zzy.logic.ILogin;
 * @version 1.0
 * @describe:用一句话描述该类是干嘛的
 */
-public class LoginController implements ILogin { 
+public class LoginController implements ILogin {
+
 	@Override
-	public void login(JSONObject json,IoSession session) throws Exception{
-		JSONObject result = HttpUtil.postJson(UrlCommon.LOGIN,json);
-		session.write(result); 
-   } 
+	public void online(JSONObject json) throws Exception {
+		
+	}
+
+	@Override
+	public void offline(JSONObject json) throws Exception {
+		
+	} 
+	
 }
 

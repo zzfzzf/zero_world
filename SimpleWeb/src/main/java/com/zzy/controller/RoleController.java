@@ -1,10 +1,8 @@
 package com.zzy.controller;
 
 import java.sql.SQLException;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,12 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSONObject;
-import com.zzy.base.ResultValue;
 import com.zzy.base.UUIDUtils;
-import com.zzy.domain.base.GBuff;
-import com.zzy.domain.base.GLand;
+import com.zzy.common.base.ResultValue;
 import com.zzy.domain.base.GRole;
-import com.zzy.domain.base.GSkill;
 
 import io.swagger.annotations.ApiOperation;
 
