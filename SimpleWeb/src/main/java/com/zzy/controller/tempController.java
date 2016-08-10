@@ -29,6 +29,7 @@ public class tempController extends BaseController {
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
 	public JSONObject listUser() {
 		return ResultValue.success();
+		
 	}
  
 	@ApiOperation(value = "创建", notes = "根据User对象创建用户")

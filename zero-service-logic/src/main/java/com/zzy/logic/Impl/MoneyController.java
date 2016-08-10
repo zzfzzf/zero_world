@@ -10,7 +10,7 @@ import com.zzy.logic.IMoney;
 */
 public class MoneyController implements IMoney {
 
-	@Override
+	@Override 
 	public void pickUpMoney() {
 		// TODO Auto-generated method stub
 		

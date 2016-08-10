@@ -18,6 +18,7 @@ public class ResultValue {
     public static final int PARAM_FAIL=305;
     public static final int PARAM_NON_NULL=500;
     public static final int TOKEN_ERROR=306;
+    public static final int LOGIN_FAIL=307; 
     /**
      * 操作成功
      * @param 返回参数

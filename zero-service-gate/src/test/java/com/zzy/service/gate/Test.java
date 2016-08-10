@@ -23,8 +23,8 @@ public class Test extends A {
 	public void init() throws IOException{
 		int a=1;
 		byte b=(byte) a;
-		byte[] bs = "3".getBytes();
-		System.out.println(b);
+		System.out.println(System.currentTimeMillis());
+		Runtime.getRuntime().exec("notepad.exe");
 	}
 
 }

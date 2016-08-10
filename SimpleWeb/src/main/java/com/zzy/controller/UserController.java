@@ -43,9 +43,9 @@ public class UserController extends BaseController {
 	@RequestMapping(value = { "/user/login" }, method = RequestMethod.POST)
 	public JSONObject login(@RequestBody ZUser user) {
 		JSONObject result = ResultValue.success();
-		if(userService.login(user)){
-			result = ResultValue.fail(ResultValue.LOGIN_FAIL, "登录失败");
-		}
+		if(userService.login(user)){ 
+			result = ResultValue.fail(ResultValue.LOGIN_FAIL, "登录失败"); 
+		} 
 		return result;
 	}
 	
