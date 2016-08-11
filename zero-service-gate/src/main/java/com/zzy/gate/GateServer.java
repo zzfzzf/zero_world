@@ -36,7 +36,7 @@ public class GateServer {
 			DefaultIoFilterChainBuilder chain = acceptor.getFilterChain();
 			// 设定这个过滤器将一行一行的读取数据 并且转码
 			chain.addLast("codec", new ProtocolCodecFilter(new TextLineCodecFactory(Charset.forName("UTF-8"))));// 指定编码过滤器
-			// 指定业务逻辑处理器
+			// 指定业务逻辑处理
 			acceptor.setHandler(new GateHandler(acceptor));
 			// 设置端口号并绑定
 			acceptor.bind(new InetSocketAddress(UrlCommon.PORT));

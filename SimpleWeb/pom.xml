@@ -14,7 +14,7 @@
 	</parent>
 	
 	<dependencies>
-			<dependency>
+		<dependency>
 				<groupId>com.zzy</groupId>
 				<artifactId>zero-service-common</artifactId>
 				<version>0.0.1-SNAPSHOT</version>

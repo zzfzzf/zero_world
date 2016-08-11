@@ -1,6 +1,7 @@
 package com.zzy.controller;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -37,6 +38,16 @@ public class RoleController extends BaseController {
 		GRole role=roleService.findByName(user);
 		return ResultValue.success(role);
 	}
+	  
+	@ApiOperation(value = "根据area获取role", notes = "")
+	@RequestMapping(value = { "/role/area/{areaId}" }, method = RequestMethod.GET)
+	public JSONObject getRoleByAreaId(@PathVariable String areaId) throws SQLException {
+		if (Objects.isNull(areaId)) {
+			return ResultValue.requireNonNull();
+		} 
+		List<GRole> roleList=roleService.findByAreaId(areaId);
+		return ResultValue.success(roleList);
+	} 
 	
 	@ApiOperation(value = "获取role", notes = "")
 	@RequestMapping(value = { "/role/{id}" }, method = RequestMethod.GET)

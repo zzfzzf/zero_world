@@ -1,6 +1,7 @@
 
 package com.zzy.logic.Impl;
 
+import com.zzy.common.base.ResultValue;
 import com.zzy.logic.IItem;
 
 /**
@@ -13,7 +14,6 @@ public class ItemController implements IItem{
 
 	@Override
 	public void pickUpItem() {
-		// TODO Auto-generated method stub
 		
 	}
 

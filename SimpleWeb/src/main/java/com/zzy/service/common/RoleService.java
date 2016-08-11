@@ -15,4 +15,6 @@ public interface RoleService extends BaseService<GRole>{
 	List<GRole> findByStatusNot(int status);
 	
 	GRole findByName(String name);
+	
+	List<GRole> findByAreaId(String id);
 }

@@ -33,7 +33,7 @@ public class ResultValue {
     /**
      * 操作成功 返回传入json
      */
-    public static JSONObject success(JSONObject json){
+    public static JSONObject onlySuccess(JSONObject json){
     	json.put("status", SUCCESS);
     	return json;
     }

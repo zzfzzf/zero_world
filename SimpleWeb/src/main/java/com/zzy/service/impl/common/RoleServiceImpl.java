@@ -33,4 +33,8 @@ public class RoleServiceImpl extends BaseServiceImp<GRole> implements RoleServic
 	public GRole findByName(String name) {
 		return roleRepository.findByName(name);
 	}
+	@Override
+	public List<GRole> findByAreaId(String id) {
+		return roleRepository.findByAreaId(id);
+	}
 }
