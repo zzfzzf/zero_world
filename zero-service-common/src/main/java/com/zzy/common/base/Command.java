@@ -15,10 +15,27 @@ public interface Command {
 	 * 登录
 	 */
 	public static String LOGIN="login";
+	
+	/**
+	 * 获取服务大区
+	 */
+	public static String AREA = "area";
+	/**
+	 * 获取大区下角色
+	 */
+	public static String ROLE = "role";
 	/**
 	 * 在线数量
 	 */
 	public static String ONLINE_NUM="onlineNum";
+	/**
+	 * 上线
+	 */
+	public static String ONLINE="online";
+	/**
+	 * 离线
+	 */
+	public static String OFFLINE="offLine";
 //	----------------------------角色指令------------------------
 	/**
 	 * 角色移动

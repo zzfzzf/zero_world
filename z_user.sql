@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2016/8/10 星期三 15:02:48                       */
+/* Created on:     2016/8/12 星期五 13:48:04                       */
 /*==============================================================*/
 
 
@@ -73,6 +73,7 @@ create table g_area
    online_num           int,
    offline_num          int,
    create_time          bigint,
+   status               int comment '状态 1启用 10删除',
    primary key (id)
 );
 
@@ -294,7 +295,7 @@ create table g_role
    defens               int,
    head_image_id        char(32),
    user_id              char(32),
-   area                 char(32),
+   area_id              char(32),
    max_blood            int,
    max_energy           int,
    speed                int,

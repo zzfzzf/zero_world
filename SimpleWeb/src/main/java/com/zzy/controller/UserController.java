@@ -24,12 +24,12 @@ import io.swagger.annotations.ApiOperation;
 // 切记一定要标注method=xxxx 否则swagger将会为每个方法包括头部信息创建多个api
 @RestController
 public class UserController extends BaseController {
-
+  
 	@ApiOperation(value = "获取user", notes = "获取user列表")
 	@RequestMapping(value = { "/user" }, method = RequestMethod.GET)
 	public JSONObject listUser() {
 		List<ZUser> userList = userService.findByStatusNot(10);
-		return ResultValue.success(userList);
+		return ResultValue.success(userList); 
 	}
 
 	@ApiOperation(value = "根据username获取user", notes = "根据username获取user")

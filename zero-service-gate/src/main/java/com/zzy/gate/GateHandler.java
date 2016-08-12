@@ -1,6 +1,5 @@
 package com.zzy.gate;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -13,6 +12,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.alibaba.fastjson.JSONObject;
 import com.zzy.common.base.Command;
 import com.zzy.common.base.ResultValue;
+import com.zzy.common.base.UrlCommon;
+import com.zzy.common.util.BroadcastUtil;
+import com.zzy.common.util.HttpUtil;
 import com.zzy.dubbo.DBService;
 
 /**
@@ -79,15 +81,28 @@ public class GateHandler extends IoHandlerAdapter implements Command{
 		
 		String command = (String)json.get("command");  
 		switch (command) {
-		case ONLINE_NUM:
+		case ROLE:// 获取大区下所有角色
+			json=HttpUtil.getJson(UrlCommon.GET_ROLE_BY_AREA+json.getString("areaId"));
+			session.write(json);
+			break;
+		case AREA:// 获取大区列表
+			json=HttpUtil.getJson(UrlCommon.LIST_AREA);
+			session.write(json);
+			break;
+		case ONLINE_NUM: // 获取在线人数
 			ResultValue.success(json).put("onlineNum",acceptor.getManagedSessionCount());
 			session.write(json);
 			break;
-		case MOVE:
-			// 移动
+		case ONLINE:
 			break;
-		case ATTACK:
-			// 攻击	
+		case OFFLINE:
+			break;
+		
+		case MOVE: // 移动
+
+			break;
+		case ATTACK: // 攻击
+				
 			break;
 		case ADD_ITEM:
 			// 添加物品 

@@ -19,6 +19,15 @@ public class GArea implements java.io.Serializable {
 	private int onlineNum;
 	private int offlineNum;
 	private long createTime;
+	private int status;
+	  
+	@Column(name = "status", length = 50)
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
 	@Id 
 	@Column(name = "id", unique = true, nullable = false, length = 32)
 	public String getId() {

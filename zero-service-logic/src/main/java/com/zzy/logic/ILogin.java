@@ -13,20 +13,11 @@ public interface ILogin {
 	/**
 	 * 上线
 	 */
-	public void online(JSONObject json) throws Exception;
+	public JSONObject online(JSONObject json) throws Exception;
 	/**
 	 * 下线
 	 */
-	public void offline(JSONObject json) throws Exception;
+	public JSONObject offline(JSONObject json) throws Exception;
 	
-	/**
-	 * 选择大区
-	 */
-	public void choseArea()throws Exception;
-	
-	/**
-	 * 选择角色
-	 */
-	public void choseRole()throws Exception;
 }
 

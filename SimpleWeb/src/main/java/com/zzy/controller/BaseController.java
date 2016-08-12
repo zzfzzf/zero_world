@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.zzy.service.common.AreaService;
 import com.zzy.service.common.BagService;
 import com.zzy.service.common.BuffService;
 import com.zzy.service.common.BuildService;
@@ -46,6 +47,8 @@ public class BaseController {
 	public RedisService redisService;
 	@Autowired
 	public RoleService roleService;
+	@Autowired
+	public AreaService areaService;
 	@Autowired
 	public BagService bagService;
 	@Autowired

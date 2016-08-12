@@ -25,16 +25,16 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 public class tempController extends BaseController {
 
-	@ApiOperation(value = "获取", notes = "获取user列表")
+	@ApiOperation(value = "获取", notes = "获取列表")
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
-	public JSONObject listUser() {
+	public JSONObject listTemp() {
 		return ResultValue.success();
 		
 	}
  
-	@ApiOperation(value = "创建", notes = "根据User对象创建用户")
+	@ApiOperation(value = "创建", notes = "根据对象创建用户")
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public JSONObject postUser(@RequestBody ZUser user) {
+	public JSONObject postTemp(@RequestBody ZUser user) {
 		if(Objects.isNull(user)){
 			return ResultValue.requireNonNull();
 		}
@@ -43,7 +43,7 @@ public class tempController extends BaseController {
 
 	@ApiOperation(value = "获取详细信息", notes = "根据url的id来获取详细信息")
 	@RequestMapping(value = "//{id}", method = RequestMethod.GET)
-	public JSONObject getUser(@PathVariable String id) {
+	public JSONObject getTemp(@PathVariable String id) {
 		if(Objects.isNull(id)){
 			return ResultValue.requireNonNull();
 		}
@@ -52,7 +52,7 @@ public class tempController extends BaseController {
 
 	@ApiOperation(value = "更新详细信息", notes = "根据url的id来指定更新对象，并根据传过来的user信息来更新用户详细信息")
 	@RequestMapping(value = "/", method = RequestMethod.PUT)
-	public JSONObject putUser(@RequestBody ZUser user) {
+	public JSONObject putTemp(@RequestBody ZUser user) {
 		if(Objects.isNull(user)){
 			return ResultValue.requireNonNull();
 		}
@@ -61,7 +61,7 @@ public class tempController extends BaseController {
 
 	@ApiOperation(value = "删除用户", notes = "根据url的id来指定删除对象")
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public JSONObject deleteUser(@PathVariable String id) {
+	public JSONObject deleteTemp(@PathVariable String id) {
 		if(Objects.isNull(id)){
 			return ResultValue.requireNonNull();
 		}
