@@ -65,22 +65,25 @@ public class GateHandler extends IoHandlerAdapter implements Command{
 	 */
 	@Override
 	public void messageReceived(IoSession session, Object message) throws Exception {
-		
 		// 收到的信息字符串
 		if(Objects.isNull(message) || "null".equals(message)){
 			throw new NullPointerException("message不能为null");
 		}
 		JSONObject json = JSONObject.parseObject((String) message);
+		String command = (String)json.get("command");  
 		Long token = json.getLong("token");
         @SuppressWarnings("unchecked")
 		Map<Long,Long> tokens = (Map<Long,Long>) dbService.getObj("tokens", Map.class);
-		if(!tokens.containsKey(token)){
+		if(!tokens.containsKey(token) && !Command.TOKEN.equals(command)){
 			session.write(ResultValue.fail(ResultValue.TOKEN_ERROR, "token错误"));
 			return;
 		}
 		
-		String command = (String)json.get("command");  
+		
 		switch (command) {
+		case TOKEN:
+			
+			break;
 		case ROLE:// 获取大区下所有角色
 			json=HttpUtil.getJson(UrlCommon.GET_ROLE_BY_AREA+json.getString("areaId"));
 			session.write(json);
@@ -94,8 +97,10 @@ public class GateHandler extends IoHandlerAdapter implements Command{
 			session.write(json);
 			break;
 		case ONLINE:
+			
 			break;
 		case OFFLINE:
+			
 			break;
 		
 		case MOVE: // 移动

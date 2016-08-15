@@ -12,7 +12,7 @@ import com.alibaba.fastjson.JSONObject;
 public interface ILogin {
 	/**
 	 * 上线
-	 */
+	 */   
 	public JSONObject online(JSONObject json) throws Exception;
 	/**
 	 * 下线
