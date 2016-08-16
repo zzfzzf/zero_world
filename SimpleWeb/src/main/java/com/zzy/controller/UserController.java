@@ -35,8 +35,8 @@ public class UserController extends BaseController {
 	@ApiOperation(value = "根据username获取user", notes = "根据username获取user")
 	@RequestMapping(value = { "/user/username/{username}" }, method = RequestMethod.GET)
 	public JSONObject getUserByUsername(@PathVariable String username) {
-		userService.findByUsername(username);
-		return ResultValue.success();
+		ZUser user=userService.findByUsername(username);
+		return ResultValue.success(user);
 	}
 	
 	@ApiOperation(value = "登录验证", notes = "用户登录验证")

@@ -41,15 +41,7 @@ public class GateHandler extends IoHandlerAdapter implements Command{
     @Override 
     @SuppressWarnings("unchecked")
 	public void sessionCreated(IoSession session) throws Exception {
-    	long token = session.getId();
-    	// 连接时返回token并存入session,只初始化一次 
-		JSONObject jsonToken = new JSONObject();
-		jsonToken.put("command", Command.TOKEN);
-		jsonToken.put("token", token);
-		session.write(jsonToken);
-		// 当前用户存入token
-		Map<Long,Long> tokens = (Map<Long,Long>) dbService.getObj("tokens", Map.class);
-		tokens.put(token, token);
+    
 	};
 	
 	/**
@@ -73,17 +65,22 @@ public class GateHandler extends IoHandlerAdapter implements Command{
 		String command = (String)json.get("command");  
 		Long token = json.getLong("token");
         @SuppressWarnings("unchecked")
-		Map<Long,Long> tokens = (Map<Long,Long>) dbService.getObj("tokens", Map.class);
+		Map<Long,String> tokens = (Map<Long,String>) dbService.getObj("tokens", Map.class);
 		if(!tokens.containsKey(token) && !Command.TOKEN.equals(command)){
 			session.write(ResultValue.fail(ResultValue.TOKEN_ERROR, "token错误"));
 			return;
+		}else{
+			String userName = json.getString("userName");
+			JSONObject jsonData=HttpUtil.getJson(UrlCommon.GET_USER_BY_USERNAME+userName); 
+			jsonData=JSONObject.parseObject(json.get("user").toString());
+			String userId=jsonData.getString("id");
+			// 当前用户存入token
+			tokens.put(session.getId(), userId);
+			session.write(ResultValue.onlySuccess(json));
 		}
 		
 		
 		switch (command) {
-		case TOKEN:
-			
-			break;
 		case ROLE:// 获取大区下所有角色
 			json=HttpUtil.getJson(UrlCommon.GET_ROLE_BY_AREA+json.getString("areaId"));
 			session.write(json);
