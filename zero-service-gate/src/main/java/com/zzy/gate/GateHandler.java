@@ -39,7 +39,6 @@ public class GateHandler extends IoHandlerAdapter implements Command{
 	public void sessionOpened(IoSession session) throws Exception {
 	}
     @Override 
-    @SuppressWarnings("unchecked")
 	public void sessionCreated(IoSession session) throws Exception {
     
 	};
@@ -59,7 +58,7 @@ public class GateHandler extends IoHandlerAdapter implements Command{
 	public void messageReceived(IoSession session, Object message) throws Exception {
 		// 收到的信息字符串
 		if(Objects.isNull(message) || "null".equals(message)){
-			throw new NullPointerException("message不能为null");
+			log.error("错误session:"+session.getId()+"---->"+"message不能为null");
 		}
 		JSONObject json = JSONObject.parseObject((String) message);
 		String command = (String)json.get("command");  
@@ -71,9 +70,10 @@ public class GateHandler extends IoHandlerAdapter implements Command{
 			return;
 		}else{
 			String userName = json.getString("userName");
-			JSONObject jsonData=HttpUtil.getJson(UrlCommon.GET_USER_BY_USERNAME+userName); 
-			jsonData=JSONObject.parseObject(json.get("user").toString());
-			String userId=jsonData.getString("id");
+			JSONObject user=HttpUtil.getJson(UrlCommon.GET_USER_BY_USERNAME+userName); 
+			// 拿到json格式的user对象
+			user=JSONObject.parseObject(json.get("data").toString());
+			String userId=user.getString("id"); 
 			// 当前用户存入token
 			tokens.put(session.getId(), userId);
 			session.write(ResultValue.onlySuccess(json));

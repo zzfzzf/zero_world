@@ -19,7 +19,8 @@ import io.swagger.annotations.ApiOperation;
 /**
  * @author Zeus
  * @version 1.1
- * @createTime：2016年6月30日 @decript:模板Controller
+ * @createTime 2016年6月30日 
+ * @decript 模板Controller
  */
 // 切记一定要标注method=xxxx 否则swagger将会为每个方法包括头部信息创建多个api
 @RestController

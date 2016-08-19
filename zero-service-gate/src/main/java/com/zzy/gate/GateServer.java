@@ -16,7 +16,8 @@ import com.zzy.common.base.UrlCommon;
 /**
  * @author Zeus
  * @version 1.1
- * @createTime：2016年7月20日 @decript:
+ * @createTime:2016年7月20日 
+ * @decript:
  */ 
 // 传递对象拦截器
 // chain.addLast("objectFilter", new ProtocolCodecFilter(new

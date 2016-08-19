@@ -6,7 +6,7 @@ import org.apache.log4j.Priority;
 /**
 * @author Zeus
 * @version 1.1
-* @createTime：2016年7月21日 
+* @createTime :2016年7月21日 
 * @decript: 重写Log4j输出类 修改级别
 */
 public class ReFileAppender extends DailyRollingFileAppender{

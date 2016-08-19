@@ -21,10 +21,11 @@ public class Test extends A {
 		new Test().init();
 	}
 	public void init() throws IOException{
-		int a=1;
-		byte b=(byte) a;
-		System.out.println(System.currentTimeMillis());
-		Runtime.getRuntime().exec("notepad.exe");
+		String str="j";
+		System.out.println(str);
+	}
+	public void K(String test){
+		test+="c";
 	}
 
 }
