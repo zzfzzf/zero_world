@@ -74,11 +74,23 @@ public interface Command {
 	 * 添加物品
 	 */
 	public static String ADD_ITEM="addItem";
+	/**
+	 * 发起交易
+	 */
+	public static String REQUEST_TRADE="requestTrade";
+	/**
+	 * 上架
+	 */
+	public static String PUT_ON_SHELVES="putOnShelves";
+	/**
+	 * 下架
+	 */
+	public static String PULL_OFF_SHELVES="pullOffShelves";
 //	----------------------------物品指令------------------------
 	/**
 	 * 装备物品
 	 */
-	public static String PUT_ON="putOn";
+	public static String PUT_ON_ITEM="putOnItem";
 	/**
 	 * 使用物品
 	 */
@@ -94,7 +106,7 @@ public interface Command {
 	/**
 	 * 卸下物品
 	 */
-	public static String TAKE_DOWN="takeDown";
+	public static String TAKE_DOWN_ITEM="takeDownItem";
 	/**
 	 * 拾取物品
 	 */
@@ -112,4 +124,13 @@ public interface Command {
 	 * 丢弃金币
 	 */
 	public static String GIVE_UP_MONEY="giveUpMoney";
+// -----------------------------怪物指令------------------------
+	/**
+	 * 怪物死亡
+	 */
+	public static String MOSTER_DEATH = "mosterDeath";
+	/**
+	 * 怪物生成
+	 */
+	public static String MOSTER_PRODUCE = "mosterProduce";
 }

@@ -141,7 +141,7 @@ public class GateHandler extends IoHandlerAdapter implements Command{
 			// 拾取金币
 
 			break;
-		case PUT_ON:
+		case PUT_ON_ITEM:
 			// 装备物品
 
 			break;
@@ -161,7 +161,7 @@ public class GateHandler extends IoHandlerAdapter implements Command{
 			// 摆摊
 
 			break;
-		case TAKE_DOWN:
+		case TAKE_DOWN_ITEM:
 			// 卸下物品
 
 			break;

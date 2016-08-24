@@ -27,16 +27,29 @@ ActiveMQ基于此
 	
 	MongoDb
 	Redis
+
+
 	Swagger UI
+
 	JQuery
+
 	Struts
+
+
         Lucene elitecsearch
+
 	Ocr
+
+        Nginx
 	JRMP(没看）
-	Nginx
+	
 	Linux
 	reactor模式
 	AtomicInteger 线程安全integer
 	spel(spring 表达式 类似eval)
 	java函数式编程
+
+生成moster 广播
+各客户端渲染
+血条由服务端控制 每次被攻击判断 如果死亡 直接向客户端发送掉落和怪物死亡信息
 
