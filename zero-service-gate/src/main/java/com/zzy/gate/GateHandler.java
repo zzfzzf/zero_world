@@ -1,5 +1,6 @@
 package com.zzy.gate;
 
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.Objects;
 
@@ -93,13 +94,9 @@ public class GateHandler extends IoHandlerAdapter implements Command{
 			ResultValue.success(json).put("onlineNum",acceptor.getManagedSessionCount());
 			session.write(json);
 			break;
-		case ONLINE:
-			
-			break;
 		case OFFLINE:
 			
 			break;
-		
 		case MOVE: // 移动
 
 			break;

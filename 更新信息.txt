@@ -4,3 +4,4 @@
 2016年7月16日  修改rolefriend时间字段为bigint 新增区表 area 映射role关系到area
 2016年7月20日  数据打乱 重新调整logingate
 2016年8月2日   分离 login gate服务器 实现login服务器交互
+2016年8月30日  修改选择大区，合并选择角色和上线功能

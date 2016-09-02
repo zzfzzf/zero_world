@@ -21,16 +21,19 @@ import com.zzy.domain.base.GRole;
  */
 public class Test {
 	public static int count=0;
-	public static void main(String[] args) throws Exception {
-		Test.class.newInstance().test();
-	}
+	public static void main(String[] args) throws Exception {Test.class.newInstance().test();}
 
 	public void test() throws InstantiationException, IllegalAccessException, InvocationTargetException, IntrospectionException {
-		JSONObject json=new JSONObject();
-		User user = new User();
-		user.setName("name");
-		json.put("user", user);
-		System.out.println(Test.transBean2Map(json.get("user")).get("password"));
+		int MaxNum=0;
+		int MinNum=0;
+		
+		for(int i=0;i<1000000;i++){
+			int num = (int) (Math.random()*1000000);
+			num = num>1000000/2 ? MaxNum++:MinNum++; 
+		}
+		
+		System.out.println(MaxNum);
+		System.out.println(MinNum);
 	}
 	 
 	 

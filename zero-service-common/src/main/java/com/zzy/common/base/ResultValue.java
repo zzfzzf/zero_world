@@ -27,6 +27,7 @@ public class ResultValue {
      	JSONObject json=new JSONObject();
     	json.put("status", SUCCESS);
     	json.put("data", object);
+    	json.put("message", "操作成功");
     	return json;
     }
     
@@ -35,6 +36,7 @@ public class ResultValue {
      */
     public static JSONObject onlySuccess(JSONObject json){
     	json.put("status", SUCCESS);
+    	json.put("message", "操作成功");
     	return json;
     }
     

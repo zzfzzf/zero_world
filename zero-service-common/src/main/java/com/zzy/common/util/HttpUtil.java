@@ -95,7 +95,7 @@ public class HttpUtil {
 	
 	private static void sent(JSONObject json,OutputStream os) throws Exception{
 		DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(os));
-		dos.writeBytes(json==null?"":json.toString());
+//		dos.writeBytes(json==null?"":json.toString());
 		dos.writeUTF(json==null?"":json.toString());
 		dos.flush();
 		dos.close();

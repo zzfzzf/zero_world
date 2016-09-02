@@ -29,10 +29,6 @@ public interface Command {
 	 */
 	public static String ONLINE_NUM="onlineNum";
 	/**
-	 * 上线
-	 */
-	public static String ONLINE="online";
-	/**
 	 * 离线
 	 */
 	public static String OFFLINE="offLine";

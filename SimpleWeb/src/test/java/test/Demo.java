@@ -70,12 +70,5 @@ public class Demo {
 		}
 	}
 
-	public static boolean isAble(User o) {
-		Iterator<User> it=userList.iterator();
-		while(it.hasNext()){
-			it.next().getName().equals(o.getName());
-				return true;
-			}
-		return false;
-	}
+	
 }
