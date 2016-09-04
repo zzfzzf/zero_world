@@ -77,17 +77,19 @@ public class GateHandler extends IoHandlerAdapter implements Command{
 			String userId=user.getString("id"); 
 			// 当前用户存入token
 			tokens.put(session.getId(), userId);
+			// 获取大区列表并装入json
+			HttpUtil.getJson(UrlCommon.LIST_AREA,json);
 			session.write(ResultValue.onlySuccess(json));
 		}
 		
 		
 		switch (command) {
-		case ROLE:// 获取大区下所有角色
-			json=HttpUtil.getJson(UrlCommon.GET_ROLE_BY_AREA+json.getString("areaId"));
+		case ROLE:// 选择角色
+			HttpUtil.getJson(UrlCommon.GET_ROLE, json);
 			session.write(json);
 			break;
-		case AREA:// 获取大区列表
-			json=HttpUtil.getJson(UrlCommon.LIST_AREA);
+		case AREA:// 选择大区
+			HttpUtil.getJson(UrlCommon.GET_ROLE_BY_AREA+json.getString("areaId"),json);
 			session.write(json);
 			break;
 		case ONLINE_NUM: // 获取在线人数
@@ -101,7 +103,8 @@ public class GateHandler extends IoHandlerAdapter implements Command{
 
 			break;
 		case ATTACK: // 攻击
-				
+			// 处理攻击逻辑
+			// 广播数据
 			break;
 		case ADD_ITEM:
 			// 添加物品 

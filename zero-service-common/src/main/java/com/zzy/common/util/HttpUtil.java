@@ -52,6 +52,26 @@ public class HttpUtil {
 		}
 		return JSONObject.parseObject(result);
 	}
+	/**
+	 * get请求获取json数据,带json
+	 * @param hurl
+	 * @return
+	 */
+	public static JSONObject getJson(String hurl,JSONObject json) {
+		String result = null;
+		try {
+			URL url = new URL(hurl);
+			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+			initConnection(connection, "GET");
+			connection.connect();
+			result = receive(connection.getInputStream());
+		} catch (Exception e) {
+			log.error("GET连接异常----" + e.getMessage());
+		}
+		json.putAll(JSONObject.parseObject(result));
+		return json;
+	}
+	
 	
 	public static JSONObject putJson(String hurl,JSONObject json) {
 		String result = null;  
@@ -67,6 +87,7 @@ public class HttpUtil {
 		}
 		return JSONObject.parseObject(result);
 	}
+	
 	
 	public static JSONObject deleteJson(String hurl) {
 		String result = null;

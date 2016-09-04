@@ -8,7 +8,7 @@
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd  
         ">
  <!-- consumer application name -->
- <dubbo:application name="consumer-of-helloworld-app" />
+ <dubbo:application name="gate_client" />
  <!-- registry address, used for consumer to discover services -->
  <dubbo:registry address="zookeeper://127.0.0.1:2181" />
  <dubbo:consumer timeout="5000" />
@@ -19,5 +19,5 @@
  <dubbo:reference interface="com.zzy.logic.IOther" id="otherLogic" /> 
  <dubbo:reference interface="com.zzy.logic.IRole"  id="roleLogic" />  
  <dubbo:reference interface="com.zzy.logic.ITrade" id="tradeLogic" />   -->
- <dubbo:reference interface="com.zzy.db.DBService" id="dbService" />  
+ <dubbo:reference interface="com.zzy.dubbo.DBService" id="dbService" />  
  </beans>
