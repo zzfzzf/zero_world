@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2016/8/12 星期五 13:48:04                       */
+/* Created on:     2016/9/5 星期一 14:45:52                        */
 /*==============================================================*/
 
 
@@ -73,7 +73,6 @@ create table g_area
    online_num           int,
    offline_num          int,
    create_time          bigint,
-   status               int comment '状态 1启用 10删除',
    primary key (id)
 );
 
@@ -182,7 +181,7 @@ create table g_items
    name                 varchar(50),
    level                bigint,
    quality              bigint comment '1 白色 2 绿色 3 蓝色 4 紫色 5 橙色',
-   type                 bigint comment '0 消耗品 1 是装备',
+   type                 bigint comment '0 消耗品 1 是装备 2 材料',
    icon                 varchar(50),
    status               bigint comment '0 未使用 1已使用',
    strength             bigint(50),
@@ -299,6 +298,8 @@ create table g_role
    max_blood            int,
    max_energy           int,
    speed                int,
+   gold                 int comment '金币',
+   coupons              int comment '点券',
    primary key (id)
 );
 

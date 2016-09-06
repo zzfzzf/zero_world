@@ -1,16 +1,13 @@
 package test;
 
-import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
-import java.beans.Introspector;
-import java.beans.PropertyDescriptor;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.function.Consumer;
 
-
-import com.alibaba.fastjson.JSONObject;
 import com.zzy.domain.base.GRole;
 
 /**
@@ -21,27 +18,21 @@ import com.zzy.domain.base.GRole;
  */
 public class Test {
 	public static int count=0;
-	public static void main(String[] args) throws Exception {Test.class.newInstance().test();}
-
-	public void test() throws InstantiationException, IllegalAccessException, InvocationTargetException, IntrospectionException {
-		int MaxNum=0;
-		int MinNum=0;
-		
-		for(int i=0;i<1000000;i++){
-			int num = (int) (Math.random()*1000000);
-			num = num>1000000/2 ? MaxNum++:MinNum++; 
+	public static void main(String[] args) throws Exception {
+		List list=new ArrayList();
+		Test.test(() -> System.out.print("花式fuckworld！"));
 		}
-		
-		System.out.println(MaxNum);
-		System.out.println(MinNum);
+
+	public static void test(Runnable o) throws Exception {
+		o.run();
 	}
 	 
 	 
 }
 
 class A extends C {
-	public void test() {
-		
+	public static void test(Runnable o) {
+		o.run();
 	} 
 } 
 

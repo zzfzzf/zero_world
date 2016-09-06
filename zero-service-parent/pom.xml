@@ -10,10 +10,11 @@
 		<module>../zero-service-gate</module>
 		<module>../zero-service-common</module>
 		<module>../zero-service-logic</module>
+		<module>../zero-service-login</module>
 		<module>../zero-service-db</module>
 		<module>../SimpleWeb</module>
 	</modules>
-	<name>zero-service-parent</name>
+	<name>zero-service-parent</name>  
 	<url>http://maven.apache.org</url>
 
 	<properties>

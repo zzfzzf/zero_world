@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
- xsi:schemaLocation="http://www.springframework.org/schema/beans  
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd  
         http://code.alibabatech.com/schema/dubbo  
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd  
         ">
- <!-- consumer application name -->
- <dubbo:application name="gate_client" />
- <!-- registry address, used for consumer to discover services -->
- <dubbo:registry address="zookeeper://127.0.0.1:2181" />
- <dubbo:consumer timeout="5000" />
- <!-- which service to consume? -->
-<!--  <dubbo:reference interface="com.zzy.logic.ILogin" id="loginLogic" /> 
- <dubbo:reference interface="com.zzy.logic.IItem"  id="itemLogic" /> 
- <dubbo:reference interface="com.zzy.logic.IMoney" id="moneyLogic" /> 
- <dubbo:reference interface="com.zzy.logic.IOther" id="otherLogic" /> 
- <dubbo:reference interface="com.zzy.logic.IRole"  id="roleLogic" />  
- <dubbo:reference interface="com.zzy.logic.ITrade" id="tradeLogic" />   -->
- <dubbo:reference interface="com.zzy.dubbo.DBService" id="dbService" />  
- </beans>
+    <!-- consumer application name -->
+    <dubbo:application name="gate_client"/>
+    <!-- registry address, used for consumer to discover services -->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <dubbo:consumer timeout="5000"/>
+    <!-- which service to consume? -->
+    <dubbo:reference interface="com.zzy.dubbo.logic.IMonster" id="monsterLogic"/>
+    <dubbo:reference interface="com.zzy.dubbo.logic.IStatus" id="statusLogic"/>
+    <dubbo:reference interface="com.zzy.dubbo.logic.IItem" id="itemLogic"/>
+    <dubbo:reference interface="com.zzy.dubbo.logic.IMoney" id="moneyLogic"/>
+    <dubbo:reference interface="com.zzy.dubbo.logic.IOther" id="otherLogic"/>
+    <dubbo:reference interface="com.zzy.dubbo.logic.IRole" id="roleLogic"/>
+    <dubbo:reference interface="com.zzy.dubbo.logic.ITrade" id="tradeLogic"/>
+    <dubbo:reference interface="com.zzy.dubbo.DBService" id="dbService"/>
+</beans>

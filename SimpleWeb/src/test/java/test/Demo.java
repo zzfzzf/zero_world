@@ -70,5 +70,10 @@ public class Demo {
 		}
 	}
 
+	private static boolean isAble(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	
 }

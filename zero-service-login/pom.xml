@@ -20,10 +20,10 @@
 
 	<dependencies>
 		<dependency>
-		<groupId>com.zzy</groupId>
-		<artifactId>zero-service-common</artifactId>
+			<groupId>com.zzy</groupId>
+			<artifactId>zero-service-common</artifactId>
 		</dependency>
-	
+
 		<!-- json -->
 		<dependency>
 			<groupId>com.alibaba</groupId>

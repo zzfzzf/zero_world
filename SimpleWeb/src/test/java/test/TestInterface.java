@@ -6,5 +6,5 @@ package test;
 * @description:
 */
 public interface TestInterface {
-	public void 
+	
 }

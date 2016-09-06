@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SimpleWeb/SimpleWeb.iml" filepath="$PROJECT_DIR$/SimpleWeb/SimpleWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zero-service-common/zero-service-common.iml" filepath="$PROJECT_DIR$/zero-service-common/zero-service-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zero-service-db/zero-service-db.iml" filepath="$PROJECT_DIR$/zero-service-db/zero-service-db.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zero-service-gate/zero-service-gate.iml" filepath="$PROJECT_DIR$/zero-service-gate/zero-service-gate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zero-service-logic/zero-service-logic.iml" filepath="$PROJECT_DIR$/zero-service-logic/zero-service-logic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zero-service-login/zero-service-login.iml" filepath="$PROJECT_DIR$/zero-service-login/zero-service-login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zero-service-parent/zero-service-parent.iml" filepath="$PROJECT_DIR$/zero-service-parent/zero-service-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/zero_world.iml" filepath="$PROJECT_DIR$/.idea/zero_world.iml" />
+    </modules>
+  </component>
+</project>

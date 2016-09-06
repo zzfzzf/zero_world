@@ -11,8 +11,8 @@ public class UrlCommon {
 	/**
 	 * 基础URL
 	 */
-	public static final String BASE_URL="http://"+HOST+":"+PORT;
-	private static final String LOGIN=BASE_URL+"/zeus/user/login";
+	private static final String BASE_URL="http://"+HOST+":"+PORT;
+	public static final String LOGIN=BASE_URL+"/zeus/user/login";
 	/**
 	 * 获取角色
 	 */
