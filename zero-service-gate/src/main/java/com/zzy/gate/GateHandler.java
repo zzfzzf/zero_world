@@ -1,9 +1,13 @@
 package com.zzy.gate;
 
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Objects;
-
+import com.alibaba.fastjson.JSONObject;
+import com.sun.org.apache.xpath.internal.operations.Bool;
+import com.zzy.common.base.Command;
+import com.zzy.common.base.ResultValue;
+import com.zzy.common.base.UrlCommon;
+import com.zzy.common.util.BroadcastUtil;
+import com.zzy.common.util.HttpUtil;
+import com.zzy.dubbo.DBService;
 import com.zzy.dubbo.logic.*;
 import org.apache.log4j.Logger;
 import org.apache.mina.core.service.IoAcceptor;
@@ -11,13 +15,11 @@ import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.alibaba.fastjson.JSONObject;
-import com.zzy.common.base.Command;
-import com.zzy.common.base.ResultValue;
-import com.zzy.common.base.UrlCommon;
-import com.zzy.common.util.BroadcastUtil;
-import com.zzy.common.util.HttpUtil;
-import com.zzy.dubbo.DBService;
+import java.awt.geom.Area;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * @author Zeus
@@ -99,32 +101,30 @@ public class GateHandler extends IoHandlerAdapter implements Command {
             tokens.put(session.getId(), userId);
             // 获取大区列表并装入json
             HttpUtil.getJson(UrlCommon.LIST_AREA, json);
-            session.write(ResultValue.onlySuccess(json));
+            session.write(ResultValue.success(json));
         }
 
-
+        IoAcceptor tempAcceeptor=acceptor;
+        List<Long> list = null;
         switch (command) {
             case ROLE:// 选择角色
-                HttpUtil.getJson(UrlCommon.GET_ROLE, json);
-                session.write(json);
+                BroadcastUtil.sentMessage(session, statusLogic.role(json));
                 break;
             case AREA:// 选择大区
-                HttpUtil.getJson(UrlCommon.GET_ROLE_BY_AREA + json.getString("areaId"), json);
-                session.write(json);
+                BroadcastUtil.sentMessage(session,statusLogic.area(json));
                 break;
             case ONLINE_NUM: // 获取在线人数
-                ResultValue.success(json).put("onlineNum", acceptor.getManagedSessionCount());
-                session.write(json);
+                ResultValue.success(json).put("data", acceptor.getManagedSessionCount());
+                BroadcastUtil.sentMessage(session,json);
                 break;
-            case OFFLINE:
-
+            case OFFLINE: // 角色下线
+                BroadcastUtil.sentMessage(acceptor,statusLogic.offline(json));
                 break;
             case MOVE: // 移动
-
+                BroadcastUtil.sentMessage(acceptor,session,roleLogic.move(json));
                 break;
             case ATTACK: // 攻击
-                // 处理攻击逻辑
-                // 广播数据
+                BroadcastUtil.sentMessage(acceptor,session,roleLogic.attack(json));
                 break;
             case ADD_ITEM:    // 添加物品
 
@@ -204,7 +204,10 @@ public class GateHandler extends IoHandlerAdapter implements Command {
 
                 break;
         }
+
+        BroadcastUtil.sentMessage(list,tempAcceeptor,session, json);
     }
+
 
     // 当一个客户端连接关闭时
     @Override

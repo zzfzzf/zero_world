@@ -20,8 +20,8 @@ public class ResultValue {
     public static final int TOKEN_ERROR=306;
     public static final int LOGIN_FAIL=307; 
     /**
-     * 操作成功
-     * @param 返回参数
+     * 传入对象,返回一个新json
+     * @param object 传入对象
      */
     public static JSONObject success(Object object){
      	JSONObject json=new JSONObject();
@@ -34,20 +34,33 @@ public class ResultValue {
     /**
      * 操作成功 返回传入json
      */
-    public static JSONObject onlySuccess(JSONObject json){
-    	json.put("status", SUCCESS);
-    	json.put("message", "操作成功");
-    	return json;
+    public static JSONObject success(JSONObject json,Object object){
+        json.put("status", SUCCESS);
+        json.put("data", object);
+        json.put("message", "操作成功");
+        return json;
     }
-    
+
     /**
-     * 操作成功
+     * 操作成功 返回传入json
+     */
+    public static JSONObject success(JSONObject json){
+        json.put("status", SUCCESS);
+        json.put("data", null);
+        json.put("message", "操作成功");
+        return json;
+    }
+
+
+    /**
+     * 操作成功 返回新json 只包含status:success
      */
     public static JSONObject success(){
     	JSONObject json=new JSONObject();
     	json.put("status", SUCCESS);
     	return json;
     }
+
     /**
      * 参数为null
      */
@@ -59,8 +72,8 @@ public class ResultValue {
     }
     /**
      * 操作失败
-     * @param 状态码
-     * @param 提示信息
+     * @param status 状态码
+     * @param message 提示信息
      */
     public static JSONObject fail(Integer status,String message){
     	JSONObject json=new JSONObject();

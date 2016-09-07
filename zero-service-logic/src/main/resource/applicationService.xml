@@ -17,17 +17,19 @@
     <!-- 用dubbo协议在 端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="20880"/>
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="com.zzy.dubbo.logic.IStatus" ref="loginLogic"/>
+    <dubbo:service interface="com.zzy.dubbo.logic.IMonster" ref="monsterLogic"/>
+    <dubbo:service interface="com.zzy.dubbo.logic.IStatus" ref="statusLogic"/>
     <dubbo:service interface="com.zzy.dubbo.logic.IItem" ref="itemLogic"/>
     <dubbo:service interface="com.zzy.dubbo.logic.IMoney" ref="moneyLogic"/>
     <dubbo:service interface="com.zzy.dubbo.logic.IOther" ref="otherLogic"/>
     <dubbo:service interface="com.zzy.dubbo.logic.IRole" ref="roleLogic"/>
     <dubbo:service interface="com.zzy.dubbo.logic.ITrade" ref="tradeLogic"/>
     <!-- 具体的实现bean -->
-    <bean id="loginLogic" class="com.zzy.dubbo.logic.Impl.StatusController"/>
+    <bean id="statusLogic" class="com.zzy.dubbo.logic.Impl.StatusController"/>
     <bean id="itemLogic" class="com.zzy.dubbo.logic.Impl.ItemController"/>
     <bean id="moneyLogic" class="com.zzy.dubbo.logic.Impl.MoneyController"/>
     <bean id="otherLogic" class="com.zzy.dubbo.logic.Impl.OtherController"/>
     <bean id="roleLogic" class="com.zzy.dubbo.logic.Impl.RoleController"/>
     <bean id="tradeLogic" class="com.zzy.dubbo.logic.Impl.TradeController"/>
+    <bean id="monsterLogic" class="com.zzy.dubbo.logic.Impl.MonsterController"/>
 </beans>

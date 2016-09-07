@@ -25,9 +25,9 @@ public class AppTest{
 	    }
 	}
 	public static void main(String[] args) throws Exception {
-		AppTest.RandomHan rd=new AppTest().new RandomHan();
-System.out.println(rd.getRandomHan() );
-		}
+		String str = "z";
+		long cTime = System.currentTimeMillis();
+	}
 		public AppTest init(Integer it) throws Exception{
 			Map map = new HashMap();
 			for(int i=0;i<1000000;i++){

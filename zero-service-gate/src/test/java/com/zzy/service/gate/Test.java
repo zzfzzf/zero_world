@@ -21,8 +21,11 @@ public class Test extends A {
 		new Test().init();
 	}
 	public void init() throws IOException{
-		String str="j";
-		System.out.println(str);
+            int a = 1;
+           Integer b = 2;
+            boolean c = true;
+
+            System.out.println(c);
 	}
 	public void K(String test){
 		test+="c";
