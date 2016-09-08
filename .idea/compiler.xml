@@ -30,7 +30,7 @@
         <module name="zero-service-login" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="SimpleWeb" target="1.8" />
       <module name="zero-service-common" target="1.8" />
       <module name="zero-service-db" target="1.8" />

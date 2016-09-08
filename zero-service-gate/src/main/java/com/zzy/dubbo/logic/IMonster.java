@@ -1,6 +1,6 @@
 package com.zzy.dubbo.logic;
 
-import com.alibaba.dubbo.common.json.JSONObject;
+import com.alibaba.fastjson.JSONObject;
 
 /**
  * @author zeus
@@ -17,5 +17,5 @@ public interface IMonster {
     /**
      * 怪物生成
      */
-    JSONObject mosterProduce(JSONObject json);
+    JSONObject monsterProduce(JSONObject json);
 }

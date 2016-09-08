@@ -17,5 +17,5 @@ public interface IMonster {
     /**
      * 怪物生成
      */
-    JSONObject mosterProduce(JSONObject json);
+    JSONObject monsterProduce(JSONObject json);
 }

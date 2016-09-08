@@ -44,13 +44,13 @@ public class GateHandler extends IoHandlerAdapter implements Command {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"applicationClient.xml"});
         context.start();
         dbService = (DBService) context.getBean("dbService");
-        statusLogic=(IStatus) context.getBean("statusLogic");
-        tradeLogic=(ITrade) context.getBean("tradeLogic");
-        itemLogic=(IItem) context.getBean("itemLogic");
-        moneyLogic=(IMoney) context.getBean("moneyLogic");
-        otherLogic=(IOther) context.getBean("otherLogic");
-        roleLogic=(IRole) context.getBean("roleLogic");
-        monsterLogic=(IMonster) context.getBean("monsterLogic");
+        statusLogic = (IStatus) context.getBean("statusLogic");
+        tradeLogic = (ITrade) context.getBean("tradeLogic");
+        itemLogic = (IItem) context.getBean("itemLogic");
+        moneyLogic = (IMoney) context.getBean("moneyLogic");
+        otherLogic = (IOther) context.getBean("otherLogic");
+        roleLogic = (IRole) context.getBean("roleLogic");
+        monsterLogic = (IMonster) context.getBean("monsterLogic");
     }
 
     // 当一个客户端连接进入时
@@ -103,115 +103,105 @@ public class GateHandler extends IoHandlerAdapter implements Command {
             HttpUtil.getJson(UrlCommon.LIST_AREA, json);
             session.write(ResultValue.success(json));
         }
-
-        IoAcceptor tempAcceeptor=acceptor;
+        // 如果为null 则不广播 默认为广播
+        IoAcceptor tempAcceeptor = acceptor;
         List<Long> list = null;
         switch (command) {
             case ROLE:// 选择角色
-                BroadcastUtil.sentMessage(session, statusLogic.role(json));
+                tempAcceeptor = null;
+                statusLogic.role(json);
                 break;
             case AREA:// 选择大区
-                BroadcastUtil.sentMessage(session,statusLogic.area(json));
+                tempAcceeptor = null;
+                statusLogic.area(json);
                 break;
             case ONLINE_NUM: // 获取在线人数
+                tempAcceeptor = null;
                 ResultValue.success(json).put("data", acceptor.getManagedSessionCount());
-                BroadcastUtil.sentMessage(session,json);
                 break;
             case OFFLINE: // 角色下线
-                BroadcastUtil.sentMessage(acceptor,statusLogic.offline(json));
+                statusLogic.offline(json);
                 break;
             case MOVE: // 移动
-                BroadcastUtil.sentMessage(acceptor,session,roleLogic.move(json));
+                roleLogic.move(json);
                 break;
             case ATTACK: // 攻击
-                BroadcastUtil.sentMessage(acceptor,session,roleLogic.attack(json));
+                roleLogic.attack(json);
                 break;
             case ADD_ITEM:    // 添加物品
-
+                tradeLogic.addItem(json);
                 break;
             case ADD_MONEY:// 添加金钱
-
-
+                tradeLogic.addMoney(json);
                 break;
             case CHAT:// 聊天
-
-
+                roleLogic.chat(json);
                 break;
             case CONFIRM_TRADE:// 确认交易
-
-
+                tradeLogic.confirmTrade(json);
                 break;
             case DESTROY_ITEM:// 销毁物品
-
-
+                itemLogic.destroy(json);
                 break;
             case GIVE_UP_ITEM:// 丢弃物品
-
-
+                itemLogic.giveUpItem(json);
                 break;
             case GIVE_UP_MONEY:// 丢弃金币
-
-
+                moneyLogic.giveUpMoney(json);
                 break;
             case PICK_UP_ITEM:// 拾取物品
-
-
+                itemLogic.pickUpItem(json);
                 break;
             case PICK_UP_MONEY:// 拾取金币
-
-
+                moneyLogic.pickUpMoney(json);
                 break;
             case PUT_ON_ITEM:// 装备物品
-
-
+                itemLogic.putOn(json);
                 break;
             case RIDE:  // 骑乘
-
-
+                roleLogic.ride(json);
                 break;
             case SPLIT_ITEM:// 拆分物品
-
-
+                itemLogic.splitItem(json);
                 break;
             case SKILL:// 使用技能
-
-
+                roleLogic.skill(json);
                 break;
             case STALL:// 摆摊
-
-
+                tradeLogic.stall(json);
                 break;
             case TAKE_DOWN_ITEM:// 卸下物品
-
-
+                itemLogic.takeDown(json);
                 break;
             case USE_ITEM:// 使用物品
-
+                itemLogic.useItem(json);
                 break;
             case UPGRADE:// 升级
-
+                roleLogic.upgrade(json);
                 break;
             case ADD_EXP:// 增加经验
-
+                roleLogic.addExp(json);
                 break;
             case REDUCE_EXP:// 减少经验
-
+                roleLogic.reduceExp(json);
                 break;
             case MONSTER_DEATH: // 怪物死掉
-
+                monsterLogic.monsterDeath(json);
                 break;
             case MONSTER_PRODUCE: // 怪物生成
-
+                monsterLogic.monsterProduce(json);
                 break;
         }
-
-        BroadcastUtil.sentMessage(list,tempAcceeptor,session, json);
+        // 广播
+        BroadcastUtil.sentMessage(list, tempAcceeptor, session, json);
     }
 
 
     // 当一个客户端连接关闭时
     @Override
-    public void sessionClosed (IoSession session)throws Exception {
+    public void sessionClosed(IoSession session) throws Exception {
         System.out.println("有客户端关闭" + session.getId());
     }
+
+
 }
