@@ -54,7 +54,13 @@
         <option value="$PROJECT_DIR$/zero-service-logic/pom.xml" />
         <option value="$PROJECT_DIR$/zero-service-login/pom.xml" />
         <option value="$PROJECT_DIR$/zero-service-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/zero-service-map/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/xxx/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">

@@ -6,10 +6,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.zzy.dubbo.DBService;
-
 /**
 * @author Zeus
 * @version 1.1

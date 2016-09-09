@@ -22,21 +22,25 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="demo" />
         <module name="SimpleWeb" />
         <module name="zero-service-common" />
         <module name="zero-service-db" />
         <module name="zero-service-gate" />
         <module name="zero-service-logic" />
         <module name="zero-service-login" />
+        <module name="zero-service-map" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="demo" target="1.8" />
       <module name="SimpleWeb" target="1.8" />
       <module name="zero-service-common" target="1.8" />
       <module name="zero-service-db" target="1.8" />
       <module name="zero-service-gate" target="1.8" />
       <module name="zero-service-logic" target="1.8" />
       <module name="zero-service-login" target="1.8" />
+      <module name="zero-service-map" target="1.8" />
       <module name="zero-service-parent" target="1.8" />
     </bytecodeTargetLevel>
   </component>

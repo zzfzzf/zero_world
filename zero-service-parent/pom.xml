@@ -13,6 +13,7 @@
 		<module>../zero-service-login</module>
 		<module>../zero-service-db</module>
 		<module>../SimpleWeb</module>
+		<module>../zero-service-map</module>
 	</modules>
 	<name>zero-service-parent</name>  
 	<url>http://maven.apache.org</url>

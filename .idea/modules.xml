@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/zero-service-gate/zero-service-gate.iml" filepath="$PROJECT_DIR$/zero-service-gate/zero-service-gate.iml" />
       <module fileurl="file://$PROJECT_DIR$/zero-service-logic/zero-service-logic.iml" filepath="$PROJECT_DIR$/zero-service-logic/zero-service-logic.iml" />
       <module fileurl="file://$PROJECT_DIR$/zero-service-login/zero-service-login.iml" filepath="$PROJECT_DIR$/zero-service-login/zero-service-login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zero-service-map/zero-service-map.iml" filepath="$PROJECT_DIR$/zero-service-map/zero-service-map.iml" />
       <module fileurl="file://$PROJECT_DIR$/zero-service-parent/zero-service-parent.iml" filepath="$PROJECT_DIR$/zero-service-parent/zero-service-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/zero_world.iml" filepath="$PROJECT_DIR$/.idea/zero_world.iml" />
     </modules>

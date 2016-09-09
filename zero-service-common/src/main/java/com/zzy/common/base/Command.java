@@ -144,4 +144,9 @@ public interface Command {
      * 怪物生成
      */
     String MONSTER_PRODUCE = "monsterProduce";
+    //-------------------------地图指令----------------------
+    /**
+     * 切换地图(传送门)
+     */
+    String MAP_CHANGE = "mapChange";
 }
