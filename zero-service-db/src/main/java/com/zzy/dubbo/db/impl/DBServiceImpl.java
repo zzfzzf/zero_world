@@ -59,7 +59,7 @@ public class DBServiceImpl implements DBService {
 	}
 
 	@Override
-	public Set<?> Setkeys(String pattern) {
+	public Set<?> setkeys(String pattern) {
 		return jedis.keys(pattern);
 	}
 

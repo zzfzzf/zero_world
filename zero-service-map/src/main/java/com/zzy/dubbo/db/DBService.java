@@ -58,7 +58,7 @@ public interface DBService {
     /**
      * 获取对象
      */
-     Object getObj(String key, Class<? extends Object> c)throws Exception;
+     Object getObj(String key, Class<? extends Object> c) throws Exception;
     
     
 

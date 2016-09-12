@@ -12,6 +12,10 @@
 
     <artifactId>zero-service-map</artifactId>
     <dependencies>
+        <dependency>
+            <groupId>com.zzy</groupId>
+            <artifactId>zero-service-common</artifactId>
+        </dependency>
         <!-- JSON 依赖 -->
         <dependency>
             <groupId>com.alibaba</groupId>

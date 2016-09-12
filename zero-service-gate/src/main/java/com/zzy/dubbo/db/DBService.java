@@ -71,7 +71,7 @@ public interface DBService {
     /**
      * 通过正则匹配keys
      */
-    public abstract Set<?> Setkeys(String pattern); 
+    public abstract Set<?> setkeys(String pattern);
 
     /**
      * 检查key是否已经存在

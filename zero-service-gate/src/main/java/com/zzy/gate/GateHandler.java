@@ -8,6 +8,7 @@ import com.zzy.common.util.BroadcastUtil;
 import com.zzy.common.util.HttpUtil;
 import com.zzy.dubbo.db.DBService;
 import com.zzy.dubbo.logic.*;
+import com.zzy.dubbo.map.IMap;
 import org.apache.log4j.Logger;
 import org.apache.mina.core.service.IoAcceptor;
 import org.apache.mina.core.service.IoHandlerAdapter;
@@ -35,7 +36,7 @@ public class GateHandler extends IoHandlerAdapter implements Command {
     private IRole roleLogic;
     private IMonster monsterLogic;
     private IoAcceptor acceptor;
-
+    private IMap mapLogic;
     public GateHandler(IoAcceptor acceptor) {
         this.acceptor = acceptor;
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"applicationClient.xml"});
@@ -48,6 +49,7 @@ public class GateHandler extends IoHandlerAdapter implements Command {
         otherLogic = (IOther) context.getBean("otherLogic");
         roleLogic = (IRole) context.getBean("roleLogic");
         monsterLogic = (IMonster) context.getBean("monsterLogic");
+        mapLogic = (IMap) context.getBean("mapLogic");
     }
 
     // 当一个客户端连接进入时
