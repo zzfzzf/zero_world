@@ -10,8 +10,8 @@ public class EasyString {
 	/**
 	 * 判断是否为null并处理String对象 
 	 */
-	public static boolean trimAndValue(String message){
-		return message==null?false:(message=message.trim())!=null;
+	public static String trimAndValue(String message){
+		return message==null?null:message.trim();
 	}
 }
 

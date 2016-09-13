@@ -34,7 +34,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="demo" target="1.8" />
-      <module name="SimpleWeb" target="1.8" />
+      <module name="SimpleWeb" target="1.6" />
       <module name="zero-service-common" target="1.8" />
       <module name="zero-service-db" target="1.8" />
       <module name="zero-service-gate" target="1.8" />

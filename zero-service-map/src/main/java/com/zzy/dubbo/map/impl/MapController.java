@@ -1,7 +1,6 @@
 package com.zzy.dubbo.map.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.zzy.common.util.Nothing;
 import com.zzy.dubbo.db.DBService;
 import com.zzy.dubbo.map.IMap;
 import org.apache.log4j.Logger;
@@ -27,7 +26,7 @@ public class MapController implements IMap {
         context.start();
         dbService = (DBService)context.getBean("dbService");
         init();
-        log.info("地图池初始化完成");
+
     }
 
     private void init(){
@@ -36,9 +35,9 @@ public class MapController implements IMap {
             if(xxxMapList==null){
                 dbService.setObj("xxxMapList",new ArrayList<Arrays>());
             }
-
+            log.info("地图池初始化完成");
         } catch (Exception e) {
-           log.error("对象强转异常");
+            log.error("对象强转异常");
         }
     }
 
