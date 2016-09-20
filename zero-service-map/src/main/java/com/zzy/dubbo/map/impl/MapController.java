@@ -5,9 +5,10 @@ import com.zzy.dubbo.db.DBService;
 import com.zzy.dubbo.map.IMap;
 import org.apache.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
+import java.util.*;
+
+import static com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResolver.iterator;
 
 /**
  * @author zeus
@@ -16,8 +17,7 @@ import java.util.List;
  * @describe:地图控制器
  */
 public class MapController implements IMap {
-
-    private List<Arrays> xxxMapList = null;// 声明地图容器变量
+    Map<String,Object> mapPond = null;
     private static Logger log = Logger.getLogger(MapController.class);
 
     DBService dbService = null;
@@ -26,18 +26,29 @@ public class MapController implements IMap {
         context.start();
         dbService = (DBService)context.getBean("dbService");
         init();
-
     }
 
     private void init(){
         try {
-          xxxMapList=(List<Arrays>)dbService.getObj("xxxMap", ArrayList.class);
-            if(xxxMapList==null){
-                dbService.setObj("xxxMapList",new ArrayList<Arrays>());
+            mapPond = (Map<String, Object>) dbService.getObj("mapPond",HashMap.class);
+            if(mapPond == null){
+                initMap(mapPond);
             }
             log.info("地图池初始化完成");
         } catch (Exception e) {
             log.error("对象强转异常");
+        }
+    }
+
+    private void initMap(Map tempMapPond){
+        // 获取到地图列表 创建地图名字和数组 存入m
+        List<Map<String,Object>> mapNames=null;
+        Iterator<Map<String,Object>> it=mapNames.iterator();
+        while(it.hasNext()){
+            Map<String,Object> tempMap = it.next();
+            tempMap.get("name");
+            tempMap.get("width");
+            tempMap.get("height");
         }
     }
 

@@ -18,7 +18,9 @@ public class MonsterController implements IMonster {
     }
 
     @Override
-    public JSONObject mosterProduce(JSONObject json) {
+    public JSONObject monsterProduce(JSONObject json) {
         return null;
     }
+
+
 }
