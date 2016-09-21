@@ -8,7 +8,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.*;
 
-import static com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResolver.iterator;
 
 /**
  * @author zeus
@@ -17,6 +16,7 @@ import static com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResol
  * @describe:地图控制器
  */
 public class MapController implements IMap {
+    private int baseGrid = 500;
     Map<String,Object> mapPond = null;
     private static Logger log = Logger.getLogger(MapController.class);
 
@@ -32,40 +32,38 @@ public class MapController implements IMap {
         try {
             mapPond = (Map<String, Object>) dbService.getObj("mapPond",HashMap.class);
             if(mapPond == null){
-                initMap(mapPond);
+                initMap();
             }
             log.info("地图池初始化完成");
         } catch (Exception e) {
-            log.error("对象强转异常");
+            log.error("地图初始化错误----"+e.getMessage());
         }
     }
 
-    private void initMap(Map tempMapPond){
+    private void initMap() throws Exception {
         // 获取到地图列表 创建地图名字和数组 存入m
         List<Map<String,Object>> mapNames=null;
-        Iterator<Map<String,Object>> it=mapNames.iterator();
-        while(it.hasNext()){
-            Map<String,Object> tempMap = it.next();
-            tempMap.get("name");
-            tempMap.get("width");
-            tempMap.get("height");
+        if(mapNames != null){
+            mapPond=new HashMap<String,Object>();
+            Iterator<Map<String,Object>> it=mapNames.iterator();
+            while(it.hasNext()){
+                Map<String,Object> tempMap = it.next();
+                mapPond.put((String)tempMap.get("name"),new Object[(Integer)tempMap.get("width")][(Integer)tempMap.get("height")]);
+            }
         }
+        throw new NullPointerException("地图列表不能为null");
     }
 
-    @Override
-    public JSONObject showList(JSONObject json) {
 
-        return json;
-    }
-
-    @Override
-    public JSONObject intoMap(JSONObject json) {
-        return json;
-    }
-
-    @Override
     public JSONObject mapChange(JSONObject json) {
-        return json;
+        return null;
     }
 
+    public JSONObject showList(JSONObject json) {
+        return null;
+    }
+
+    public JSONObject intoMap(JSONObject json) {
+        return null;
+    }
 }

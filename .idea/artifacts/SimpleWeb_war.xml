@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="SimpleWeb:war">
     <output-path>$PROJECT_DIR$/SimpleWeb/target</output-path>
-    <root id="archive" name="spring-boot-starter-parent-1.3.3.RELEASE.war">
+    <root id="archive" name="SimpleWeb-0.0.1-SNAPSHOT.war">
       <element id="artifact" artifact-name="SimpleWeb:war exploded" />
     </root>
   </artifact>
