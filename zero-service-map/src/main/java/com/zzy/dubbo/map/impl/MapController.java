@@ -41,15 +41,12 @@ public class MapController implements IMap {
     }
 
     private void initMap() throws Exception {
-
         // 获取到地图列表 创建地图名字和数组 存入  统一初始化
         List<JSONObject> mapNames= (List<JSONObject>) dbService.getObj("mapNames",List.class);
         if(mapNames != null){
             mapPond=new JSONObject();
-            Iterator<JSONObject> it=mapNames.iterator();
-            while(it.hasNext()){
-                Map<String,Object> tempMap = it.next();
-                mapPond.put((String)tempMap.get("name"),new Object[(Integer)tempMap.get("width")][(Integer)tempMap.get("height")]);
+            for (JSONObject tempMap : mapNames) {
+                mapPond.put(tempMap.getString("name"), new Object[tempMap.getInteger("width")/baseGrid][tempMap.getInteger("height")/baseGrid]);
             }
         }
         throw new NullPointerException("地图列表不能为null");
