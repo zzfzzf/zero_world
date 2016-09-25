@@ -1,55 +1,8 @@
-	ZooKeeper
-	RMI (Remote method invocation) 远程方法调用 ejb基于此
-	RPC (Remote Procedure Call)	远程过程调用 dubbo基于此
-	EJB	部署分布式应用程序 基于rmi实现
-	JMS  (java message service) java队列消息协议 消息由头(head) 属性(property) 主体(body) 组成
-支持两种消息传递模型: 点对点(ptp) 和 发布/订阅(pub/sub) 简单来说就是一对一传递和一对多传递
-ActiveMQ基于此
-	ActiveMQ 安全支持JMS Provider实现
-	SOA
-	MAVEN
-	GIT
-	SVN
-	Socket
-	Mina
-	Object
-	Mysql
-
-	Hibernate
-	Mybatis
-
-
-	Spring boot 
-
-	Spring data jpa
-	Spring mvc
-
-	
-	MongoDb
-	Redis
-
-
-	Swagger UI
-
-	JQuery
-
-	Struts
-
-
-        Lucene elitecsearch
-
-	Ocr
-
-        Nginx
-	JRMP(没看）
-	
-	Linux
-	reactor模式
-	AtomicInteger 线程安全integer
-	spel(spring 表达式 类似eval)
-	java函数式编程
-
-生成moster 广播
-各客户端渲染
-血条由服务端控制 每次被攻击判断 如果死亡 直接向客户端发送掉落和怪物死亡信息
-
+桑普多利亚 ac米兰 平
+切尔西 利物浦 平 平胜 2:1 2:2 
+皇家贝蒂斯 格拉纳达  胜 平胜 1:0 0:0
+横滨松鼠 天鹅 平 平胜 2:1 1:1 
+大宫松鼠 负 平负
+东京fc 浦和红钻 负 平负
+巴塞罗那  负 负负
+埃弗顿 胜 胜胜 平胜 1:0 2:0 
