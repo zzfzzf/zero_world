@@ -116,10 +116,11 @@ public class GateHandler extends IoHandlerAdapter implements Command {
                 break;
             case ONLINE_NUM: // 获取在线人数
                 tempAcceeptor = null;
-                ResultValue.success(json).put("data", acceptor.getManagedSessionCount());
+                ResultValue.success(json,acceptor.getManagedSessionCount());
                 break;
             case OFFLINE: // 角色下线
                 statusLogic.offline(json);
+                mapLogic.outMap(json);
                 break;
             case MOVE: // 移动
                 roleLogic.move(json);

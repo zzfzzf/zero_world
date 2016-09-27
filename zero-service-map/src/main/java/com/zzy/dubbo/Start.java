@@ -1,5 +1,6 @@
 package com.zzy.dubbo;
 
+import com.zzy.common.util.Nothing;
 import org.apache.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

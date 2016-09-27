@@ -20,4 +20,9 @@ public interface IMap {
      * 进入地图
      */
     JSONObject intoMap(JSONObject json);
+
+    /**
+     * 离开地图
+     */
+    JSONObject outMap(JSONObject json);
 }

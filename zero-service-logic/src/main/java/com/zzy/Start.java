@@ -1,4 +1,4 @@
-package com.zzy.dubbo.logic;
+package com.zzy;
 
 import java.io.IOException;
 

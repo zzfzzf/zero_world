@@ -1,5 +1,7 @@
 package com.zzy.service.gate;
 
+import com.alibaba.dubbo.common.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -17,11 +19,12 @@ public class Test extends A {
 		new Test().init();
 	}
 	public void init() throws IOException{
-            int a = 1;
-           Integer b = 2;
-            boolean c = true;
-
-            System.out.println(c);
+        JSONObject json=new JSONObject();
+        Object[][] objs = new Object[2][2] ;
+        objs[0][0] = 0;
+        objs[0][1] = 1;
+        json.put("arr",objs);
+        System.out.println(json.getArray("arr"));
 	}
 	public void K(String test){
 		test+="c";

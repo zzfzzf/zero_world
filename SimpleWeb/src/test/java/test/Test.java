@@ -8,6 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 
+import com.alibaba.fastjson.JSONObject;
 import com.zzy.domain.base.GRole;
 
 /**
@@ -19,6 +20,21 @@ import com.zzy.domain.base.GRole;
 public class Test {
 	public static int count=0;
 	public static void main(String[] args) throws Exception {
+		Object[][] o = new Object[2][1];
+		o[1][0]=10;
+		JSONObject json = new JSONObject();
+		json.put("o",o);
+		Object[][] ko = (Object[][]) json.get("o");
+		System.out.println(ko[1][0]);
+
+
+
+
+
+
+
+
+
 		List list=new ArrayList();
 		Test.test(() -> System.out.print("花式fuckworld！"));
 		}

@@ -2,6 +2,8 @@ package com.zzy.common.base;
 
 import com.alibaba.fastjson.JSONObject;
 
+import java.util.ArrayList;
+
 /**
 * @author Zeus
 * @version 1.1
@@ -45,10 +47,7 @@ public class ResultValue {
      * 操作成功 返回传入json
      */
     public static JSONObject success(JSONObject json){
-        json.put("status", SUCCESS);
-        json.put("data", null);
-        json.put("message", "操作成功");
-        return json;
+       return success(json,null);
     }
 
 

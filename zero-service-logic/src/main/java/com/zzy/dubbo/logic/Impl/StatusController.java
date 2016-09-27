@@ -22,14 +22,12 @@ public class StatusController implements IStatus {
 
 	@Override
 	public JSONObject area(JSONObject json) throws Exception {
-		HttpUtil.getJson(UrlCommon.GET_ROLE_BY_AREA + json.getString("areaId"), json);
-		return json;
+		return HttpUtil.getJson(UrlCommon.GET_ROLE_BY_AREA + json.getString("areaId"), json);
 	}
 
 	@Override
 	public JSONObject role(JSONObject json) throws Exception {
-		HttpUtil.getJson(UrlCommon.GET_ROLE, json);
-		return json;
+		return HttpUtil.getJson(UrlCommon.GET_ROLE, json);
 	}
 }
 

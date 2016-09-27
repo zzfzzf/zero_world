@@ -1,6 +1,7 @@
 package com.zzy.dubbo.map.impl;
 
 import com.alibaba.fastjson.JSONObject;
+import com.zzy.common.base.BasicSetting;
 import com.zzy.dubbo.db.DBService;
 import com.zzy.dubbo.map.IMap;
 import org.apache.log4j.Logger;
@@ -11,48 +12,54 @@ import java.util.*;
 
 /**
  * @author zeus
- * @date 2016年9月9日
  * @version 1.0
+ * @date 2016年9月9日
  * @describe:地图控制器
  */
 public class MapController implements IMap {
-    private int baseGrid = 500;
     JSONObject mapPond = null;
     private static Logger log = Logger.getLogger(MapController.class);
 
     DBService dbService = null;
-    public MapController(){
+
+    public MapController() {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"applicationClient.xml"});
         context.start();
-        dbService = (DBService)context.getBean("dbService");
+        dbService = (DBService) context.getBean("dbService");
         init();
     }
 
-    private void init(){
+    private void init() {
         try {
-            mapPond = (JSONObject) dbService.getObj("mapPond",JSONObject.class);
-            if(mapPond == null){
+            mapPond = (JSONObject) dbService.getObj("mapPond", JSONObject.class);
+            if (mapPond == null) {
                 initMap();
             }
             log.info("地图池初始化完成");
         } catch (Exception e) {
-            log.error("地图初始化错误----"+e.getMessage());
+            log.error("地图初始化错误----" + e.getMessage());
         }
     }
 
     private void initMap() throws Exception {
         // 获取到地图列表 创建地图名字和数组 存入  统一初始化
-        List<JSONObject> mapNames= (List<JSONObject>) dbService.getObj("mapNames",List.class);
-        if(mapNames != null){
-            mapPond=new JSONObject();
-            for (JSONObject tempMap : mapNames) {
-                mapPond.put(tempMap.getString("name"), new Object[tempMap.getInteger("width")/baseGrid][tempMap.getInteger("height")/baseGrid]);
+        List<JSONObject> maps = (List) dbService.getObj("maps", List.class);
+        if (maps != null) {
+            mapPond = new JSONObject();
+            for (JSONObject tempMap : maps) {
+                Object[][] obj = new Object[tempMap.getInteger("width") / BasicSetting.BASE_AIR_GRID][tempMap.getInteger("height") / BasicSetting.BASE_AIR_GRID];
+                for(int i=0;i<obj.length;i++){
+                    for(int j=0;j<obj[i].length;j++){
+                        obj[i][j] = new ArrayList();
+                    }
+                }
+                mapPond.put(tempMap.getString("id"), obj);
+                dbService.setObj("mapPond", mapPond);
             }
         }
         throw new NullPointerException("地图列表不能为null");
     }
 
-    @Override
     public JSONObject mapChange(JSONObject json) {
         return null;
     }
@@ -63,5 +70,11 @@ public class MapController implements IMap {
 
     public JSONObject intoMap(JSONObject json) {
         return null;
+    }
+
+    public JSONObject outMap(JSONObject json) {
+        Object[][] objs = (Object[][]) mapPond.get(json.getString("mapId"));
+
+        return json;
     }
 }
