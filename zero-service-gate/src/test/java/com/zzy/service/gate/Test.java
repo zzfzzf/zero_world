@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
 * @author Zeus
@@ -21,10 +23,11 @@ public class Test extends A {
 	public void init() throws IOException{
         JSONObject json=new JSONObject();
         Object[][] objs = new Object[2][2] ;
-        objs[0][0] = 0;
-        objs[0][1] = 1;
+            List l=new ArrayList();
+            l.add(100);
+        objs[0][0] = l;
         json.put("arr",objs);
-        System.out.println(json.getArray("arr"));
+        System.out.println(((List)objs[0][0]).get(0));
 	}
 	public void K(String test){
 		test+="c";

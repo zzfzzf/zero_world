@@ -122,10 +122,11 @@ public class GateHandler extends IoHandlerAdapter implements Command {
                 statusLogic.offline(json);
                 mapLogic.outMap(json);
                 break;
-            case MOVE: // 移动
+            case MOVE: // 移动 暂定
                 roleLogic.move(json);
+                mapLogic.mapChange(json);
                 break;
-            case ATTACK: // 攻击
+            case ATTACK: // 攻击 暂定
                 roleLogic.attack(json);
                 break;
             case ADD_ITEM:    // 添加物品

@@ -2,6 +2,7 @@ package com.zzy.dubbo.map.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zzy.common.base.BasicSetting;
+import com.zzy.common.util.Nothing;
 import com.zzy.dubbo.db.DBService;
 import com.zzy.dubbo.map.IMap;
 import org.apache.log4j.Logger;
@@ -73,8 +74,11 @@ public class MapController implements IMap {
     }
 
     public JSONObject outMap(JSONObject json) {
-        Object[][] objs = (Object[][]) mapPond.get(json.getString("mapId"));
-
+        List<JSONObject>[][] objs = (List[][]) mapPond.get(json.getString("mapId"));
+        Iterator<JSONObject> it = objs[json.getInteger("x")][json.getInteger("y")].iterator();
+        while(it.hasNext()){
+            Nothing.doNothing(it.next().get("roleId").equals(json.get("roleId"))?it.remove():Nothing.doNothing());
+        }
         return json;
     }
 }
