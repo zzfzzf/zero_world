@@ -1,7 +1,7 @@
 package com.zzy.service.cross;
 
 import com.zzy.domain.cross.GBagItem;
-import com.zzy.service.common.BaseService;
+import com.zzy.base.BaseService;
 
 /**
 * @author Zeus

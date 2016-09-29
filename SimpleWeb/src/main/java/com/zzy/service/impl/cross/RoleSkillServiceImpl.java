@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.zzy.domain.cross.GRoleSkill;
 import com.zzy.repository.cross.RoleSkillRepository;
 import com.zzy.service.cross.RoleSkillService;
-import com.zzy.service.impl.common.BaseServiceImp;
+import com.zzy.base.BaseServiceImp;
 /**
 * @author Zeus
 * @version 1.1

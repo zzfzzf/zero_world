@@ -1,8 +1,7 @@
 
 package com.zzy.dubbo.logic;
 
-import com.alibaba.dubbo.common.json.JSONObject;
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 
 /**
  * @author zeus

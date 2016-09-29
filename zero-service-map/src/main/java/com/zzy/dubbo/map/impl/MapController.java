@@ -2,6 +2,8 @@ package com.zzy.dubbo.map.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zzy.common.base.BasicSetting;
+import com.zzy.common.base.UrlCommon;
+import com.zzy.common.util.HttpUtil;
 import com.zzy.common.util.Nothing;
 import com.zzy.dubbo.db.DBService;
 import com.zzy.dubbo.map.IMap;
@@ -44,17 +46,18 @@ public class MapController implements IMap {
 
     private void initMap() throws Exception {
         // 获取到地图列表 创建地图名字和数组 存入  统一初始化
-        List<JSONObject> maps = (List) dbService.getObj("maps", List.class);
-        if (maps != null) {
+        List<Map<String,Object>> mapList = (List) (HttpUtil.getJson(UrlCommon.GET_MAP).get("data"));
+        if (mapList != null) {
             mapPond = new JSONObject();
-            for (JSONObject tempMap : maps) {
-                Object[][] obj = new Object[tempMap.getInteger("width") / BasicSetting.BASE_AIR_GRID][tempMap.getInteger("height") / BasicSetting.BASE_AIR_GRID];
+            for (Object tempMap : mapList) {
+                JSONObject jMap = (JSONObject) JSONObject.toJSON(tempMap);
+                Object[][] obj = new Object[jMap.getInteger("width") / BasicSetting.BASE_AIR_GRID][jMap.getInteger("height") / BasicSetting.BASE_AIR_GRID];
                 for(int i=0;i<obj.length;i++){
                     for(int j=0;j<obj[i].length;j++){
                         obj[i][j] = new ArrayList();
                     }
                 }
-                mapPond.put(tempMap.getString("id"), obj);
+                mapPond.put(jMap.getString("id"), obj);
                 dbService.setObj("mapPond", mapPond);
             }
         }

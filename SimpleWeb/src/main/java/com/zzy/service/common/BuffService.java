@@ -1,7 +1,6 @@
 package com.zzy.service.common;
 
-import java.util.List;
-
+import com.zzy.base.BaseService;
 import com.zzy.domain.base.GBuff;
 
 /**
@@ -10,5 +9,5 @@ import com.zzy.domain.base.GBuff;
 * @createTime：2016年7月12日 
 * @decript:
 */
-public interface BuffService extends BaseService<GBuff>{
+public interface BuffService extends BaseService<GBuff> {
 }

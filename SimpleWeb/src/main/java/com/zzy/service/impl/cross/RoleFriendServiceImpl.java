@@ -7,10 +7,9 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
 import com.zzy.domain.cross.GRoleFriend;
-import com.zzy.domain.cross.GRoleSkill;
 import com.zzy.repository.cross.RoleFriendRepository;
 import com.zzy.service.cross.RoleFriendService;
-import com.zzy.service.impl.common.BaseServiceImp;
+import com.zzy.base.BaseServiceImp;
 /**
 * @author Zeus
 * @version 1.1

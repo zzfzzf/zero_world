@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.zzy.domain.cross.GRoleBuff;
 import com.zzy.repository.cross.RoleBuffRepository;
 import com.zzy.service.cross.RoleBuffService;
-import com.zzy.service.impl.common.BaseServiceImp;
+import com.zzy.base.BaseServiceImp;
 /**
 * @author Zeus
 * @version 1.1

@@ -1,15 +1,11 @@
 package test;
 
-import java.beans.IntrospectionException;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-import java.util.function.Consumer;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zzy.domain.base.GRole;
+import springfox.documentation.spring.web.json.Json;
 
 /**
  * @author zero
@@ -20,23 +16,13 @@ import com.zzy.domain.base.GRole;
 public class Test {
 	public static int count=0;
 	public static void main(String[] args) throws Exception {
-		Object[][] o = new Object[2][1];
-		o[1][0]=10;
-		JSONObject json = new JSONObject();
-		json.put("o",o);
-		Object[][] ko = (Object[][]) json.get("o");
-		System.out.println(ko[1][0]);
-
-
-
-
-
-
-
-
-
-		List list=new ArrayList();
-		Test.test(() -> System.out.print("花式fuckworld！"));
+		 JSONObject json=new JSONObject();
+		List list = new ArrayList();
+		list.add(1);
+		list.add(2);
+		json.put("list",list);
+		JSONObject j= JSONObject.parseObject(json.toJSONString());
+		System.out.print(((List)j.get("list")).get(0));
 		}
 
 	public static void test(Runnable o) throws Exception {
@@ -46,28 +32,3 @@ public class Test {
 	 
 }
 
-class A extends C {
-	public static void test(Runnable o) {
-		o.run();
-	} 
-} 
-
-class B extends C {
-	public void test() {
-		System.out.println(this.role);
-	}
-}
-
-class C {
-	public GRole role=null;
-	public C(){
-		this.role=D.role;
-	}
-}
-
-class D {
-	public static GRole role = new GRole();
-	public D(){
-		System.out.println("初始化 D");
-	}
-}

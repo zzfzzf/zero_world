@@ -1,7 +1,10 @@
 
 package com.zzy.dubbo.logic.Impl;
 
-import com.alibaba.dubbo.common.json.JSONObject;
+
+import com.alibaba.fastjson.JSONObject;
+import com.zzy.common.base.UrlCommon;
+import com.zzy.common.util.HttpUtil;
 import com.zzy.dubbo.logic.ITrade;
 
 /**
@@ -14,6 +17,7 @@ public class TradeController implements ITrade{
 
 	@Override
 	public JSONObject addItem(JSONObject json) {
+		json.put("item", HttpUtil.getJson(UrlCommon.GET_ITEM).get("data"));
 		return null;
 	}
 

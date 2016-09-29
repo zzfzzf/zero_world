@@ -1,5 +1,6 @@
 package com.zzy.service.common;
 
+import com.zzy.base.BaseService;
 import com.zzy.domain.base.GGenius;
 
 /**
@@ -8,5 +9,5 @@ import com.zzy.domain.base.GGenius;
 * @createTime：2016年6月30日 
 * @decript:
 */
-public interface GeniusService extends BaseService<GGenius>{
+public interface GeniusService extends BaseService<GGenius> {
 }

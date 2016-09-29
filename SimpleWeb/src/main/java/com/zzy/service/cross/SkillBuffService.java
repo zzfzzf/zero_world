@@ -1,8 +1,7 @@
 package com.zzy.service.cross;
 
-import com.zzy.domain.base.GRole;
 import com.zzy.domain.cross.GSkillBuff;
-import com.zzy.service.common.BaseService;
+import com.zzy.base.BaseService;
 
 /**
 * @author Zeus

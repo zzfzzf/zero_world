@@ -1,12 +1,12 @@
 package com.zzy.service.impl.common;
 
 import com.zzy.base.BaseServiceImp;
+import com.zzy.domain.base.GMap;
+import com.zzy.service.common.MapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
-import com.zzy.domain.base.GEquip;
-import com.zzy.service.common.EquipService;
 /**
 * @author Zeus
 * @version 1.1
@@ -14,9 +14,9 @@ import com.zzy.service.common.EquipService;
 * @decript:
 */
 @Service
-public class EquipServiceImpl extends BaseServiceImp<GEquip> implements EquipService{
+public class MapServiceImpl extends BaseServiceImp<GMap> implements MapService{
 	@Autowired
-	public EquipServiceImpl(CrudRepository<GEquip, String> crudRepository) {
+	public MapServiceImpl(CrudRepository<GMap, String> crudRepository) {
 		super(crudRepository);
-	} 
+	}
 }

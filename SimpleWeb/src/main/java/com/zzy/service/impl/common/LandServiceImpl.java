@@ -1,8 +1,8 @@
 package com.zzy.service.impl.common;
 
-import java.util.List;
 import java.util.Set;
 
+import com.zzy.base.BaseServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,9 @@
 package com.zzy.controller;
 
-import java.util.List;
 import java.util.Objects;
 
+import com.zzy.base.BaseController;
+import com.zzy.base.BaseDefine;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSONObject;
-import com.zzy.base.UUIDUtils;
+import com.zzy.utils.UUIDUtils;
 import com.zzy.common.base.ResultValue;
 import com.zzy.domain.base.ZUser;
 
@@ -29,25 +30,19 @@ public class UserController extends BaseController {
 	@ApiOperation(value = "获取user", notes = "获取user列表")
 	@RequestMapping(value = { "/user" }, method = RequestMethod.GET)
 	public JSONObject listUser() {
-		List<ZUser> userList = userService.findByStatusNot(10);
-		return ResultValue.success(userList); 
+		return ResultValue.success(userService.findByStatusNot(10));
 	}
 
 	@ApiOperation(value = "根据username获取user", notes = "根据username获取user")
 	@RequestMapping(value = { "/user/username/{username}" }, method = RequestMethod.GET)
 	public JSONObject getUserByUsername(@PathVariable String username) {
-		ZUser user=userService.findByUsername(username);
-		return ResultValue.success(user);
+		return ResultValue.success(userService.findByUsername(username));
 	}
 	
 	@ApiOperation(value = "登录验证", notes = "用户登录验证")
 	@RequestMapping(value = { "/user/login" }, method = RequestMethod.POST)
 	public JSONObject login(@RequestBody ZUser user) {
-		JSONObject result = ResultValue.success();
-		if(userService.login(user)){ 
-			result = ResultValue.fail(ResultValue.LOGIN_FAIL, "登录失败"); 
-		} 
-		return result;
+		return userService.login(user)?ResultValue.success():ResultValue.fail(ResultValue.LOGIN_FAIL, "登录失败");
 	}
 	
 	@ApiOperation(value = "创建user", notes = "根据User对象创建用户")
@@ -67,8 +62,7 @@ public class UserController extends BaseController {
 		if (Objects.isNull(id)) {
 			return ResultValue.requireNonNull();
 		}
-		ZUser user = userService.get(id);
-		return ResultValue.success(user);
+		return ResultValue.success( userService.get(id));
 	}
 
 	@ApiOperation(value = "更新user详细信息", notes = "根据url的id来指定更新对象，并根据传过来的user信息来更新用户详细信息")
@@ -82,13 +76,13 @@ public class UserController extends BaseController {
 	}
 
 	@ApiOperation(value = "删除user", notes = "根据url的id来指定删除对象")
-	@RequestMapping(value = "user/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
 	public JSONObject deleteUser(@PathVariable String id) {
 		if(Objects.isNull(id)){
 			return ResultValue.requireNonNull();
 		}
 		ZUser user = new ZUser(); 
-		user.setStatus(10);
+		user.setStatus(BaseDefine.DELETE_CODE);
 		user.setId(id);
 		userService.update(user);
 		return ResultValue.success();

@@ -3,6 +3,8 @@ package com.zzy.controller;
 import java.util.List;
 import java.util.Objects;
 
+import com.zzy.base.BaseController;
+import com.zzy.base.BaseDefine;
 import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,8 +31,7 @@ public class AreaController extends BaseController {
 	@ApiOperation(value = "获取area", notes = "获取area列表")
 	@RequestMapping(value = { "/area" }, method = RequestMethod.GET)
 	public JSONObject listArea() {  
-		List<GArea> areaList = areaService.list();
-		return ResultValue.success(areaList);
+		return ResultValue.success(areaService.list());
 		
 	}
  
@@ -50,8 +51,7 @@ public class AreaController extends BaseController {
 		if(Objects.isNull(id)){
 			return ResultValue.requireNonNull();
 		}
-		GArea area = areaService.get(id);
-		return ResultValue.success(area);
+		return ResultValue.success(areaService.get(id));
 	}
 
 	@ApiOperation(value = "更新area详细信息", notes = "根据url的id来指定更新对象，并根据传过来的area信息来更新用户详细信息")
@@ -65,13 +65,13 @@ public class AreaController extends BaseController {
 	}
 
 	@ApiOperation(value = "删除area", notes = "根据url的id来指定删除对象")
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/area/{id}", method = RequestMethod.DELETE)
 	public JSONObject deleteArea(@PathVariable String id) {
 		if(Objects.isNull(id)){
 			return ResultValue.requireNonNull();
 		}   
 		GArea area = areaService.get(id);
-		area.setStatus(10);
+		area.setStatus(BaseDefine.DELETE_CODE);
 		areaService.update(area);
 		return ResultValue.success();
 	}

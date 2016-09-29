@@ -1,13 +1,12 @@
-package com.zzy.service.impl.common;
+package com.zzy.base;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Service;
 
-import com.zzy.service.common.BaseService;
+import com.zzy.base.BaseService;
 
 /**
  * @author zero

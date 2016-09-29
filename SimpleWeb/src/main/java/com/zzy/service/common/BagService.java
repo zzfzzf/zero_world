@@ -1,5 +1,6 @@
 package com.zzy.service.common;
 
+import com.zzy.base.BaseService;
 import com.zzy.domain.base.GBag;
 
 /**
@@ -8,6 +9,6 @@ import com.zzy.domain.base.GBag;
 * @createTime：2016年7月12日 
 * @decript:
 */
-public interface BagService extends BaseService<GBag>{ 
+public interface BagService extends BaseService<GBag> {
    
 }

@@ -1,11 +1,10 @@
-package com.zzy.service.common;
+package com.zzy.base;
 
 import java.util.List;
 
 /** 
 * @author zero
 * @version 1.0.0
-* @param <E>
 * @date:2016年4月1日
 * @description:
 */

@@ -103,19 +103,19 @@ public class GateHandler extends IoHandlerAdapter implements Command {
             session.write(ResultValue.success(json));
         }
         // 如果为null 则不广播 默认为广播
-        IoAcceptor tempAcceeptor = acceptor;
+        IoAcceptor tempAcceptor = acceptor;
         List<Long> list = null;
         switch (command) {
             case ROLE:// 选择角色
-                tempAcceeptor = null;
+                tempAcceptor = null;
                 statusLogic.role(json);
                 break;
             case AREA:// 选择大区
-                tempAcceeptor = null;
+                tempAcceptor = null;
                 statusLogic.area(json);
                 break;
             case ONLINE_NUM: // 获取在线人数
-                tempAcceeptor = null;
+                tempAcceptor = null;
                 ResultValue.success(json,acceptor.getManagedSessionCount());
                 break;
             case OFFLINE: // 角色下线
@@ -129,58 +129,58 @@ public class GateHandler extends IoHandlerAdapter implements Command {
             case ATTACK: // 攻击 暂定
                 roleLogic.attack(json);
                 break;
-            case ADD_ITEM:    // 添加物品
+            case ADD_ITEM: // 添加物品
                 tradeLogic.addItem(json);
                 break;
-            case ADD_MONEY:// 添加金钱
+            case ADD_MONEY: // 添加金钱
                 tradeLogic.addMoney(json);
                 break;
-            case CHAT:// 聊天
+            case CHAT: // 聊天
                 roleLogic.chat(json);
                 break;
-            case CONFIRM_TRADE:// 确认交易
+            case CONFIRM_TRADE: // 确认交易
                 tradeLogic.confirmTrade(json);
                 break;
-            case DESTROY_ITEM:// 销毁物品
+            case DESTROY_ITEM: // 销毁物品
                 itemLogic.destroy(json);
                 break;
-            case GIVE_UP_ITEM:// 丢弃物品
+            case GIVE_UP_ITEM: // 丢弃物品
                 itemLogic.giveUpItem(json);
                 break;
-            case GIVE_UP_MONEY:// 丢弃金币
+            case GIVE_UP_MONEY: // 丢弃金币
                 moneyLogic.giveUpMoney(json);
                 break;
-            case PICK_UP_ITEM:// 拾取物品
+            case PICK_UP_ITEM: // 拾取物品
                 itemLogic.pickUpItem(json);
                 break;
-            case PICK_UP_MONEY:// 拾取金币
+            case PICK_UP_MONEY: // 拾取金币
                 moneyLogic.pickUpMoney(json);
                 break;
-            case PUT_ON_ITEM:// 装备物品
+            case PUT_ON_ITEM: // 装备物品
                 itemLogic.putOn(json);
                 break;
-            case RIDE:  // 骑乘
+            case RIDE: // 骑乘
                 roleLogic.ride(json);
                 break;
-            case SPLIT_ITEM:// 拆分物品
+            case SPLIT_ITEM: // 拆分物品
                 itemLogic.splitItem(json);
                 break;
-            case SKILL:// 使用技能
+            case SKILL: // 使用技能
                 roleLogic.skill(json);
                 break;
-            case STALL:// 摆摊
+            case STALL: // 摆摊
                 tradeLogic.stall(json);
                 break;
-            case TAKE_DOWN_ITEM:// 卸下物品
+            case TAKE_DOWN_ITEM: // 卸下物品
                 itemLogic.takeDown(json);
                 break;
-            case USE_ITEM:// 使用物品
+            case USE_ITEM: // 使用物品
                 itemLogic.useItem(json);
                 break;
-            case UPGRADE:// 升级
+            case UPGRADE: // 升级
                 roleLogic.upgrade(json);
                 break;
-            case ADD_EXP:// 增加经验
+            case ADD_EXP: // 增加经验
                 roleLogic.addExp(json);
                 break;
             case REDUCE_EXP:// 减少经验
@@ -194,7 +194,7 @@ public class GateHandler extends IoHandlerAdapter implements Command {
                 break;
         }
         // 广播
-        BroadcastUtil.sentMessage(list, tempAcceeptor, session, json);
+        BroadcastUtil.sentMessage(list, tempAcceptor, session, json);
     }
 
 

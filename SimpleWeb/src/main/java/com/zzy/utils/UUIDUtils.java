@@ -1,4 +1,4 @@
-package com.zzy.base;
+package com.zzy.utils;
 
 import java.util.UUID;
 

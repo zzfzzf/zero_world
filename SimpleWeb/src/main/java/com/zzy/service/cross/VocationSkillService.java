@@ -3,7 +3,7 @@ package com.zzy.service.cross;
 import java.util.List;
 
 import com.zzy.domain.cross.GVocationSkill;
-import com.zzy.service.common.BaseService;
+import com.zzy.base.BaseService;
 
 /**
 * @author Zeus

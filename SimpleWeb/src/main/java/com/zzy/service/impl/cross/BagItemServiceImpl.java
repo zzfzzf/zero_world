@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.zzy.domain.cross.GBagItem;
 import com.zzy.service.cross.BagItemService;
-import com.zzy.service.impl.common.BaseServiceImp;
+import com.zzy.base.BaseServiceImp;
 /**
 * @author Zeus
 * @version 1.1

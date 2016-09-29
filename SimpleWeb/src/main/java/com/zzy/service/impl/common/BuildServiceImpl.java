@@ -1,11 +1,11 @@
 package com.zzy.service.impl.common;
 
+import com.zzy.base.BaseServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
 import com.zzy.domain.base.GBuilding;
-import com.zzy.service.common.BuffService;
 import com.zzy.service.common.BuildService;
 /**
 * @author Zeus

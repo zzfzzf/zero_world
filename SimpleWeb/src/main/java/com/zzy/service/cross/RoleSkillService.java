@@ -2,10 +2,8 @@ package com.zzy.service.cross;
 
 import java.util.List;
 
-import org.springframework.data.jpa.repository.Query;
-
 import com.zzy.domain.cross.GRoleSkill;
-import com.zzy.service.common.BaseService;
+import com.zzy.base.BaseService;
 
 /**
 * @author Zeus

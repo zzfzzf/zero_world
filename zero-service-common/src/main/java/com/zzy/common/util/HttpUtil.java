@@ -101,4 +101,8 @@ public class HttpUtil {
         reader.close();
         return sb == null ? "" : sb.toString();
     }
+
+    public static Object getDataToJson(String url) throws Exception{
+        return getJson(url);
+    }
 }

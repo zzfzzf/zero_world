@@ -1,7 +1,7 @@
 package com.zzy.service.common;
 
 import com.zzy.base.BaseService;
-import com.zzy.domain.base.GEquip;
+import com.zzy.domain.base.GMap;
 
 /**
 * @author Zeus
@@ -9,5 +9,5 @@ import com.zzy.domain.base.GEquip;
 * @createTime：2016年6月30日 
 * @decript:
 */
-public interface EquipService extends BaseService<GEquip> {
+public interface MapService extends BaseService<GMap> {
 }

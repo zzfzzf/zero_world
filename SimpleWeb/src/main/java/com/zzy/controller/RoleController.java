@@ -4,6 +4,8 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
 
+import com.zzy.base.BaseController;
+import com.zzy.base.BaseDefine;
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSONObject;
-import com.zzy.base.UUIDUtils;
+import com.zzy.utils.UUIDUtils;
 import com.zzy.common.base.ResultValue;
 import com.zzy.domain.base.GRole;
 
@@ -34,8 +36,7 @@ public class RoleController extends BaseController {
 		if (Objects.isNull(user)) {
 			return ResultValue.requireNonNull();
 		}
-		GRole role=roleService.findByName(user);
-		return ResultValue.success(role);
+		return ResultValue.success(roleService.findByName(user));
 	}
 	  
 	@ApiOperation(value = "根据area获取role", notes = "")
@@ -43,29 +44,27 @@ public class RoleController extends BaseController {
 	public JSONObject getRoleByAreaId(@PathVariable String areaId) throws SQLException {
 		if (Objects.isNull(areaId)) {
 			return ResultValue.requireNonNull();
-		} 
-		List<GRole> roleList=roleService.findByAreaId(areaId);
-		return ResultValue.success(roleList);
+		}
+		return ResultValue.success(roleService.findByAreaId(areaId));
 	} 
 	
-	@ApiOperation(value = "获取role", notes = "")
+	@ApiOperation(value = "获取role", notes = "根据id获取role详情")
 	@RequestMapping(value = { "/role/{id}" }, method = RequestMethod.GET)
 	public JSONObject getRole(@PathVariable String id) throws SQLException {
 		if (Objects.isNull(id)) {
 			return ResultValue.requireNonNull();
 		}
-		GRole role=roleService.get(id);
-		return ResultValue.success(role);
+		return ResultValue.success(roleService.get(id));
 	}
 
-	@ApiOperation(value = "删除角色", notes = "")
+	@ApiOperation(value = "删除角色", notes = "根据id删除(假删除)role")
 	@RequestMapping(value = "/role/{id}", method = RequestMethod.DELETE)
 	public JSONObject deleteRole(@PathVariable String id) {
 		if (Objects.isNull(id)) {
 			return ResultValue.requireNonNull();
 		}
-		GRole role = roleService.get(id);
-		role.setStatus(10);
+		GRole role = new GRole(id);
+		role.setStatus(BaseDefine.DELETE_CODE);
 		roleService.update(role);
 		return ResultValue.success();
 	}
@@ -83,7 +82,7 @@ public class RoleController extends BaseController {
 	@ApiOperation(value = "获取角色列表", notes = "")
 	@RequestMapping(value = "/role", method = RequestMethod.GET)
 	public JSONObject listRole() {
-		List<GRole> list = roleService.findByStatusNot(10);
+		List<GRole> list = roleService.findByStatusNot(BaseDefine.DELETE_CODE);
 		return ResultValue.success(list);
 	}
 

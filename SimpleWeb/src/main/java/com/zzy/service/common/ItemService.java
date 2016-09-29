@@ -1,5 +1,6 @@
 package com.zzy.service.common;
 
+import com.zzy.base.BaseService;
 import com.zzy.domain.base.GItems;
 
 /**
@@ -8,5 +9,5 @@ import com.zzy.domain.base.GItems;
 * @createTime：2016年6月30日 
 * @decript:
 */
-public interface ItemService extends BaseService<GItems>{
+public interface ItemService extends BaseService<GItems> {
 }

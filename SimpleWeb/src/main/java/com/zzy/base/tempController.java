@@ -1,4 +1,4 @@
-package com.zzy.controller;
+package com.zzy.base;
 
 import java.util.Objects;
 
@@ -25,7 +25,6 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 public class tempController extends BaseController {
 
-	@ApiOperation(value = "获取", notes = "获取列表")
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
 	public JSONObject listTemp() {
 		return ResultValue.success();
@@ -34,8 +33,8 @@ public class tempController extends BaseController {
  
 	@ApiOperation(value = "创建", notes = "根据对象创建用户")
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public JSONObject postTemp(@RequestBody ZUser user) {
-		if(Objects.isNull(user)){
+	public JSONObject postTemp(@RequestBody ZUser obj) {
+		if(Objects.isNull(obj)){
 			return ResultValue.requireNonNull();
 		}
 		return ResultValue.success();
@@ -52,14 +51,14 @@ public class tempController extends BaseController {
 
 	@ApiOperation(value = "更新详细信息", notes = "根据url的id来指定更新对象，并根据传过来的user信息来更新用户详细信息")
 	@RequestMapping(value = "/", method = RequestMethod.PUT)
-	public JSONObject putTemp(@RequestBody ZUser user) {
-		if(Objects.isNull(user)){
+	public JSONObject putTemp(@RequestBody ZUser obj) {
+		if(Objects.isNull(obj)){
 			return ResultValue.requireNonNull();
 		}
 		return ResultValue.success();
 	}
 
-	@ApiOperation(value = "删除用户", notes = "根据url的id来指定删除对象")
+	@ApiOperation(value = "删除", notes = "根据url的id来指定删除对象")
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public JSONObject deleteTemp(@PathVariable String id) {
 		if(Objects.isNull(id)){

@@ -21,7 +21,7 @@ public class BeansUtils {
         if(obj == null){  
             return null;  
         }          
-        Map<String, Object> map = new HashMap<String, Object>();  
+        Map<String, Object> map = new HashMap();
         try {  
             BeanInfo beanInfo = Introspector.getBeanInfo(obj.getClass());  
             PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();  
@@ -41,5 +41,5 @@ public class BeansUtils {
             System.out.println("transBean2Map Error " + e);  
         }  
         return map;  
-    } 
+    }
 }

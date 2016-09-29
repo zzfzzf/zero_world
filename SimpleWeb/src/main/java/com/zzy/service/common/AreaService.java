@@ -1,5 +1,6 @@
 package com.zzy.service.common;
 
+import com.zzy.base.BaseService;
 import com.zzy.domain.base.GArea;
 
 /**
@@ -8,6 +9,6 @@ import com.zzy.domain.base.GArea;
 * @createTime:2016年7月12日 
 * @decript:区服控制器
 */
-public interface AreaService extends BaseService<GArea>{ 
+public interface AreaService extends BaseService<GArea> {
 	
 }

@@ -168,7 +168,7 @@ public class GRole implements java.io.Serializable {
     	this.role_skill = role_skill;
     }
 
-	public GRole() {}
+	public GRole(String id) {}
 
 
 	@Id

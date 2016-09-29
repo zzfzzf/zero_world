@@ -1,5 +1,6 @@
 package com.zzy.service.common;
 
+import com.zzy.base.BaseService;
 import com.zzy.domain.base.GImage;
 
 /**
@@ -8,5 +9,5 @@ import com.zzy.domain.base.GImage;
 * @createTime：2016年6月30日 
 * @decript:
 */
-public interface ImageService extends BaseService<GImage>{
+public interface ImageService extends BaseService<GImage> {
 }

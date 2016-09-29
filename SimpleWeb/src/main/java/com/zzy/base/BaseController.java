@@ -1,29 +1,10 @@
-package com.zzy.controller;
+package com.zzy.base;
 
+import com.zzy.service.common.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.zzy.service.common.AreaService;
-import com.zzy.service.common.BagService;
-import com.zzy.service.common.BuffService;
-import com.zzy.service.common.BuildService;
-import com.zzy.service.common.EquipService;
-import com.zzy.service.common.GeniusService;
-import com.zzy.service.common.ImageService;
-import com.zzy.service.common.ItemService;
-import com.zzy.service.common.LandService;
-import com.zzy.service.common.MonsterService;
-import com.zzy.service.common.NpcService;
-import com.zzy.service.common.PositionService;
-import com.zzy.service.common.PowerService;
-import com.zzy.service.common.RaceService;
-import com.zzy.service.common.RedisService;
-import com.zzy.service.common.RoleService;
-import com.zzy.service.common.SkillService;
-import com.zzy.service.common.UserService;
-import com.zzy.service.common.VocationService;
-import com.zzy.service.common.VoiceService;
 import com.zzy.service.cross.BagItemService;
 import com.zzy.service.cross.EquipItemService;
 import com.zzy.service.cross.PositionPowerService;
@@ -41,10 +22,12 @@ import com.zzy.service.cross.VocationSkillService;
 // 切记一定要标注method=xxxx 否则swagger将会为每个方法包括头部信息创建多个api
 @RequestMapping(value = "/zeus")
 @RestController
-public class BaseController {
+public class BaseController<T> {
 	// redis服务类
 	@Autowired
 	public RedisService redisService;
+	@Autowired
+	public MapService mapService;
 	@Autowired
 	public RoleService roleService;
 	@Autowired
@@ -103,4 +86,5 @@ public class BaseController {
 	public VocationSkillService vocationSkillService;
 	@Autowired
 	public SkillBuffService skillBuffService;
+
 }

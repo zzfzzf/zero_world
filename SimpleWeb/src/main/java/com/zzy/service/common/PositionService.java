@@ -1,5 +1,6 @@
 package com.zzy.service.common;
 
+import com.zzy.base.BaseService;
 import com.zzy.domain.base.ZPosition;
 
 /**
@@ -8,5 +9,5 @@ import com.zzy.domain.base.ZPosition;
 * @createTime：2016年6月30日 
 * @decript:
 */
-public interface PositionService extends BaseService<ZPosition>{
+public interface PositionService extends BaseService<ZPosition> {
 }
