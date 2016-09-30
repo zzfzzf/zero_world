@@ -1,6 +1,8 @@
 package com.zzy.domain.base;
 // Generated 2016-7-13 16:23:17 by Hibernate Tools 3.4.0.CR1
 
+import com.zzy.base.BaseEntity;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,7 +13,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "g_npc", catalog = "zero")
-public class GNpc implements java.io.Serializable {
+public class GNpc  extends BaseEntity implements java.io.Serializable {
 
 	private String id;
 	private String name;

@@ -25,6 +25,7 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 public class tempController extends BaseController {
 
+	@ApiOperation(value = "获取列表", notes = "获取列表")
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
 	public JSONObject listTemp() {
 		return ResultValue.success();
@@ -64,8 +65,8 @@ public class tempController extends BaseController {
 		if(Objects.isNull(id)){
 			return ResultValue.requireNonNull();
 		}
-		GRole role = roleService.get(id);
-		role.setStatus(10);
+		GRole role = new GRole(id);
+		role.setStatus(BaseDefine.DELETE_CODE);
 		roleService.update(role);
 		return ResultValue.success();
 	}

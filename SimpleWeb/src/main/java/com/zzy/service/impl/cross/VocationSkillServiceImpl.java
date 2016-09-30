@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.zzy.domain.cross.GVocationSkill;
 import com.zzy.repository.cross.VocationSkillRepository;
 import com.zzy.service.cross.VocationSkillService;
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 /**
 * @author Zeus
 * @version 1.1
@@ -17,7 +17,7 @@ import com.zzy.base.BaseServiceImp;
 * @decript:
 */
 @Service
-public class VocationSkillServiceImpl extends BaseServiceImp<GVocationSkill> implements VocationSkillService{
+public class VocationSkillServiceImpl extends BaseServiceImpl<GVocationSkill> implements VocationSkillService{
 	@Autowired
 	private VocationSkillRepository vsRepository;
 	@Autowired

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.zzy.domain.cross.ZUserPosition;
 import com.zzy.service.cross.UserPositionService;
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 /**
 * @author Zeus
 * @version 1.1
@@ -14,7 +14,7 @@ import com.zzy.base.BaseServiceImp;
 * @decript:
 */
 @Service
-public class UserPositionServiceImpl extends BaseServiceImp<ZUserPosition> implements UserPositionService{
+public class UserPositionServiceImpl extends BaseServiceImpl<ZUserPosition> implements UserPositionService{
 	@Autowired
 	public UserPositionServiceImpl(CrudRepository<ZUserPosition, String> crudRepository) {
 		super(crudRepository);

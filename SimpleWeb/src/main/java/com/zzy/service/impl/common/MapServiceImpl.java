@@ -1,6 +1,6 @@
 package com.zzy.service.impl.common;
 
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 import com.zzy.domain.base.GMap;
 import com.zzy.service.common.MapService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 * @decript:
 */
 @Service
-public class MapServiceImpl extends BaseServiceImp<GMap> implements MapService{
+public class MapServiceImpl extends BaseServiceImpl<GMap> implements MapService{
 	@Autowired
 	public MapServiceImpl(CrudRepository<GMap, String> crudRepository) {
 		super(crudRepository);

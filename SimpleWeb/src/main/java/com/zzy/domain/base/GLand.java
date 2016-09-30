@@ -15,6 +15,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.zzy.base.BaseEntity;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
@@ -23,7 +24,7 @@ import org.hibernate.annotations.NotFoundAction;
  */
 @Entity
 @Table(name = "g_land", catalog = "zero")
-public class GLand implements java.io.Serializable {
+public class GLand  extends BaseEntity implements java.io.Serializable {
 
 	private String id;
 	private String name;

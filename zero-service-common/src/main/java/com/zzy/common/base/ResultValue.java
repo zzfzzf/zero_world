@@ -1,8 +1,10 @@
 package com.zzy.common.base;
 
 import com.alibaba.fastjson.JSONObject;
+import com.zzy.common.util.Nothing;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
 * @author Zeus
@@ -23,16 +25,12 @@ public class ResultValue {
     public static final int LOGIN_FAIL=307; 
     /**
      * 传入对象,返回一个新json
-     * @param object 传入对象
      */
     public static JSONObject success(Object object){
-     	JSONObject json=new JSONObject();
-    	json.put("status", SUCCESS);
-    	json.put("data", object);
-    	json.put("message", "操作成功");
-    	return json;
+        return object instanceof JSONObject?success((JSONObject)object,null):(object instanceof Integer?success(new JSONObject(),null):success(new JSONObject(),object));
+
     }
-    
+
     /**
      * 操作成功 返回传入json
      */
@@ -44,30 +42,17 @@ public class ResultValue {
     }
 
     /**
-     * 操作成功 返回传入json
-     */
-    public static JSONObject success(JSONObject json){
-       return success(json,null);
-    }
-
-
-    /**
      * 操作成功 返回新json 只包含status:success
      */
     public static JSONObject success(){
-    	JSONObject json=new JSONObject();
-    	json.put("status", SUCCESS);
-    	return json;
+    	return success(null);
     }
 
     /**
      * 参数为null
      */
     public static JSONObject requireNonNull(){
-    	JSONObject json=new JSONObject();
-    	json.put("status", PARAM_NON_NULL);
-    	json.put("message", "参数不能为null");
-    	return json;
+    	return fail(PARAM_NON_NULL,"参数不能为null");
     }
     /**
      * 操作失败

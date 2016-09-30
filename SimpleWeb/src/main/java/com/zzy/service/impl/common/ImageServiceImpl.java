@@ -1,6 +1,6 @@
 package com.zzy.service.impl.common;
 
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import com.zzy.service.common.ImageService;
 * @decript:
 */
 @Service
-public class ImageServiceImpl extends BaseServiceImp<GImage> implements ImageService{
+public class ImageServiceImpl extends BaseServiceImpl<GImage> implements ImageService{
 	@Autowired
 	public ImageServiceImpl(CrudRepository<GImage, String> crudRepository) {
 		super(crudRepository);

@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.zzy.base.BaseEntity;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
@@ -19,7 +20,7 @@ import com.zzy.domain.base.GRole;
  */
 @Entity
 @Table(name = "z_user_g_role", catalog = "zero")
-public class ZUserGRole implements java.io.Serializable {
+public class ZUserGRole  extends BaseEntity implements java.io.Serializable {
 
 	private String id;
 	private String detail;

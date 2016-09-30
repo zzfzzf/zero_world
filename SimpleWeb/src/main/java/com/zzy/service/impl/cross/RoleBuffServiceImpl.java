@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.zzy.domain.cross.GRoleBuff;
 import com.zzy.repository.cross.RoleBuffRepository;
 import com.zzy.service.cross.RoleBuffService;
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 /**
 * @author Zeus
 * @version 1.1
@@ -17,7 +17,7 @@ import com.zzy.base.BaseServiceImp;
 * @decript:
 */
 @Service
-public class RoleBuffServiceImpl extends BaseServiceImp<GRoleBuff> implements RoleBuffService{
+public class RoleBuffServiceImpl extends BaseServiceImpl<GRoleBuff> implements RoleBuffService{
 	
 	@Autowired
 	private RoleBuffRepository rbRepository;

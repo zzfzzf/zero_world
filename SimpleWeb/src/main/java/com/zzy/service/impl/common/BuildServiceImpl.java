@@ -1,6 +1,6 @@
 package com.zzy.service.impl.common;
 
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import com.zzy.service.common.BuildService;
 * @decript:
 */
 @Service
-public class BuildServiceImpl extends BaseServiceImp<GBuilding> implements BuildService {
+public class BuildServiceImpl extends BaseServiceImpl<GBuilding> implements BuildService {
 	@Autowired
 	public BuildServiceImpl(CrudRepository<GBuilding, String> crudRepository) {
 		super(crudRepository);

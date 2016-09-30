@@ -6,6 +6,7 @@ import com.zzy.common.base.ResultValue;
 import com.zzy.common.base.UrlCommon;
 import com.zzy.common.util.BroadcastUtil;
 import com.zzy.common.util.HttpUtil;
+import com.zzy.common.util.Nothing;
 import com.zzy.dubbo.db.DBService;
 import com.zzy.dubbo.logic.*;
 import com.zzy.dubbo.map.IMap;
@@ -76,35 +77,38 @@ public class GateHandler extends IoHandlerAdapter implements Command {
     /**
      * 当客户端发送消息到达时
      */
+    @SuppressWarnings("unchecked")
     @Override
     public void messageReceived(IoSession session, Object message) throws Exception {
+        // 如果为null 则不广播 默认为广播
+        IoAcceptor tempAcceptor = acceptor;
+        List<Long> list = null;
         // 收到的信息字符串
         if (Objects.isNull(message) || "null".equals(message)) {
             log.error("错误session:" + session.getId() + "---->" + "message不能为null");
+            return;
         }
         JSONObject json = JSONObject.parseObject((String) message);
         String command = (String) json.get("command");
         Long token = json.getLong("token");
-        @SuppressWarnings("unchecked")
-        Map<Long, String> tokens = (Map<Long, String>) dbService.getObj("tokens", Map.class);
+
+        Map<Long, String> tokens = (Map) dbService.getObj("tokens", Map.class);
         if (!tokens.containsKey(token) && !Command.TOKEN.equals(command)) {
             session.write(ResultValue.fail(ResultValue.TOKEN_ERROR, "token错误"));
             return;
         } else {
-            String userName = json.getString("userName");
-            JSONObject user = HttpUtil.getJson(UrlCommon.GET_USER_BY_USERNAME + userName);
+            JSONObject user = HttpUtil.getJson(UrlCommon.GET_USER_BY_USERNAME + json.getString("userName"));
             // 拿到json格式的user对象
             user = JSONObject.parseObject(user.get("data").toString());
-            String userId = user.getString("id");
             // 当前用户存入token
-            tokens.put(session.getId(), userId);
+            tokens.put(session.getId(),  user.getString("id"));
             // 获取大区列表并装入json
             HttpUtil.getJson(UrlCommon.LIST_AREA, json);
-            session.write(ResultValue.success(json));
+            // 只发送给自己
+            acceptor=null;
+            BroadcastUtil.sentMessage(acceptor,json);
         }
-        // 如果为null 则不广播 默认为广播
-        IoAcceptor tempAcceptor = acceptor;
-        List<Long> list = null;
+
         switch (command) {
             case ROLE:// 选择角色
                 tempAcceptor = null;

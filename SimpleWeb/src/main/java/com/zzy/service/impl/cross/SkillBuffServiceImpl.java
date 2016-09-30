@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.zzy.domain.cross.GSkillBuff;
 import com.zzy.service.cross.SkillBuffService;
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 /**
 * @author Zeus
 * @version 1.1
@@ -14,7 +14,7 @@ import com.zzy.base.BaseServiceImp;
 * @decript:
 */
 @Service
-public class SkillBuffServiceImpl extends BaseServiceImp<GSkillBuff> implements SkillBuffService{
+public class SkillBuffServiceImpl extends BaseServiceImpl<GSkillBuff> implements SkillBuffService{
 	@Autowired
 	public SkillBuffServiceImpl(CrudRepository<GSkillBuff, String> crudRepository) {
 		super(crudRepository);

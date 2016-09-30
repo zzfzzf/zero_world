@@ -11,9 +11,9 @@ import java.util.List;
 
 public interface BaseService <E>{
 	
-	int add(E entity);
-	int delete(E entity);  
-	int update(E entity);
+	Integer add(E entity);
+	Integer delete(E entity);
+	Integer update(E entity);
 	E get(String id);
 	List<E> list();    
 }

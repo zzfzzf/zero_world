@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.zzy.base.BaseEntity;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
@@ -19,7 +20,7 @@ import com.zzy.domain.base.GSkill;
  */
 @Entity
 @Table(name = "g_vocation_skill", catalog = "zero")
-public class GVocationSkill implements java.io.Serializable {
+public class GVocationSkill  extends BaseEntity implements java.io.Serializable {
 
 	private String id;
 	private GSkill skill;

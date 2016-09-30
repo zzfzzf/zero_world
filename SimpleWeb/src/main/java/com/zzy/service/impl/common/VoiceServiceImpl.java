@@ -1,6 +1,6 @@
 package com.zzy.service.impl.common;
 
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import com.zzy.service.common.VoiceService;
 * @decript:
 */
 @Service
-public class VoiceServiceImpl extends BaseServiceImp<GVoice> implements VoiceService{
+public class VoiceServiceImpl extends BaseServiceImpl<GVoice> implements VoiceService{
 	@Autowired
 	public VoiceServiceImpl(CrudRepository<GVoice, String> crudRepository) {
 		super(crudRepository);

@@ -16,17 +16,13 @@ import springfox.documentation.spring.web.json.Json;
 public class Test {
 	public static int count=0;
 	public static void main(String[] args) throws Exception {
-		 JSONObject json=new JSONObject();
-		List list = new ArrayList();
-		list.add(1);
-		list.add(2);
-		json.put("list",list);
-		JSONObject j= JSONObject.parseObject(json.toJSONString());
-		System.out.print(((List)j.get("list")).get(0));
 		}
 
 	public static void test(Runnable o) throws Exception {
 		o.run();
+	}
+	public void test(Object o){
+		System.out.print(o);
 	}
 	 
 	 

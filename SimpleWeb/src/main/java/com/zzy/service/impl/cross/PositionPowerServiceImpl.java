@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.zzy.domain.cross.ZPositionPower;
 import com.zzy.service.cross.PositionPowerService;
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 /**
 * @author Zeus
 * @version 1.1
@@ -14,7 +14,7 @@ import com.zzy.base.BaseServiceImp;
 * @decript:
 */
 @Service
-public class PositionPowerServiceImpl extends BaseServiceImp<ZPositionPower> implements PositionPowerService{
+public class PositionPowerServiceImpl extends BaseServiceImpl<ZPositionPower> implements PositionPowerService{
 	@Autowired
 	public PositionPowerServiceImpl(CrudRepository<ZPositionPower, String> crudRepository) {
 		super(crudRepository);

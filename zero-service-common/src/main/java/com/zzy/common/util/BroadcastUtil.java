@@ -17,7 +17,6 @@ import com.alibaba.fastjson.JSONObject;
 public class BroadcastUtil {
     /**
      * 发送给所有在线角色
-     *
      * @param acceptor session管理器
      * @param json     数据
      */
@@ -31,7 +30,6 @@ public class BroadcastUtil {
 
     /**
      * 发送给不包括Excluded的所有在线角色
-     *
      * @param acceptor session管理器
      * @param json     数据
      */
@@ -49,7 +47,6 @@ public class BroadcastUtil {
 
     /**
      * 发送给指定集合对象
-     *
      * @param collection
      * @param acceptor
      * @param json

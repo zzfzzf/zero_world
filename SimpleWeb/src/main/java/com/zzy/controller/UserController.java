@@ -48,44 +48,25 @@ public class UserController extends BaseController {
 	@ApiOperation(value = "创建user", notes = "根据User对象创建用户")
 	@RequestMapping(value = "/user", method = RequestMethod.POST)
 	public JSONObject postUser(@RequestBody ZUser user) {
-		if (Objects.isNull(user)) {
-			return ResultValue.requireNonNull();
-		}
-		user.setId(UUIDUtils.uuid32());
-		userService.add(user);
-		return ResultValue.success();
+		return Objects.isNull(user)?ResultValue.requireNonNull():ResultValue.success(userService.add(user));
 	}
 
 	@ApiOperation(value = "获取user详细信息", notes = "根据url的id来获取详细信息")
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
 	public JSONObject getUser(@PathVariable String id) {
-		if (Objects.isNull(id)) {
-			return ResultValue.requireNonNull();
-		}
-		return ResultValue.success( userService.get(id));
+		return Objects.isNull(id)?ResultValue.requireNonNull():ResultValue.success( userService.get(id));
 	}
 
 	@ApiOperation(value = "更新user详细信息", notes = "根据url的id来指定更新对象，并根据传过来的user信息来更新用户详细信息")
 	@RequestMapping(value = "/user", method = RequestMethod.PUT)
 	public JSONObject putUser(@RequestBody ZUser user) {
-		if (Objects.isNull(user)) {
-			return ResultValue.requireNonNull();
-		}
-		userService.update(user);
-		return ResultValue.success();
+		return Objects.isNull(user)?ResultValue.requireNonNull():ResultValue.success(userService.update(user));
 	}
 
 	@ApiOperation(value = "删除user", notes = "根据url的id来指定删除对象")
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
 	public JSONObject deleteUser(@PathVariable String id) {
-		if(Objects.isNull(id)){
-			return ResultValue.requireNonNull();
-		}
-		ZUser user = new ZUser(); 
-		user.setStatus(BaseDefine.DELETE_CODE);
-		user.setId(id);
-		userService.update(user);
-		return ResultValue.success();
+		return Objects.isNull(id)?ResultValue.requireNonNull():ResultValue.success(userService.update(new ZUser(id).setStatus(BaseDefine.DELETE_CODE)));
 	}
 
 }

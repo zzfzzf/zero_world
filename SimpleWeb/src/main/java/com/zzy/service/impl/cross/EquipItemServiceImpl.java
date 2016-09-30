@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.zzy.domain.cross.GEquipItem;
 import com.zzy.service.cross.EquipItemService;
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 /**
 * @author Zeus
 * @version 1.1
@@ -14,7 +14,7 @@ import com.zzy.base.BaseServiceImp;
 * @decript:
 */
 @Service
-public class EquipItemServiceImpl extends BaseServiceImp<GEquipItem> implements EquipItemService{
+public class EquipItemServiceImpl extends BaseServiceImpl<GEquipItem> implements EquipItemService{
 	@Autowired
 	public EquipItemServiceImpl(CrudRepository<GEquipItem, String> crudRepository) {
 		super(crudRepository);

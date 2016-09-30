@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.zzy.domain.cross.GRaceGenius;
 import com.zzy.service.cross.RaceGeniusService;
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 /**
 * @author Zeus
 * @version 1.1
@@ -14,7 +14,7 @@ import com.zzy.base.BaseServiceImp;
 * @decript:
 */
 @Service
-public class RaceGeniusServiceImpl extends BaseServiceImp<GRaceGenius> implements RaceGeniusService {
+public class RaceGeniusServiceImpl extends BaseServiceImpl<GRaceGenius> implements RaceGeniusService {
 	@Autowired
 	public RaceGeniusServiceImpl(CrudRepository<GRaceGenius, String> crudRepository) {
 		super(crudRepository);

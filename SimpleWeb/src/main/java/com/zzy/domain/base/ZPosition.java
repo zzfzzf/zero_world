@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.zzy.base.BaseEntity;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
@@ -21,7 +22,7 @@ import com.zzy.domain.cross.ZPositionPower;
  */
 @Entity
 @Table(name = "z_position", catalog = "zero")
-public class ZPosition implements java.io.Serializable {
+public class ZPosition  extends BaseEntity implements java.io.Serializable {
 
 	private String id;
 	private String name;

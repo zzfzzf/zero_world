@@ -12,6 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.zzy.base.BaseEntity;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
@@ -22,7 +23,7 @@ import com.zzy.domain.cross.GEquipItem;
  */
 @Entity
 @Table(name = "g_equip", catalog = "zero")
-public class GEquip implements java.io.Serializable {
+public class GEquip  extends BaseEntity implements java.io.Serializable {
 
 	private String id;
 	private String detail;

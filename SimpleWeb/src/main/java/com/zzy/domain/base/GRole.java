@@ -3,7 +3,6 @@ package com.zzy.domain.base;
 
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,12 +13,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
+import com.zzy.base.BaseEntity;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.zzy.domain.cross.GRoleBuff;
 import com.zzy.domain.cross.GRoleFriend;
 import com.zzy.domain.cross.GRoleSkill;
@@ -30,7 +27,7 @@ import com.zzy.domain.cross.GRoleSkill;
 @Entity
 @Table(name = "g_role", catalog = "zero")
 //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) // 延迟加载问题
-public class GRole implements java.io.Serializable {
+public class GRole  extends BaseEntity implements java.io.Serializable {
 	private String id;
 	private String name;
 	private Integer maxBlood;
@@ -48,7 +45,7 @@ public class GRole implements java.io.Serializable {
 	private Integer lucky;
 	private String conditions;
 	private Integer attack;
-	private Integer defens;
+	private Integer defense;
 	private GVocation vocation;
 	private Set<GRoleSkill> role_skill;
     private Set<GRoleFriend> role_friend; 
@@ -279,8 +276,9 @@ public class GRole implements java.io.Serializable {
 		return this.status;
 	}
 
-	public void setStatus(Integer status) {
+	public GRole setStatus(Integer status) {
 		this.status = status;
+		return this;
 	}
 
 
@@ -339,13 +337,13 @@ public class GRole implements java.io.Serializable {
 		this.attack = attack;
 	}
 
-	@Column(name = "defens")
-	public Integer getDefens() {
-		return this.defens;
+	@Column(name = "defense")
+	public Integer getDefense() {
+		return this.defense;
 	}
 
-	public void setDefens(Integer defens) {
-		this.defens = defens;
+	public void setDefense(Integer defense) {
+		this.defense = defense;
 	}
 
 	 

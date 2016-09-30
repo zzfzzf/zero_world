@@ -12,10 +12,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.zzy.base.BaseEntity;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
-import com.zzy.domain.cross.ZUserGRole;
 import com.zzy.domain.cross.ZUserPosition;
 
 /**
@@ -23,7 +23,7 @@ import com.zzy.domain.cross.ZUserPosition;
  */
 @Entity
 @Table(name = "z_user", catalog = "zero")
-public class ZUser implements java.io.Serializable {
+public class ZUser  extends BaseEntity implements java.io.Serializable {
 
 	private String id;
 	private String username;
@@ -37,16 +37,16 @@ public class ZUser implements java.io.Serializable {
 	private String phone;
 	private GImage headImageId;
 	private Set<GRole> role;
-	private Set<ZUserPosition> user_pisition;
-	@OneToMany(fetch = FetchType.LAZY)  
-    @JoinColumn(name="user_id") 
+	private Set<ZUserPosition> user_position;
+	@OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name="user_id")
 	@NotFound(action=NotFoundAction.IGNORE) 
-	public Set<ZUserPosition> getUser_pisition() {
-		return user_pisition;
+	public Set<ZUserPosition> getUser_position() {
+		return user_position;
 	}
 
-	public void setUser_pisition(Set<ZUserPosition> user_pisition) {
-		this.user_pisition = user_pisition;
+	public void setUser_position(Set<ZUserPosition> user_position) {
+		this.user_position = user_position;
 	}
 
 	@OneToOne 
@@ -137,8 +137,9 @@ public class ZUser implements java.io.Serializable {
 		return this.status;
 	}
 
-	public void setStatus(Integer status) {
+	public ZUser setStatus(Integer status) {
 		this.status = status;
+		return this;
 	}
 
 	@Column(name = "vip")

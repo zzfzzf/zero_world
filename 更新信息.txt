@@ -8,3 +8,4 @@
 2016年9月4日   决定将扩展物品 存放于redis  保持通话 电影
 2016年9月27日  重新封装HttpUtil类
 2016年9月28日  新增下线logic代码 
+2016年9月30日  新增BaseEntity类 修改基本service操作 修改Controller代码 修改GateHandle代码 修改到给所有logic增加抛异常

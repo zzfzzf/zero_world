@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.zzy.base.BaseEntity;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
@@ -19,7 +20,7 @@ import com.zzy.domain.base.GBuff;
  */
 @Entity
 @Table(name = "g_role_buff", catalog = "zero")
-public class GRoleBuff implements java.io.Serializable {
+public class GRoleBuff  extends BaseEntity implements java.io.Serializable {
 	
 	private String id;
 	private Long time;

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.zzy.domain.cross.GRoleSkill;
 import com.zzy.repository.cross.RoleSkillRepository;
 import com.zzy.service.cross.RoleSkillService;
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 /**
 * @author Zeus
 * @version 1.1
@@ -17,7 +17,7 @@ import com.zzy.base.BaseServiceImp;
 * @decript: 角色技能类
 */
 @Service
-public class RoleSkillServiceImpl extends BaseServiceImp<GRoleSkill> implements RoleSkillService{
+public class RoleSkillServiceImpl extends BaseServiceImpl<GRoleSkill> implements RoleSkillService{
 	@Autowired
 	private RoleSkillRepository rsRespository;
 	@Autowired

@@ -1,6 +1,6 @@
 package com.zzy.service.impl.common;
 
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import com.zzy.service.common.SkillService;
 * @decript:
 */
 @Service
-public class SkillServiceImpl extends BaseServiceImp<GSkill> implements SkillService{
+public class SkillServiceImpl extends BaseServiceImpl<GSkill> implements SkillService{
 	@Autowired
 	public SkillServiceImpl(CrudRepository<GSkill, String> crudRepository) {
 		super(crudRepository);

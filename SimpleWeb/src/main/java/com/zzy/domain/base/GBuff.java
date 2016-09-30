@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.zzy.base.BaseEntity;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
@@ -16,7 +17,7 @@ import org.hibernate.annotations.NotFoundAction;
  */
 @Entity
 @Table(name = "g_buff", catalog = "zero")
-public class GBuff implements java.io.Serializable {
+public class GBuff extends BaseEntity implements java.io.Serializable {
 
 	private String id;
 	private String name;

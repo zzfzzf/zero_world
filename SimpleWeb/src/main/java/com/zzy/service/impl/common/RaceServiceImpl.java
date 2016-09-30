@@ -1,6 +1,6 @@
 package com.zzy.service.impl.common;
 
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import com.zzy.service.common.RaceService;
 * @decript:
 */
 @Service
-public class RaceServiceImpl extends BaseServiceImp<GRace> implements RaceService{
+public class RaceServiceImpl extends BaseServiceImpl<GRace> implements RaceService{
 	@Autowired
 	public RaceServiceImpl(CrudRepository<GRace, String> crudRepository) {
 		super(crudRepository);

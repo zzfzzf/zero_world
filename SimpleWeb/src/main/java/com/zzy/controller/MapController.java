@@ -7,6 +7,7 @@ import com.zzy.common.base.ResultValue;
 import com.zzy.domain.base.GMap;
 import com.zzy.domain.base.GRole;
 import com.zzy.domain.base.ZUser;
+import com.zzy.utils.UUIDUtils;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,48 +27,30 @@ public class MapController extends BaseController {
 	@RequestMapping(value = { "/map" }, method = RequestMethod.GET)
 	public JSONObject listTemp() {
 		return ResultValue.success(mapService.list());
-		
 	}
  
 	@ApiOperation(value = "创建map", notes = "根据map对象创建用户")
 	@RequestMapping(value = "/map", method = RequestMethod.POST)
 	public JSONObject postTemp(@RequestBody GMap map) {
-		if(Objects.isNull(map)){
-			return ResultValue.requireNonNull();
-		}
-		mapService.add(map);
-		return ResultValue.success();
+		return Objects.isNull(map)?ResultValue.requireNonNull():ResultValue.success(mapService.add(map));
 	}
 
 	@ApiOperation(value = "获取map详细信息", notes = "根据url的id来获取详细信息")
 	@RequestMapping(value = "/map/{id}", method = RequestMethod.GET)
 	public JSONObject getTemp(@PathVariable String id) {
-		if(Objects.isNull(id)){
-			return ResultValue.requireNonNull();
-		}
-		return ResultValue.success(mapService.get(id));
+		return Objects.isNull(id)?ResultValue.requireNonNull():ResultValue.success(mapService.get(id));
 	}
 
 	@ApiOperation(value = "更新map详细信息", notes = "根据url的id来指定更新对象，并根据传过来的map信息来更新用户详细信息")
 	@RequestMapping(value = "/map", method = RequestMethod.PUT)
 	public JSONObject putTemp(@RequestBody GMap map) {
-		if(Objects.isNull(map)){
-			return ResultValue.requireNonNull();
-		}
-		mapService.update(map);
-		return ResultValue.success();
+		return Objects.isNull(map)?ResultValue.requireNonNull():ResultValue.success(mapService.update(map));
 	}
 
 	@ApiOperation(value = "删除map", notes = "根据url的id来指定删除对象")
 	@RequestMapping(value = "/map/{id}", method = RequestMethod.DELETE)
 	public JSONObject deleteTemp(@PathVariable String id) {
-		if(Objects.isNull(id)){
-			return ResultValue.requireNonNull();
-		}
-		GMap map =new GMap(id);
-		map.setStatus(BaseDefine.DELETE_CODE);
-		mapService.update(map);
-		return ResultValue.success();
+		return Objects.isNull(id)?ResultValue.requireNonNull():ResultValue.success(mapService.update(new GMap(id).setStatus(BaseDefine.DELETE_CODE)));
 	}
 
 }

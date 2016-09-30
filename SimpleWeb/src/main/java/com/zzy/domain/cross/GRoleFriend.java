@@ -12,6 +12,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.zzy.base.BaseEntity;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
@@ -24,7 +25,7 @@ import com.zzy.domain.base.GRole;
 @Entity
 @Table(name = "g_role_friend", catalog = "zero")
 @JsonIgnoreProperties({"friend"})
-public class GRoleFriend implements java.io.Serializable {
+public class GRoleFriend  extends BaseEntity implements java.io.Serializable {
 
 	private String id;
 	private String detail;

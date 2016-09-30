@@ -218,7 +218,7 @@ create table g_monster
 (
    id                   char(32) not null,
    attack               bigint(50),
-   defens               bigint(50),
+   defense               bigint(50),
    quality              int,
    name                 varchar(50),
    level                int,
@@ -291,7 +291,7 @@ create table g_role
    conditions           varchar(50) comment '0 饥饿 1 饱食',
    race_id              char(32),
    attack               int,
-   defens               int,
+   defense               int,
    head_image_id        char(32),
    user_id              char(32),
    area_id              char(32),

@@ -5,6 +5,7 @@ import java.util.Objects;
 
 import com.zzy.base.BaseController;
 import com.zzy.base.BaseDefine;
+import com.zzy.utils.UUIDUtils;
 import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,48 +33,30 @@ public class AreaController extends BaseController {
 	@RequestMapping(value = { "/area" }, method = RequestMethod.GET)
 	public JSONObject listArea() {  
 		return ResultValue.success(areaService.list());
-		
 	}
  
 	@ApiOperation(value = "创建area", notes = "根据Area对象创建用户")
 	@RequestMapping(value = "/area", method = RequestMethod.POST)
 	public JSONObject postArea(@RequestBody GArea area) {
-		if(Objects.isNull(area)){
-			return ResultValue.requireNonNull();
-		}
-		areaService.add(area);
-		return ResultValue.success();
+		return Objects.isNull(area)?ResultValue.requireNonNull():ResultValue.success(areaService.add(area));
 	}
 
 	@ApiOperation(value = "获取area详细信息", notes = "根据url的id来获取area详细信息")
 	@RequestMapping(value = "/area/{id}", method = RequestMethod.GET)
 	public JSONObject getArea(@PathVariable String id) {
-		if(Objects.isNull(id)){
-			return ResultValue.requireNonNull();
-		}
-		return ResultValue.success(areaService.get(id));
+		return Objects.isNull(id)?ResultValue.requireNonNull():ResultValue.success(areaService.get(id));
 	}
 
 	@ApiOperation(value = "更新area详细信息", notes = "根据url的id来指定更新对象，并根据传过来的area信息来更新用户详细信息")
 	@RequestMapping(value = "/area", method = RequestMethod.PUT)
 	public JSONObject putArea(@RequestBody GArea area) {
-		if(Objects.isNull(area)){
-			return ResultValue.requireNonNull();
-		}
-		areaService.update(area);
-		return ResultValue.success();
+		return Objects.isNull(area)?ResultValue.requireNonNull():ResultValue.success(areaService.update(area));
 	}
 
 	@ApiOperation(value = "删除area", notes = "根据url的id来指定删除对象")
 	@RequestMapping(value = "/area/{id}", method = RequestMethod.DELETE)
 	public JSONObject deleteArea(@PathVariable String id) {
-		if(Objects.isNull(id)){
-			return ResultValue.requireNonNull();
-		}   
-		GArea area = areaService.get(id);
-		area.setStatus(BaseDefine.DELETE_CODE);
-		areaService.update(area);
-		return ResultValue.success();
+		return Objects.isNull(id)?ResultValue.requireNonNull():ResultValue.success(areaService.update(new GArea(id).setStatus(BaseDefine.DELETE_CODE)));
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.zzy.domain.base;
 
+import com.zzy.base.BaseEntity;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "g_map", catalog = "zero")
-public class GMap implements java.io.Serializable {
+public class GMap extends BaseEntity implements java.io.Serializable {
 
     private String id;
     private String name;
@@ -67,7 +69,8 @@ public class GMap implements java.io.Serializable {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public GMap setStatus(Integer status) {
         this.status = status;
+        return this;
     }
 }

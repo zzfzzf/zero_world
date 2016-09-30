@@ -1,6 +1,8 @@
 package com.zzy.domain.base;
 // Generated 2016-7-4 10:01:06 by Hibernate Tools 3.4.0.CR1
 
+import com.zzy.base.BaseEntity;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,23 +13,23 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "g_items", catalog = "zero")
-public class GItems implements java.io.Serializable {
+public class GItems  extends BaseEntity implements java.io.Serializable {
 
 	private String id;
 	private String detail;
 	private String name;
-	private Long level;
-	private Long quality;
-	private Long type;
+	private Integer level;
+	private Integer quality;
+	private Integer type;
 	private String icon;
-	private Long status;
-	private Long strength;
-	private Long agility;
-	private Long intellect;
-	private Long lucky;
+	private Integer status;
+	private Integer strength;
+	private Integer agility;
+	private Integer intellect;
+	private Integer lucky;
 	private String profile;
-	private Long property;
-	private Long price;
+	private Integer property;
+	private Integer price;
 
 	public GItems() {
 	}
@@ -36,8 +38,8 @@ public class GItems implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public GItems(String id, String detail, String name, Long level, Long quality, Long type, String icon, Long status,
-			Long strength, Long agility, Long intellect, Long lucky, String profile, Long property, Long price) {
+	public GItems(String id, String detail, String name, Integer level, Integer quality, Integer type, String icon, Integer status,
+			Integer strength, Integer agility, Integer intellect, Integer lucky, String profile, Integer property, Integer price) {
 		this.id = id;
 		this.detail = detail;
 		this.name = name;
@@ -85,29 +87,29 @@ public class GItems implements java.io.Serializable {
 	}
 
 	@Column(name = "level")
-	public Long getLevel() {
+	public Integer getLevel() {
 		return this.level;
 	}
 
-	public void setLevel(Long level) {
+	public void setLevel(Integer level) {
 		this.level = level;
 	}
 
 	@Column(name = "quality")
-	public Long getQuality() {
+	public Integer getQuality() {
 		return this.quality;
 	}
 
-	public void setQuality(Long quality) {
+	public void setQuality(Integer quality) {
 		this.quality = quality;
 	}
 
 	@Column(name = "type")
-	public Long getType() {
+	public Integer getType() {
 		return this.type;
 	}
 
-	public void setType(Long type) {
+	public void setType(Integer type) {
 		this.type = type;
 	}
 
@@ -121,47 +123,48 @@ public class GItems implements java.io.Serializable {
 	}
 
 	@Column(name = "status")
-	public Long getStatus() {
+	public Integer getStatus() {
 		return this.status;
 	}
 
-	public void setStatus(Long status) {
+	public GItems setStatus(Integer status) {
 		this.status = status;
+		return this;
 	}
 
 	@Column(name = "strength")
-	public Long getStrength() {
+	public Integer getStrength() {
 		return this.strength;
 	}
 
-	public void setStrength(Long strength) {
+	public void setStrength(Integer strength) {
 		this.strength = strength;
 	}
 
 	@Column(name = "agility")
-	public Long getAgility() {
+	public Integer getAgility() {
 		return this.agility;
 	}
 
-	public void setAgility(Long agility) {
+	public void setAgility(Integer agility) {
 		this.agility = agility;
 	}
 
 	@Column(name = "intellect")
-	public Long getIntellect() {
+	public Integer getIntellect() {
 		return this.intellect;
 	}
 
-	public void setIntellect(Long intellect) {
+	public void setIntellect(Integer intellect) {
 		this.intellect = intellect;
 	}
 
 	@Column(name = "lucky")
-	public Long getLucky() {
+	public Integer getLucky() {
 		return this.lucky;
 	}
 
-	public void setLucky(Long lucky) {
+	public void setLucky(Integer lucky) {
 		this.lucky = lucky;
 	}
 
@@ -175,20 +178,20 @@ public class GItems implements java.io.Serializable {
 	}
 
 	@Column(name = "property")
-	public Long getProperty() {
+	public Integer getProperty() {
 		return this.property;
 	}
 
-	public void setProperty(Long property) {
+	public void setProperty(Integer property) {
 		this.property = property;
 	}
 
 	@Column(name = "price")
-	public Long getPrice() {
+	public Integer getPrice() {
 		return this.price;
 	}
 
-	public void setPrice(Long price) {
+	public void setPrice(Integer price) {
 		this.price = price;
 	}
 

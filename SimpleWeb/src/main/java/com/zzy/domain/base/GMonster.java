@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.zzy.base.BaseEntity;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
@@ -17,11 +18,11 @@ import org.hibernate.annotations.NotFoundAction;
  */
 @Entity
 @Table(name = "g_monster", catalog = "zero")
-public class GMonster implements java.io.Serializable {
+public class GMonster extends BaseEntity implements java.io.Serializable {
 
 	private String id;
 	private Long attack;
-	private Long defens;
+	private Long defense;
 	private Integer quality;
 	private String name;
 	private Integer level;
@@ -71,13 +72,13 @@ public class GMonster implements java.io.Serializable {
 		this.attack = attack;
 	}
 
-	@Column(name = "defens")
-	public Long getDefens() {
-		return this.defens;
+	@Column(name = "defense")
+	public Long getDefense() {
+		return this.defense;
 	}
 
-	public void setDefens(Long defens) {
-		this.defens = defens;
+	public void setDefense(Long defense) {
+		this.defense = defense;
 	}
 
 	@Column(name = "quality")

@@ -1,6 +1,6 @@
 package com.zzy.service.impl.common;
 
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import com.zzy.service.common.MonsterService;
 * @decript:
 */
 @Service
-public class MonsterServiceImpl extends BaseServiceImp<GMonster> implements MonsterService{
+public class MonsterServiceImpl extends BaseServiceImpl<GMonster> implements MonsterService{
 	@Autowired
 	public MonsterServiceImpl(CrudRepository<GMonster, String> crudRepository) {
 		super(crudRepository);

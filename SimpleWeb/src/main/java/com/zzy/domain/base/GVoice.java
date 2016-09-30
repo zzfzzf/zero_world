@@ -1,6 +1,8 @@
 package com.zzy.domain.base;
 // Generated 2016-7-4 10:01:06 by Hibernate Tools 3.4.0.CR1
 
+import com.zzy.base.BaseEntity;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,7 +13,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "g_voice", catalog = "zero")
-public class GVoice implements java.io.Serializable {
+public class GVoice  extends BaseEntity implements java.io.Serializable {
 
 	private String id;
 	private String name;

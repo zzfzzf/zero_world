@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.zzy.domain.cross.GRoleFriend;
 import com.zzy.repository.cross.RoleFriendRepository;
 import com.zzy.service.cross.RoleFriendService;
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 /**
 * @author Zeus
 * @version 1.1
@@ -17,7 +17,7 @@ import com.zzy.base.BaseServiceImp;
 * @decript:
 */
 @Service
-public class RoleFriendServiceImpl extends BaseServiceImp<GRoleFriend> implements RoleFriendService{
+public class RoleFriendServiceImpl extends BaseServiceImpl<GRoleFriend> implements RoleFriendService{
 	
 	@Autowired
 	private RoleFriendRepository frRepository;

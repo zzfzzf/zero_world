@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.zzy.base.BaseEntity;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
@@ -24,7 +25,7 @@ import com.zzy.domain.cross.GSkillBuff;
 @Entity
 @Table(name = "g_skill", catalog = "zero")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class GSkill implements java.io.Serializable {
+public class GSkill  extends BaseEntity implements java.io.Serializable {
 
 	private String id;
 	private String detail;

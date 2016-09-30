@@ -33,67 +33,42 @@ public class RoleController extends BaseController {
 	@ApiOperation(value = "根据user获取role", notes = "")
 	@RequestMapping(value = { "/role/user/{user}" }, method = RequestMethod.GET)
 	public JSONObject getRoleByUser(@PathVariable String user) throws SQLException {
-		if (Objects.isNull(user)) {
-			return ResultValue.requireNonNull();
-		}
-		return ResultValue.success(roleService.findByName(user));
+		return Objects.isNull(user)?ResultValue.requireNonNull():ResultValue.success(roleService.findByName(user));
 	}
 	  
 	@ApiOperation(value = "根据area获取role", notes = "")
 	@RequestMapping(value = { "/role/area/{areaId}" }, method = RequestMethod.GET)
 	public JSONObject getRoleByAreaId(@PathVariable String areaId) throws SQLException {
-		if (Objects.isNull(areaId)) {
-			return ResultValue.requireNonNull();
-		}
-		return ResultValue.success(roleService.findByAreaId(areaId));
+		return Objects.isNull(areaId)?ResultValue.requireNonNull():ResultValue.success(roleService.findByAreaId(areaId));
 	} 
 	
 	@ApiOperation(value = "获取role", notes = "根据id获取role详情")
 	@RequestMapping(value = { "/role/{id}" }, method = RequestMethod.GET)
 	public JSONObject getRole(@PathVariable String id) throws SQLException {
-		if (Objects.isNull(id)) {
-			return ResultValue.requireNonNull();
-		}
-		return ResultValue.success(roleService.get(id));
+		return Objects.isNull(id)?ResultValue.requireNonNull():ResultValue.success(roleService.get(id));
 	}
 
 	@ApiOperation(value = "删除角色", notes = "根据id删除(假删除)role")
 	@RequestMapping(value = "/role/{id}", method = RequestMethod.DELETE)
 	public JSONObject deleteRole(@PathVariable String id) {
-		if (Objects.isNull(id)) {
-			return ResultValue.requireNonNull();
-		}
-		GRole role = new GRole(id);
-		role.setStatus(BaseDefine.DELETE_CODE);
-		roleService.update(role);
-		return ResultValue.success();
+		return Objects.isNull(id)?ResultValue.requireNonNull():ResultValue.success(roleService.update(new GRole(id).setStatus(BaseDefine.DELETE_CODE)));
 	}
 
 	@ApiOperation(value = "修改角色", notes = "")
 	@RequestMapping(value = "/role", method = RequestMethod.PUT)
 	public JSONObject updateRole(@RequestBody GRole role) {
-		if (Objects.isNull(role)) {
-			return ResultValue.requireNonNull();
-		}
-			roleService.update(role);
-			return ResultValue.success(); 
+		return Objects.isNull(role)?ResultValue.requireNonNull():ResultValue.success(roleService.update(role));
 	}
 
 	@ApiOperation(value = "获取角色列表", notes = "")
 	@RequestMapping(value = "/role", method = RequestMethod.GET)
 	public JSONObject listRole() {
-		List<GRole> list = roleService.findByStatusNot(BaseDefine.DELETE_CODE);
-		return ResultValue.success(list);
+		return ResultValue.success(roleService.findByStatusNot(BaseDefine.DELETE_CODE));
 	}
 
 	@ApiOperation(value = "新增角色", notes = "")
 	@RequestMapping(value = "/role", method = RequestMethod.POST)
 	public JSONObject addRole(@RequestBody GRole role) {
-		if (Objects.isNull(role)) {
-			return ResultValue.requireNonNull();
-		}
-		role.setId(UUIDUtils.uuid32());
-		roleService.add(role);
-		return ResultValue.success();
+		return Objects.isNull(role)?ResultValue.requireNonNull():ResultValue.success(roleService.add(role));
 	}
 }

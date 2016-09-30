@@ -59,7 +59,6 @@ public class HttpUtil {
 
     /**
      * get请求获取json数据,带json
-     *
      * @param hurl
      * @return
      */

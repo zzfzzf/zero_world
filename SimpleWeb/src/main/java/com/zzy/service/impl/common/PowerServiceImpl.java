@@ -1,6 +1,6 @@
 package com.zzy.service.impl.common;
 
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import com.zzy.service.common.PowerService;
 * @decript:
 */
 @Service
-public class PowerServiceImpl extends BaseServiceImp<ZPower> implements PowerService{
+public class PowerServiceImpl extends BaseServiceImpl<ZPower> implements PowerService{
 	@Autowired
 	public PowerServiceImpl(CrudRepository<ZPower, String> crudRepository) {
 		super(crudRepository);

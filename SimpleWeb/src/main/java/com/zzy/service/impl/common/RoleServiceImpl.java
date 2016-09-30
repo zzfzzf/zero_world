@@ -2,7 +2,7 @@ package com.zzy.service.impl.common;
 
 import java.util.List;
 
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ import com.zzy.service.common.RoleService;
 * @decript:
 */
 @Service
-public class RoleServiceImpl extends BaseServiceImp<GRole> implements RoleService {
+public class RoleServiceImpl extends BaseServiceImpl<GRole> implements RoleService {
   
 	@Autowired
 	private RoleRepository roleRepository;

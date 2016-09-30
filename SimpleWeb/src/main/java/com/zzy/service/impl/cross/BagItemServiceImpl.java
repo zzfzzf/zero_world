@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.zzy.domain.cross.GBagItem;
 import com.zzy.service.cross.BagItemService;
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 /**
 * @author Zeus
 * @version 1.1
@@ -14,7 +14,7 @@ import com.zzy.base.BaseServiceImp;
 * @decript:
 */
 @Service
-public class BagItemServiceImpl extends BaseServiceImp<GBagItem> implements BagItemService{
+public class BagItemServiceImpl extends BaseServiceImpl<GBagItem> implements BagItemService{
 	@Autowired
 	public BagItemServiceImpl(CrudRepository<GBagItem, String> crudRepository) {
 		super(crudRepository);

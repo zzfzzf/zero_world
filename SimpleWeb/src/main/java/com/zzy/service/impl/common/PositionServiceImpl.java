@@ -1,6 +1,6 @@
 package com.zzy.service.impl.common;
 
-import com.zzy.base.BaseServiceImp;
+import com.zzy.base.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import com.zzy.service.common.PositionService;
 * @decript:
 */
 @Service
-public class PositionServiceImpl extends BaseServiceImp<ZPosition> implements PositionService{
+public class PositionServiceImpl extends BaseServiceImpl<ZPosition> implements PositionService{
 	@Autowired
 	public PositionServiceImpl(CrudRepository<ZPosition, String> crudRepository) {
 		super(crudRepository);
