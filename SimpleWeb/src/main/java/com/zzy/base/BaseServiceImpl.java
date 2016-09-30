@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import com.zzy.utils.UUIDUtils;
 import org.springframework.data.repository.CrudRepository;
 
 import com.zzy.base.BaseService;
@@ -15,28 +16,29 @@ import com.zzy.base.BaseService;
  * @date:2016年4月1日
  * @description:
  */
-public class BaseServiceImp<E> implements BaseService<E> {
+public class BaseServiceImpl<E extends BaseEntity> implements BaseService<E> {
 	
 	public CrudRepository<E,String> crudRepository;
 	
-	public BaseServiceImp(CrudRepository<E, String> crudRepository) {
+	public BaseServiceImpl(CrudRepository<E, String> crudRepository) {
 		this.crudRepository = crudRepository;
 	}
  
 	@Override 
-	public int add(E entity) {
+	public Integer add(E entity) {
+		entity.setId(UUIDUtils.uuid32());
 		crudRepository.save(entity);
 		return 1;
 	}
 
 	@Override
-	public int delete(E entity) {
+	public Integer delete(E entity) {
 		crudRepository.delete(entity);
 		return 1;
 	}
 
 	@Override
-	public int update(E entity) {
+	public Integer update(E entity) {
 		crudRepository.save(entity);
 		return 1;
 	}
