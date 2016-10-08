@@ -16,7 +16,7 @@ import com.zzy.dubbo.logic.ITrade;
 public class TradeController implements ITrade{
 
 	@Override
-	public JSONObject addItem(JSONObject json){
+	public JSONObject addItem(JSONObject json) {
 		HttpUtil.getJson(UrlCommon.GET_ITEM,json);
 		return json;
 	}

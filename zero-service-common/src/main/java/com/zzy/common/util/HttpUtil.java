@@ -25,6 +25,21 @@ import com.alibaba.fastjson.JSONObject;
 public class HttpUtil {
     private static Logger log = Logger.getLogger(HttpUtil.class);
 
+    private OutputStream getOutStream(HttpURLConnection connection){
+        try{
+            return connection.getOutputStream();
+        }catch (Exception e){
+            log.error("获取输出流失败");return null;
+        }
+    }
+
+    private InputStream getInputStream(HttpURLConnection connection){
+        try{
+            return connection.getInputStream();
+        }catch (Exception e){
+            log.error("获取输入流失败");return null;
+        }
+    }
     /**
      * 初始化connect设置
      */
@@ -47,7 +62,7 @@ public class HttpUtil {
         return connection;
     }
 
-    public static JSONObject postJson(String hurl, JSONObject json) throws Exception {
+    public static JSONObject postJson(String hurl, JSONObject json)  {
         HttpURLConnection connection = initConnection("POST", hurl);
         sent(json, connection.getOutputStream());
         return JSONObject.parseObject(receive(connection.getInputStream()));
@@ -62,28 +77,33 @@ public class HttpUtil {
      * @param hurl
      * @return
      */
-    public static JSONObject getJson(String hurl, JSONObject json) throws Exception {
+    public static JSONObject getJson(String hurl, JSONObject json) {
         json.putAll(JSONObject.parseObject(receive(initConnection("GET", hurl).getInputStream())));
         return json;
     }
 
 
-    public static JSONObject putJson(String hurl, JSONObject json) throws Exception {
+    public static JSONObject putJson(String hurl, JSONObject json) {
         HttpURLConnection connection = initConnection("PUT", hurl);
         sent(json, connection.getOutputStream());
         return JSONObject.parseObject(receive(connection.getInputStream()));
     }
 
 
-    public static JSONObject deleteJson(String hurl) throws Exception {
+    public static JSONObject deleteJson(String hurl) {
         return JSONObject.parseObject(receive(initConnection("DELETE", hurl).getInputStream()));
     }
 
-    private static void sent(JSONObject json, OutputStream os) throws Exception {
-        DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(os));
-        dos.writeUTF(json == null ? "" : json.toString());
-        dos.flush();
-        dos.close();
+    private static void sent(JSONObject json, OutputStream os) {
+        try{
+            DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(os));
+            dos.writeUTF(json == null ? "" : json.toString());
+            dos.flush();
+            dos.close();
+        }catch (Exception e){
+            log.error("Http请求消息发送错误------"+e.getMessage());
+        }
+
     }
 
     /**
