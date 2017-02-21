@@ -62,7 +62,7 @@ public class HttpUtil {
         return connection;
     }
 
-    public static JSONObject postJson(String hurl, JSONObject json)  {
+    public static JSONObject postJson(String hurl, JSONObject json) throws Exception {
         HttpURLConnection connection = initConnection("POST", hurl);
         sent(json, connection.getOutputStream());
         return JSONObject.parseObject(receive(connection.getInputStream()));
@@ -77,20 +77,20 @@ public class HttpUtil {
      * @param hurl
      * @return
      */
-    public static JSONObject getJson(String hurl, JSONObject json) {
+    public static JSONObject getJson(String hurl, JSONObject json) throws Exception{
         json.putAll(JSONObject.parseObject(receive(initConnection("GET", hurl).getInputStream())));
         return json;
     }
 
 
-    public static JSONObject putJson(String hurl, JSONObject json) {
+    public static JSONObject putJson(String hurl, JSONObject json) throws Exception{
         HttpURLConnection connection = initConnection("PUT", hurl);
         sent(json, connection.getOutputStream());
         return JSONObject.parseObject(receive(connection.getInputStream()));
     }
 
 
-    public static JSONObject deleteJson(String hurl) {
+    public static JSONObject deleteJson(String hurl) throws Exception{
         return JSONObject.parseObject(receive(initConnection("DELETE", hurl).getInputStream()));
     }
 
