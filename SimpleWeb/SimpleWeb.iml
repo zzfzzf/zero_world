@@ -53,7 +53,7 @@
     <orderEntry type="library" name="Maven: org.mapstruct:mapstruct:1.0.0.CR1" level="project" />
     <orderEntry type="library" name="Maven: io.swagger:swagger-annotations:1.5.3" level="project" />
     <orderEntry type="library" name="Maven: io.swagger:swagger-models:1.5.3" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.4.5" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.6" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: io.springfox:springfox-spi:2.2.2" level="project" />
     <orderEntry type="library" name="Maven: io.springfox:springfox-core:2.2.2" level="project" />

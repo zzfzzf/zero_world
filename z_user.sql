@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2016/9/5 星期一 14:45:52                        */
+/* Created on:     2017/2/23 18:37:58                           */
 /*==============================================================*/
 
 
@@ -73,6 +73,7 @@ create table g_area
    online_num           int,
    offline_num          int,
    create_time          bigint,
+   status               int,
    primary key (id)
 );
 
@@ -179,18 +180,18 @@ create table g_items
    id                   char(32) not null,
    detail               varchar(50),
    name                 varchar(50),
-   level                bigint,
-   quality              bigint comment '1 白色 2 绿色 3 蓝色 4 紫色 5 橙色',
-   type                 bigint comment '0 消耗品 1 是装备 2 材料',
+   level                int,
+   quality              int comment '1 白色 2 绿色 3 蓝色 4 紫色 5 橙色',
+   type                 int comment '0 消耗品 1 是装备 2 材料',
    icon                 varchar(50),
-   status               bigint comment '0 未使用 1已使用',
-   strength             bigint(50),
-   agility              bigint(50),
-   intellect            bigint(50),
-   lucky                bigint(50),
+   status               int comment '0 未使用 1已使用',
+   strength             int,
+   agility              int,
+   intellect            int,
+   lucky                int,
    profile              varchar(50),
-   property             bigint comment '基本属性 ',
-   price                bigint,
+   property             int comment '基本属性 ',
+   price                int,
    primary key (id)
 );
 
@@ -218,7 +219,7 @@ create table g_monster
 (
    id                   char(32) not null,
    attack               bigint(50),
-   defense               bigint(50),
+   defense              bigint(50),
    quality              int,
    name                 varchar(50),
    level                int,
@@ -291,7 +292,7 @@ create table g_role
    conditions           varchar(50) comment '0 饥饿 1 饱食',
    race_id              char(32),
    attack               int,
-   defense               int,
+   defense              int,
    head_image_id        char(32),
    user_id              char(32),
    area_id              char(32),

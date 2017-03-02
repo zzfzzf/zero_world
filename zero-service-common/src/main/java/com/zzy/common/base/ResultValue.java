@@ -28,7 +28,6 @@ public class ResultValue {
      */
     public static JSONObject success(Object object){
         return object instanceof JSONObject?success((JSONObject)object,null):(object instanceof Integer?success(new JSONObject(),null):success(new JSONObject(),object));
-
     }
 
     /**
