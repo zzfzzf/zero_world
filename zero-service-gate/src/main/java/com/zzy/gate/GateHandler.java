@@ -82,6 +82,7 @@ public class GateHandler extends IoHandlerAdapter implements Command {
     public void messageReceived(IoSession session, Object message) throws Exception {
         // 如果为null 则不广播 默认为广播
         IoAcceptor tempAcceptor = acceptor;
+        // 广播对象集合
         List<Long> list = null;
         // 收到的信息字符串
         if (Objects.isNull(message) || "null".equals(message)) {

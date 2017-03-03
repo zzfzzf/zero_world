@@ -76,12 +76,11 @@ public class BroadcastUtil {
         return json;
     }
 
-    private static JSONObject sentToMe(IoAcceptor acceptor, IoSession session, JSONObject json) {
-        Iterator<Map.Entry<Long, IoSession>> ir = acceptor.getManagedSessions().entrySet().iterator();
-        while (ir.hasNext()) {
-            Map.Entry<Long, IoSession> entry = ir.next();
-            Nothing.doNothing(entry.getValue() != session ? entry.getValue().write(json) : session.write(json));
-        }
+    /**
+     * 返回请求给自己
+     */
+    private static JSONObject sentToMe(IoSession session, JSONObject json) {
+        session.write(json);
         return json;
     }
 
@@ -92,7 +91,7 @@ public class BroadcastUtil {
      * @param json
      */
     public static void sentMessage(Collection<Long> collection, IoAcceptor acceptor, IoSession session, JSONObject json) {
-        Nothing.doNothing(Objects.nonNull(acceptor) ? foreach(collection, acceptor.getManagedSessions(), json) : sentToMe(acceptor, session, json));
+        Nothing.doNothing(Objects.nonNull(acceptor) ? foreach(collection, acceptor.getManagedSessions(), json) : sentToMe(session, json));
     }
 }
 

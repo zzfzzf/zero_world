@@ -1,2 +1,0 @@
-2016-08-03 13:48:39,620 com.zzy.common.base.HttpUtil.postJson(HttpUtil.java:37) ERROR - message: POST连接异常----Connection refused: connect
-2016-08-03 13:48:39,657 com.zzy.login.LoginHandler.exceptionCaught(LoginHandler.java:35) ERROR - message: 错误session:1---->Trying to write a null message : not allowed

@@ -15,7 +15,7 @@ import com.zzy.common.util.HttpUtil;
  * @author Zeus
  * @version 1.1
  * @createTime:2016年8月1日
- * @description:
+ * @description: 登录处理器
  */
 public class LoginHandler extends IoHandlerAdapter implements Command{
 	private static Logger log = Logger.getLogger(LoginHandler.class);

@@ -1,0 +1,8 @@
+2017-03-02 16:51:06,269 INFO  Test - dddd
+2017-03-02 17:08:08,740 INFO  Test - dddd
+2017-03-02 17:14:57,882 INFO  Test - dddd
+2017-03-02 17:30:26,115 INFO  com.zzy.login.LoginServer - Login服务已启动-----监听端口为：9999
+2017-03-02 17:31:29,797 DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter - Processing a MESSAGE_RECEIVED for session 1
+2017-03-02 17:31:29,808 ERROR com.zzy.login.LoginHandler - 错误session:1---->java.lang.String cannot be cast to com.alibaba.fastjson.JSONObject
+2017-03-02 17:37:22,693 DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter - Processing a MESSAGE_RECEIVED for session 2
+2017-03-02 17:37:22,694 ERROR com.zzy.login.LoginHandler - 错误session:2---->java.lang.String cannot be cast to com.alibaba.fastjson.JSONObject
