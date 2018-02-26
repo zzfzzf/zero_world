@@ -42,7 +42,6 @@ public class LoginServer {
 		dcfg.setReuseAddress(true);// 设置每一个非主监听连接的端口可以重用
 
 		acceptor.bind(new InetSocketAddress(PORT));// 绑定端口
-		System.out.println("dsddd");
 		log.info("Login服务已启动-----监听端口为："+PORT);
 	}
 

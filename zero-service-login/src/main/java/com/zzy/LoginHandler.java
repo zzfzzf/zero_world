@@ -30,8 +30,7 @@ public class LoginHandler extends IoHandlerAdapter implements Command{
 	 */
 	@Override
 	public void exceptionCaught(IoSession session, Throwable cause) throws Exception {
-		System.out.println("有用户异常关闭");
-		log.error("错误session:"+session.getId()+"---->"+cause.getMessage());
+		log.error("有用户异常关闭:"+session.getId()+"---->"+cause.getMessage());
 	}
 
 	/**
@@ -41,13 +40,13 @@ public class LoginHandler extends IoHandlerAdapter implements Command{
 	public void messageReceived(IoSession session, Object message) throws Exception {
 		// 收到的信息字符串
 		if(Objects.isNull(message) || "null".equals(message)){
-			throw new NullPointerException("message不能为null");
+			log.error("message不能为null");
+			return;
 		}
 		JSONObject json = JSONObject.parseObject((String) message);
 		String command = (String)json.get("command");
 		if(Command.LOGIN.equals(command)){
-			JSONObject result = HttpUtil.postJson(UrlCommon.LOGIN,json);
-			session.write(result);
+			session.write(HttpUtil.postJson(UrlCommon.LOGIN,json));
 		}
 	}
 
@@ -55,6 +54,6 @@ public class LoginHandler extends IoHandlerAdapter implements Command{
 	// 当一个客户端连接关闭时
 	@Override
 	public void sessionClosed(IoSession session) throws Exception {
-		System.out.println("客户端"+session.getId()+"关闭");
+		log.info("客户端："+session.getId()+"链接关闭");
 	}
 }
